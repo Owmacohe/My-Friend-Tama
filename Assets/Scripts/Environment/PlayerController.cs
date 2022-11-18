@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Character Controls")]
     public float mouseSensitivity = 3.5f;
     public float walkSpeed = 10f;
     public float gravity = -13.0f;
     [Range(0.0f, 0.5f)] public float moveSmoothTime = 0.15f;
     [Range(0.0f, 0.3f)] public float mouseSmoothTime = 0.01f;
 
+    //Character private values
     private GameObject playerCamera;
     private float cameraPitch = 0.0f;
     private float velocityY = 0.0f;
     private CharacterController controller = null;
+
+    //Used to create character smoothing movement
     private Vector2 currentDir = Vector2.zero;
     private Vector2 currentDirVelocity = Vector2.zero;
     private Vector2 currentMouseDelta = Vector2.zero;
@@ -55,11 +59,13 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePlayerMovement()
     {
+        //Gets new location every frame and normalizes values
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         targetDir.Normalize();
 
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
+        //Checks to see if player grounded and stops them from falling further
         if (controller.isGrounded)
         {
             velocityY = 0.0f;
@@ -67,8 +73,8 @@ public class PlayerController : MonoBehaviour
 
         velocityY += gravity * Time.deltaTime;
 
+        //Applies movement through character controller
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
-
         controller.Move(velocity * Time.deltaTime);
     }
 }
