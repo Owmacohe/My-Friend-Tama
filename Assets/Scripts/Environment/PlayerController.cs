@@ -12,19 +12,19 @@ public class PlayerController : MonoBehaviour
     [Range(0.0f, 0.5f)] public float moveSmoothTime = 0.15f;
     [Range(0.0f, 0.3f)] public float mouseSmoothTime = 0.01f;
 
-    //Character private values
-    private GameObject playerCamera;
-    private float cameraPitch = 0.0f;
-    private float velocityY = 0.0f;
-    private CharacterController controller = null;
+    //Character values
+    GameObject playerCamera;
+    float cameraPitch;
+    float velocityY;
+    CharacterController controller;
 
     //Used to create character smoothing movement
-    private Vector2 currentDir = Vector2.zero;
-    private Vector2 currentDirVelocity = Vector2.zero;
-    private Vector2 currentMouseDelta = Vector2.zero;
-    private Vector2 currentMouseDeltaVelocity = Vector2.zero;
+    Vector2 currentDir = Vector2.zero;
+    Vector2 currentDirVelocity = Vector2.zero;
+    Vector2 currentMouseDelta = Vector2.zero;
+    Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
-    private void Start()
+    void Start()
     {
         //Locks cursor position at startup 
         Cursor.lockState = CursorLockMode.Locked;
@@ -34,13 +34,14 @@ public class PlayerController : MonoBehaviour
         playerCamera = gameObject.transform.Find("MainCamera").gameObject;
         controller = GetComponent<CharacterController>();
     }
-    private void Update()
+    
+    void Update()
     {
         UpdateMouseLook();
         UpdatePlayerMovement();
     }
 
-    private void UpdateMouseLook()
+    void UpdateMouseLook()
     {
         //Gets new location every frame
         Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
@@ -53,9 +54,10 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localEulerAngles = Vector3.right * cameraPitch;
 
         //Adjusts camera horizontal with mouse sensitivity
-        transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
+        transform.Rotate(Vector3.up * (currentMouseDelta.x * mouseSensitivity));
     }
-    private void UpdatePlayerMovement()
+    
+    void UpdatePlayerMovement()
     {
         //Gets new location every frame and normalizes values
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
