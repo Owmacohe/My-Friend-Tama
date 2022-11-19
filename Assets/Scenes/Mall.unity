@@ -1389,12 +1389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39f0f7e17f11f2448932da58e9b63d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha: 0.004
+  alpha: 0.143
   size: 0.0438
-  direction: 0
-  velocity: {x: 0, y: 0, z: 5}
+  direction: 2
+  velocity: {x: 0, y: 0, z: 10}
   speed: 0.03
-  density: 0.67
+  density: 0.15
   spawnDistanceRange:
     m_MinValue: 0.1317829
     m_MaxValue: 1
