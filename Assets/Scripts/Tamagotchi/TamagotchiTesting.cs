@@ -13,7 +13,7 @@ public class TamagotchiTesting : MonoBehaviour
     
     void Start()
     {
-        tama = new Tamagotchi();
+        tama = new Tamagotchi(new []{ 5, 10 });
     }
 
     void FixedUpdate()

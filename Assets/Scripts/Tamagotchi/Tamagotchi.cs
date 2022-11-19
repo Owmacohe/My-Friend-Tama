@@ -13,8 +13,9 @@ public class Tamagotchi
 
     float spawnTime;
     bool hasJustEvolved;
+    int[] evolutionThresholds;
 
-    public Tamagotchi()
+    public Tamagotchi(int[] thresholds)
     {
         Food = 1;
         Happiness = 1;
@@ -22,6 +23,8 @@ public class Tamagotchi
         
         Age = TamagotchiAge.Egg;
         spawnTime = Time.time;
+
+        evolutionThresholds = thresholds;
     }
 
     public void Feed()
@@ -39,9 +42,29 @@ public class Tamagotchi
         Discipline = Discipline < 1 ? Discipline + 0.1f : 1;
     }
 
+    bool IsEvolutionTime()
+    {
+        if (evolutionThresholds != null)
+            foreach (int i in evolutionThresholds)
+                if (Round(Time.time - spawnTime, 0) == i)
+                    return true;
+
+        return false;
+    }
+
     float UpdateStat(float stat, float amount)
     {
-        return stat > 0 ? stat - (Random.Range(0, 4) == 0 ? amount : 0) : 0;
+        if (stat is > 0 and <= 1)
+        {
+            return stat - (Random.Range(0, 4) == 0 ? amount : 0);
+        }
+        
+        if (stat < 0)
+        {
+            return 0;
+        }
+            
+        return 1;
     }
 
     public void UpdateStats(float amount)
@@ -50,8 +73,7 @@ public class Tamagotchi
         Happiness = UpdateStat(Happiness, amount);
         Discipline = UpdateStat(Discipline, amount);
 
-        if (Round(Time.time - spawnTime, 0) == 5 ||
-            Round(Time.time - spawnTime, 0) == 10)
+        if (IsEvolutionTime())
         {
             Evolve();
         }
