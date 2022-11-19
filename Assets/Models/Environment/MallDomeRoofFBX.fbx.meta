@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dfac1e4888e1f564cab143b8e1bd73ee
+guid: 230a19dfb0a9c3342bcb967ebab7c061
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,38 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Zone0Material
-    second: {fileID: 2100000, guid: c129b8fc0b0a3d94fb9b63b0914abf6d, type: 2}
+      name: DoomRoofMaterial
+    second: {fileID: 2100000, guid: 6e33f111fc336e542bc7eed89c04c4d5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Zone1Material
-    second: {fileID: 2100000, guid: 296724c3c67634b419cad0e2756f7a1d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Zone2Material
-    second: {fileID: 2100000, guid: cac4f9b3275558347a336865aa12783e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Zone3Material
-    second: {fileID: 2100000, guid: ebe9798a8caad1342be55d3fa8cf87d0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Zone4Material
-    second: {fileID: 2100000, guid: 28094609525d3a04996a3f4e68fa9f9a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Zone5Material
-    second: {fileID: 2100000, guid: 97d18cc10323ff54a8d3d529ea08e140, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Zone6Material
-    second: {fileID: 2100000, guid: 7aeabdde813cd2e44b13c84d913f27ba, type: 2}
+      name: DoomRoofSpecialMaterial
+    second: {fileID: 2100000, guid: 1d8491435abd2dd408ce833072902585, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

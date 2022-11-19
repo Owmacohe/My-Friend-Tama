@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Character Controls")]
     public float mouseSensitivity = 3.5f;
     public float walkSpeed = 10f;
+    public float jumpHeight = 1.0f;
     public float gravity = -13.0f;
     [Range(0.0f, 0.5f)] public float moveSmoothTime = 0.15f;
     [Range(0.0f, 0.3f)] public float mouseSmoothTime = 0.01f;
@@ -23,7 +24,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentMouseDelta = Vector2.zero;
     private Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
-
     private void Start()
     {
         //Locks cursor position at startup 
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         playerCamera = gameObject.transform.Find("MainCamera").gameObject;
         controller = GetComponent<CharacterController>();
     }
-
     private void Update()
     {
         UpdateMouseLook();
@@ -56,7 +55,6 @@ public class PlayerController : MonoBehaviour
         //Adjusts camera horizontal with mouse sensitivity
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
     }
-
     private void UpdatePlayerMovement()
     {
         //Gets new location every frame and normalizes values
@@ -66,15 +64,20 @@ public class PlayerController : MonoBehaviour
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
         //Checks to see if player grounded and stops them from falling further
-        if (controller.isGrounded)
+        if (controller.isGrounded && velocityY < 0)
         {
             velocityY = 0.0f;
         }
-
         velocityY += gravity * Time.deltaTime;
 
         //Applies movement through character controller
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
         controller.Move(velocity * Time.deltaTime);
+
+        //Jump Action
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+        }
     }
 }
