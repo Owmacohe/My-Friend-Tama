@@ -7,7 +7,7 @@ public class PlayerObjectDetection : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             if (other.gameObject.tag == "Food")
             {
@@ -16,5 +16,15 @@ public class PlayerObjectDetection : MonoBehaviour
             }
         }
  
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
     }
 }
