@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
     [Range(0.0f, 0.5f)] public float moveSmoothTime = 0.15f;
     [Range(0.0f, 0.3f)] public float mouseSmoothTime = 0.01f;
 
+    public GameObject playerFlashlight;
+
     //Character values
     GameObject playerCamera;
     float cameraPitch;
     float velocityY;
     CharacterController controller;
+    Light playerLight;
+    private bool flashlightOn = true;
 
     //Used to create character smoothing movement
     Vector2 currentDir = Vector2.zero;
@@ -33,14 +37,16 @@ public class PlayerController : MonoBehaviour
         //Get child objects at start up
         playerCamera = gameObject.transform.Find("MainCamera").gameObject;
         controller = GetComponent<CharacterController>();
+        playerLight = playerFlashlight.GetComponent<Light>();
     }
-    
     void Update()
     {
         UpdateMouseLook();
         UpdatePlayerMovement();
+        FlashlightControls();
     }
 
+    //Updates mouse controls
     void UpdateMouseLook()
     {
         //Gets new location every frame
@@ -56,7 +62,7 @@ public class PlayerController : MonoBehaviour
         //Adjusts camera horizontal with mouse sensitivity
         transform.Rotate(Vector3.up * (currentMouseDelta.x * mouseSensitivity));
     }
-    
+    //Updates player movement
     void UpdatePlayerMovement()
     {
         //Gets new location every frame and normalizes values
@@ -82,4 +88,22 @@ public class PlayerController : MonoBehaviour
             velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
+    //Controls light component inside playercharacter
+    void FlashlightControls()
+    {
+        if (Input.GetKeyDown("f"))
+        {
+            if (!flashlightOn)
+            {
+                playerLight.enabled = true;
+                flashlightOn = true;
+            }
+            else if (flashlightOn)
+            {
+                playerLight.enabled = false;
+                flashlightOn = false;
+            }
+        }
+    }
+   
 }
