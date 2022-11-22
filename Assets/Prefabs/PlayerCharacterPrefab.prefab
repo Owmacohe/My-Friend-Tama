@@ -452,11 +452,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alpha: 1
-  size: 0.01
+  size: 0.03
   direction: 2
-  velocity: {x: 0, y: 0, z: 0.1}
+  velocity: {x: 0, y: 0, z: -0.5}
   speed: 0.03
-  density: 30
+  density: 5
   spawnDistanceRange:
     m_MinValue: 0.1317829
     m_MaxValue: 1
@@ -667,10 +667,6 @@ PrefabInstance:
     - target: {fileID: 9138171963822938757, guid: 3ece36eaf4ac05d4c8bd0f2fbe86544f, type: 3}
       propertyPath: m_Name
       value: Tamagotchi
-      objectReference: {fileID: 0}
-    - target: {fileID: 9138171963822938757, guid: 3ece36eaf4ac05d4c8bd0f2fbe86544f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ece36eaf4ac05d4c8bd0f2fbe86544f, type: 3}
