@@ -8,7 +8,8 @@ public class ConsumableSpawnerScript : MonoBehaviour
     [SerializeField] List<GameObject> spawnableItems;
     [SerializeField] int numberOfItemsToSpawn = 2;
 
-    List<Transform> freeSpawnPoint, usedSpawnPoint;
+    List<Transform> freeSpawnPoint = new List<Transform>();
+    List<Transform> usedSpawnPoint = new List<Transform>();
 
     void Start()
     {
