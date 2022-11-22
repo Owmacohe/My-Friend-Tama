@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714272221026389540}
   m_Layer: 0
-  m_Name: FoodSpawnPointPrefab
+  m_Name: SpawnPointPrefab
   m_TagString: FoodSpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
