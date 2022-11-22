@@ -5,24 +5,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Character Controls")]
-    public float mouseSensitivity = 3.5f;
-    public float walkSpeed = 10f;
-    public float jumpHeight = 1.0f;
-    public float gravity = -13.0f;
-    [Range(0.0f, 0.5f)] public float moveSmoothTime = 0.15f;
-    [Range(0.0f, 0.3f)] public float mouseSmoothTime = 0.01f;
+    [SerializeField] float mouseSensitivity = 3.5f;
+    [SerializeField] float walkSpeed = 10f;
+    [SerializeField] float jumpHeight = 1.0f;
+    [SerializeField] float gravity = -13.0f;
+    [SerializeField, Range(0.0f, 0.5f)] float moveSmoothTime = 0.15f;
+    [SerializeField, Range(0.0f, 0.3f)] float mouseSmoothTime = 0.01f;
 
-    public GameObject playerFlashlight;
+    [SerializeField] GameObject playerFlashlight;
 
-    //Character values
+    // Character values
     GameObject playerCamera;
     float cameraPitch;
     float velocityY;
     CharacterController controller;
     Light playerLight;
-    private bool flashlightOn = true;
+    bool flashlightOn = true;
 
-    //Used to create character smoothing movement
+    // Used to create character smoothing movement
     Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
     Vector2 currentMouseDelta = Vector2.zero;
@@ -30,15 +30,16 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //Locks cursor position at startup 
+        // Locks cursor position at startup 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        //Get child objects at start up
+        // Get child objects at start up
         playerCamera = gameObject.transform.Find("MainCamera").gameObject;
         controller = GetComponent<CharacterController>();
         playerLight = playerFlashlight.GetComponent<Light>();
     }
+    
     void Update()
     {
         UpdateMouseLook();
@@ -46,49 +47,58 @@ public class PlayerController : MonoBehaviour
         FlashlightControls();
     }
 
-    //Updates mouse controls
+    /// <summary>
+    /// Updates mouse controls
+    /// </summary>
     void UpdateMouseLook()
     {
-        //Gets new location every frame
+        // Gets new location every frame
         Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDelta, mouseSmoothTime);
 
-        //Adjusts camera vertical with mouse sensitivity
+        // Adjusts camera vertical with mouse sensitivity
         cameraPitch -= currentMouseDelta.y * mouseSensitivity;
         cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
         playerCamera.transform.localEulerAngles = Vector3.right * cameraPitch;
 
-        //Adjusts camera horizontal with mouse sensitivity
+        // Adjusts camera horizontal with mouse sensitivity
         transform.Rotate(Vector3.up * (currentMouseDelta.x * mouseSensitivity));
     }
-    //Updates player movement
+    
+    /// <summary>
+    /// Updates player movement
+    /// </summary>
     void UpdatePlayerMovement()
     {
-        //Gets new location every frame and normalizes values
+        // Gets new location every frame and normalizes values
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         targetDir.Normalize();
 
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
 
-        //Checks to see if player grounded and stops them from falling further
+        // Checks to see if player grounded and stops them from falling further
         if (controller.isGrounded && velocityY < 0)
         {
             velocityY = 0.0f;
         }
+        
         velocityY += gravity * Time.deltaTime;
 
-        //Applies movement through character controller
+        // Applies movement through character controller
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * walkSpeed + Vector3.up * velocityY;
         controller.Move(velocity * Time.deltaTime);
 
-        //Jump Action
+        // Jump Action
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
             velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
-    //Controls light component inside playercharacter
+    
+    /// <summary>
+    /// Controls light component inside PlayerCharacter
+    /// </summary>
     void FlashlightControls()
     {
         if (Input.GetKeyDown("f"))
@@ -105,5 +115,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-   
 }

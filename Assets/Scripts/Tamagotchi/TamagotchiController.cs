@@ -3,18 +3,12 @@ using UnityEngine;
 
 public class TamagotchiController : MonoBehaviour
 {
-    [SerializeField]
-    float statsSpeed = 0.005f;
-    [SerializeField]
-    float firstStatThreshold = 0.5f;
-    [SerializeField]
-    float secondStatThreshold = 0.1f;
-    [SerializeField]
-    MeshRenderer screen;
-    [SerializeField]
-    float flashingSpeed = 5;
-    [SerializeField, ColorUsage(true, true)]
-    Color foodColour, happinessColour, disciplineColour;
+    [SerializeField] float statsSpeed = 0.005f;
+    [SerializeField] float firstStatThreshold = 0.5f;
+    [SerializeField] float secondStatThreshold = 0.1f;
+    [SerializeField] MeshRenderer screen;
+    [SerializeField] float flashingSpeed = 5;
+    [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
     
     Tamagotchi tama;
     
@@ -39,9 +33,9 @@ public class TamagotchiController : MonoBehaviour
         
         // TODO: update evolution sprite
         
-        UpdateStat(tama.Food, new []{ isHungry, isStarving }, foodColour);
-        UpdateStat(tama.Happiness, new []{ isSad, isMiserable }, happinessColour);
-        UpdateStat(tama.Discipline, new []{ isRude, isWicked }, disciplineColour);
+        CheckStat(tama.Food, new []{ isHungry, isStarving }, foodColour);
+        CheckStat(tama.Happiness, new []{ isSad, isMiserable }, happinessColour);
+        CheckStat(tama.Discipline, new []{ isRude, isWicked }, disciplineColour);
         
         // TODO: update stat bars
 
@@ -61,18 +55,28 @@ public class TamagotchiController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the tamagotchi's current screen colour
+    /// </summary>
+    /// <param name="col">The colour to be set (must be an HDR colour)</param>
     void SetScreenColour(Color col)
     {
         screen.material.SetColor(emissionColor, col);
     }
 
-    void UpdateStat(float stat, bool[] thresholds, Color flash)
+    /// <summary>
+    /// Compares a given stat's against thresholds to determine tamagotchi conditions and trigger external scripts
+    /// </summary>
+    /// <param name="stat">The value to be checked</param>
+    /// <param name="conditions">The reference-passed booleans to be possibly turned on/off</param>
+    /// <param name="flash">The colour to flash if the stat is too low</param>
+    void CheckStat(float stat, bool[] conditions, Color flash)
     {
         if (stat <= firstStatThreshold)
         {
             if (stat > secondStatThreshold)
             {
-                if (!thresholds[0])
+                if (!conditions[0])
                 {
                     if (!isFlashing)
                     {
@@ -81,36 +85,36 @@ public class TamagotchiController : MonoBehaviour
                         flashingStartTime = Time.time;   
                     }
 
-                    thresholds[0] = true;
+                    conditions[0] = true;
                     
                     // TODO: call environment script (initial ping)
                 }
 
-                if (thresholds[1])
+                if (conditions[1])
                 {
-                    thresholds[1] = false;
+                    conditions[1] = false;
                 }
             }
-            else if (stat <= secondStatThreshold && !thresholds[1])
+            else if (stat <= secondStatThreshold && !conditions[1])
             {
                 // TODO: call environment script (dire ping)
 
-                thresholds[1] = true;
+                conditions[1] = true;
             }
         }
         else
         {
-            if (thresholds[0])
+            if (conditions[0])
             {
-                thresholds[0] = false;
+                conditions[0] = false;
                 
                 isFlashing = false;
                 SetScreenColour(defaultColour);
             }
             
-            if (thresholds[1])
+            if (conditions[1])
             {
-                thresholds[1] = false;
+                conditions[1] = false;
             }
         }
     }

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class TamagotchiTesting : MonoBehaviour
 {
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    TMP_Text info;
+    [SerializeField] float speed;
+    [SerializeField] TMP_Text info;
 
     Tamagotchi tama;
     

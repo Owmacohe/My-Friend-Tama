@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class PlayerObjectDetection : MonoBehaviour
 {
-
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
+        // TODO: eventually we'll also need to check if the tamagotchi needs food currently
+        
         if (Input.GetKey(KeyCode.E))
         {
-            if (other.gameObject.tag == "Food")
+            if (other.gameObject.CompareTag("Food"))
             {
                 Destroy(other.gameObject);
-
             }
         }
- 
     }
 
     private void OnTriggerEnter(Collider other)

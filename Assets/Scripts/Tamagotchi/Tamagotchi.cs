@@ -27,21 +27,31 @@ public class Tamagotchi
         evolutionThresholds = thresholds;
     }
 
+    /// <summary>
+    /// Increases food level
+    /// </summary>
     public void Feed()
     {
         Food = Food < 1 ? Food + 0.1f : 1;
     }
     
+    // Increases happiness level
     public void Play()
     {
         Happiness = Happiness < 1 ? Happiness + 0.1f : 1;
     }
     
+    /// <summary>
+    /// Increases discipline level
+    /// </summary>
     public void Scold()
     {
         Discipline = Discipline < 1 ? Discipline + 0.1f : 1;
     }
 
+    /// <summary>
+    /// Whether or not the tamagotchi is ready to evolve
+    /// </summary>
     bool IsEvolutionTime()
     {
         if (evolutionThresholds != null)
@@ -52,21 +62,10 @@ public class Tamagotchi
         return false;
     }
 
-    float UpdateStat(float stat, float amount)
-    {
-        if (stat is > 0 and <= 1)
-        {
-            return stat - (Random.Range(0, 4) == 0 ? amount : 0);
-        }
-        
-        if (stat < 0)
-        {
-            return 0;
-        }
-            
-        return 1;
-    }
-
+    /// <summary>
+    /// Decreases all stats and evolves, if necessary
+    /// </summary>
+    /// <param name="amount">Amount that each stat has a chance to be decreased by</param>
     public void UpdateStats(float amount)
     {
         Food = UpdateStat(Food, amount);
@@ -82,8 +81,31 @@ public class Tamagotchi
             hasJustEvolved = false;
         }
     }
+    
+    /// <summary>
+    /// Returns a decreased stat
+    /// </summary>
+    /// <param name="stat">The current value of the stat</param>
+    /// <param name="amount">Amount that the stat has a chance to be decreased by</param>
+    float UpdateStat(float stat, float amount)
+    {
+        if (stat is > 0 and <= 1)
+        {
+            return stat - (Random.Range(0, 4) == 0 ? amount : 0);
+        }
+        
+        if (stat < 0)
+        {
+            return 0;
+        }
+            
+        return 1;
+    }
 
-    public void Evolve()
+    /// <summary>
+    /// Increases the age
+    /// </summary>
+    void Evolve()
     {
         if (!hasJustEvolved)
         {
@@ -98,6 +120,11 @@ public class Tamagotchi
         }
     }
 
+    /// <summary>
+    /// Rounds a float to a set number of decimal places
+    /// </summary>
+    /// <param name="amount">Float to be rounded</param>
+    /// <param name="decimalPlaces">Number of decimal places to round to</param>
     float Round(float amount, int decimalPlaces = 2)
     {
         float temp = Mathf.Pow(10, decimalPlaces);
@@ -105,7 +132,10 @@ public class Tamagotchi
         return Mathf.Round(amount * temp) / temp;
     }
 
-    public string ToString()
+    /// <summary>
+    /// Overridden ToString method
+    /// </summary>
+    public override string ToString()
     {
         return "<b>TAMAGODCHI</b>" +
            "\nAge: " + Age + " (" + Round(Time.time - spawnTime, 0) + "s)" +
