@@ -3,14 +3,23 @@ using UnityEngine;
 
 public class TamagotchiController : MonoBehaviour
 {
+    [Header("Stats")]
     [SerializeField] float statsSpeed = 0.005f;
     [SerializeField] float firstStatThreshold = 0.5f;
     [SerializeField] float secondStatThreshold = 0.1f;
-    [SerializeField] MeshRenderer screen;
+    [SerializeField] Transform foodBar, happinessBar, disciplineBar;
+
+    [Header("Sprite")]
+    [SerializeField] SpriteRenderer tamaSprite;
+    [SerializeField] Sprite[] tamaEvolutions;
+    
+    [Header("Flashing")]
+    [SerializeField] SpriteRenderer screen;
     [SerializeField] float flashingSpeed = 5;
     [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
     
     Tamagotchi tama;
+    int timesEvolved;
     
     readonly int emissionColor = Shader.PropertyToID("_EmissionColor");
     Color defaultColour, flashingColour;
@@ -24,19 +33,26 @@ public class TamagotchiController : MonoBehaviour
     void Start()
     {
         tama = new Tamagotchi(null);
+        tamaSprite.sprite = tamaEvolutions[timesEvolved];
+        
         defaultColour = screen.material.GetColor(emissionColor);
     }
 
     void FixedUpdate()
     {
-        tama.UpdateStats(statsSpeed);
-        
-        // TODO: update evolution sprite
-        
+        if (tama.UpdateStats(statsSpeed))
+        {
+            tamaSprite.sprite = tamaEvolutions[++timesEvolved];
+        }
+
         CheckStat(tama.Food, new []{ isHungry, isStarving }, foodColour);
         CheckStat(tama.Happiness, new []{ isSad, isMiserable }, happinessColour);
         CheckStat(tama.Discipline, new []{ isRude, isWicked }, disciplineColour);
-        
+
+        SetStatBar(foodBar, tama.Food);
+        SetStatBar(happinessBar, tama.Happiness);
+        SetStatBar(disciplineBar, tama.Discipline);
+
         // TODO: update stat bars
 
         if (isFlashing)
@@ -117,5 +133,11 @@ public class TamagotchiController : MonoBehaviour
                 conditions[1] = false;
             }
         }
+    }
+
+    void SetStatBar(Transform bar, float stat)
+    {
+        bar.localScale = new Vector3(stat, 1, 1);
+        bar.localPosition = new Vector3((0.4f * stat) - 0.4f, -0.35f, 0);
     }
 }

@@ -66,7 +66,7 @@ public class Tamagotchi
     /// Decreases all stats and evolves, if necessary
     /// </summary>
     /// <param name="amount">Amount that each stat has a chance to be decreased by</param>
-    public void UpdateStats(float amount)
+    public bool UpdateStats(float amount)
     {
         Food = UpdateStat(Food, amount);
         Happiness = UpdateStat(Happiness, amount);
@@ -75,11 +75,11 @@ public class Tamagotchi
         if (IsEvolutionTime())
         {
             Evolve();
+            return true;
         }
-        else
-        {
-            hasJustEvolved = false;
-        }
+        
+        hasJustEvolved = false;
+        return false;
     }
     
     /// <summary>
