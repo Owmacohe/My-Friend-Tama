@@ -21,7 +21,7 @@ public class TamagotchiController : MonoBehaviour
     Tamagotchi tama;
     int timesEvolved;
     
-    readonly int emissionColor = Shader.PropertyToID("_EmissionColor");
+    readonly int emissionColor = Shader.PropertyToID("_Color");
     Color defaultColour, flashingColour;
     bool isFlashing;
     float flashingStartTime;
@@ -52,8 +52,6 @@ public class TamagotchiController : MonoBehaviour
         SetStatBar(foodBar, tama.Food);
         SetStatBar(happinessBar, tama.Happiness);
         SetStatBar(disciplineBar, tama.Discipline);
-
-        // TODO: update stat bars
 
         if (isFlashing)
         {
