@@ -3137,8 +3137,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 636283941528170314, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Name
+      value: Tamagotchi Light (above)
+      objectReference: {fileID: 0}
+    - target: {fileID: 636283941528170319, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_Intensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 636283942726261120, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: size
@@ -3148,9 +3152,17 @@ PrefabInstance:
       propertyPath: density
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 636283942726261121, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 636283942726261124, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 636283942726261125, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 636283942731852290, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_RootOrder
@@ -3220,9 +3232,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3553514995332386200, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 145
+    - target: {fileID: 4751476433344682903, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}

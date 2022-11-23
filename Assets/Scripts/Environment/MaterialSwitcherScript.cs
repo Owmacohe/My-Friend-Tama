@@ -9,21 +9,19 @@ public class MaterialSwitcherScript : MonoBehaviour
     Material[] materials;
     Material screenMaterial;
     PlayerObjectDetection playerObjectDetection;
-
-
-    private void Start()
-    {
-        initialSceenSetup();
-        playerObjectDetection = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerObjectDetection>();
     
+    void Start()
+    {
+        InitialSceenSetup();
+        playerObjectDetection = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerObjectDetection>();
     }
 
     void Update()
     {
-       poweredOn();
+       PoweredOn();
     }
 
-    void initialSceenSetup()
+    void InitialSceenSetup()
     {
         ///Keeps all screens black at start up until player collects coin
         materials = arcadeCab.GetComponent<MeshRenderer>().materials;
@@ -31,7 +29,7 @@ public class MaterialSwitcherScript : MonoBehaviour
         screenMaterial.SetColor("_EmissionColor", Color.black);
     }
 
-    void poweredOn()
+    void PoweredOn()
     {
         screenMaterial.SetColor("_EmissionColor", Color.blue);
     }

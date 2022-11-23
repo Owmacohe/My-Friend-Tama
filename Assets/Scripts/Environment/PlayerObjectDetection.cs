@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerObjectDetection : MonoBehaviour
 {
-
-    public bool hasCoin = false;
+    public bool hasCoin;
 
     void OnTriggerStay(Collider other)
     {
@@ -18,7 +17,7 @@ public class PlayerObjectDetection : MonoBehaviour
                 Destroy(other.gameObject);
             }
             
-            else  if (other.gameObject.CompareTag("Money"))
+            else if (other.gameObject.CompareTag("Money"))
             {
                 if (!hasCoin)
                 {
@@ -27,9 +26,8 @@ public class PlayerObjectDetection : MonoBehaviour
                 }
                 else
                 {
-                    return;
+                    return;   
                 }
-                
             }
 
             else if (other.gameObject.CompareTag("ArcadeCab"))
@@ -53,7 +51,7 @@ public class PlayerObjectDetection : MonoBehaviour
     {
         if (hasCoin)
         {
-            ///Call increase to entertainment here
+            // Call increase to entertainment here
             hasCoin = false;
         }
     }

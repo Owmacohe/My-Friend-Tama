@@ -17,11 +17,12 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] SpriteRenderer screen;
     [SerializeField] float flashingSpeed = 5;
     [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
+    [SerializeField] Vector3 awayPosition, awayRotation, frontPosition, frontRotation;
     
     Tamagotchi tama;
     int timesEvolved;
     
-    readonly int emissionColor = Shader.PropertyToID("_Color");
+    readonly int emissionColor = Shader.PropertyToID("_EmissionColor");
     Color defaultColour, flashingColour;
     bool isFlashing;
     float flashingStartTime;
@@ -133,6 +134,11 @@ public class TamagotchiController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the scale and position of stat bars in the tamagotchi UI
+    /// </summary>
+    /// <param name="bar">The bar Transform to set</param>
+    /// <param name="stat">The stat value to base it on</param>
     void SetStatBar(Transform bar, float stat)
     {
         bar.localScale = new Vector3(stat, 1, 1);
