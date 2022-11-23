@@ -718,6 +718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arcadeCab: {fileID: 1272937226}
+  playerCharacter: {fileID: 636283940936603716}
+  poweredOn: 0
 --- !u!4 &1733212518
 Transform:
   m_ObjectHideFlags: 0
@@ -820,6 +822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacterPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 636283942731852413, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1736186607848007155, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -854,3 +860,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+--- !u!1 &636283940936603716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 636283942731852413, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+  m_PrefabInstance: {fileID: 636283940936603715}
+  m_PrefabAsset: {fileID: 0}
