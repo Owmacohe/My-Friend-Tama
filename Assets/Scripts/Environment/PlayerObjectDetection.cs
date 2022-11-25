@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,13 @@ using UnityEngine;
 public class PlayerObjectDetection : MonoBehaviour
 {
     public bool hasCoin;
+
+    TamagotchiController tc;
+
+    void Start()
+    {
+        tc = FindObjectOfType<TamagotchiController>();
+    }
 
     void OnTriggerStay(Collider other)
     {
@@ -15,8 +23,9 @@ public class PlayerObjectDetection : MonoBehaviour
             if (other.gameObject.CompareTag("Food"))
             {
                 Destroy(other.gameObject);
+                
+                tc.tama.Feed();
             }
-            
             else if (other.gameObject.CompareTag("Money"))
             {
                 if (!hasCoin)
@@ -29,20 +38,21 @@ public class PlayerObjectDetection : MonoBehaviour
                     return;   
                 }
             }
-
             else if (other.gameObject.CompareTag("ArcadeCab"))
             {
                 CoinCheck(other);
+                
+                tc.tama.Play();
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-
+        
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
 
     }

@@ -18,14 +18,17 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] float flashingSpeed = 5;
     [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
     [SerializeField] Vector3 awayPosition, awayRotation, frontPosition, frontRotation;
+    [SerializeField] float tamaSlideSpeed = 0.01f;
     
-    Tamagotchi tama;
+    public Tamagotchi tama;
     int timesEvolved;
     
     readonly int emissionColor = Shader.PropertyToID("_EmissionColor");
     Color defaultColour, flashingColour;
     bool isFlashing;
     float flashingStartTime;
+    bool isSliding, slideUp;
+    float slideCurrent;
     
     bool isHungry, isStarving;
     bool isSad, isMiserable;
@@ -37,6 +40,16 @@ public class TamagotchiController : MonoBehaviour
         tamaSprite.sprite = tamaEvolutions[timesEvolved];
         
         defaultColour = screen.material.GetColor(emissionColor);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            isSliding = true;
+            slideUp = !slideUp;
+            slideCurrent = 0;
+        }
     }
 
     void FixedUpdate()
@@ -67,6 +80,28 @@ public class TamagotchiController : MonoBehaviour
                     Mathf.Sin(Time.time * (flashingSpeed + elapsedTimeOffset))
                 )
             );
+        }
+
+        if (isSliding)
+        {
+            float lerpAmount = slideCurrent + tamaSlideSpeed;
+            
+            if (slideUp && !transform.localPosition.Equals(frontPosition))
+            {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, frontPosition, lerpAmount);
+                transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, frontRotation, lerpAmount);
+            }
+            else if (!slideUp && !transform.localPosition.Equals(awayPosition))
+            {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, awayPosition, lerpAmount);
+                transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, awayRotation, lerpAmount);
+            }
+            else
+            {
+                isSliding = false;
+            }
+
+            slideCurrent += tamaSlideSpeed;
         }
     }
 

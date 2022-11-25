@@ -4245,6 +4245,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5715401575540264120, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: tamaSlideSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6685872714142516088, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_Layer
       value: 3
