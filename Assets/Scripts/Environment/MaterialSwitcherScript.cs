@@ -1,36 +1,65 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MaterialSwitcherScript : MonoBehaviour
 {
-    [SerializeField] GameObject arcadeCab;
-   
-    Material[] materials;
-    Material screenMaterial;
-    PlayerObjectDetection playerObjectDetection;
+    [SerializeField] GameObject[] arcadeCabs;
+    [SerializeField] float timeToSwitch = 10;
+
+    [HideInInspector] public GameObject currentCab;
+    GameObject lastCab;
     
+    MeshRenderer[] renderers;
+    float onStartTime, onEndTime;
+
+    readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
     void Start()
     {
-        InitialSceenSetup();
-        playerObjectDetection = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerObjectDetection>();
+        foreach (GameObject i in arcadeCabs)
+        {
+            PowerOff(i);
+        }
+        
+        PowerRandomOn();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-       PoweredOn();
+        if (Time.time - onStartTime >= onEndTime)
+        {
+            PowerRandomOn();
+        }
     }
 
-    void InitialSceenSetup()
+    void PowerRandomOn()
     {
-        ///Keeps all screens black at start up until player collects coin
-        materials = arcadeCab.GetComponent<MeshRenderer>().materials;
-        screenMaterial = materials[1];
-        screenMaterial.SetColor("_EmissionColor", Color.black);
+        // TODO: add checking so it doesn't pick the same one twice in a row
+        PowerOn(arcadeCabs[Random.Range(0, arcadeCabs.Length)]);
     }
 
-    void PoweredOn()
+    void PowerOn(GameObject cab)
     {
-        screenMaterial.SetColor("_EmissionColor", Color.blue);
+        cab.GetComponent<MeshRenderer>().materials[1].SetColor(EmissionColor, Color.blue);
+        
+        onStartTime = Time.time;
+        onEndTime = timeToSwitch + Random.Range(-(timeToSwitch/5), (timeToSwitch/5));
+        
+        if (currentCab != null)
+        {
+            PowerOff(lastCab);
+        }
+        
+        currentCab = cab;
+    }
+
+    void PowerOff(GameObject cab)
+    {
+        cab.GetComponent<MeshRenderer>().materials[1].SetColor(EmissionColor, Color.black);
+        
+        lastCab = currentCab;
     }
 }
