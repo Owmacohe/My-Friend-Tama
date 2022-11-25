@@ -61,7 +61,6 @@ public class PlayerObjectDetection : MonoBehaviour
     {
         if (hasCoin)
         {
-            // Call increase to entertainment here
             hasCoin = false;
         }
     }
