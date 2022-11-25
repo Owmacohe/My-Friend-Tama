@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
     Light playerLight;
     bool flashlightOn = true;
+    bool isLookingAtTama;
 
     // Used to create character smoothing movement
     Vector2 currentDir = Vector2.zero;
@@ -101,18 +102,17 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void FlashlightControls()
     {
-        if (Input.GetKeyDown("f"))
+        if (Input.GetKeyDown("f") && !isLookingAtTama)
         {
-            if (!flashlightOn)
-            {
-                playerLight.enabled = true;
-                flashlightOn = true;
-            }
-            else if (flashlightOn)
-            {
-                playerLight.enabled = false;
-                flashlightOn = false;
-            }
+            flashlightOn = !flashlightOn;
+            SetFlashlight(flashlightOn, false);
         }
+    }
+
+    public void SetFlashlight(bool isOn, bool fromTama)
+    {
+        playerLight.enabled = isOn;
+
+        isLookingAtTama = fromTama && !isOn;
     }
 }

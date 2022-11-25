@@ -19,7 +19,8 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
     [SerializeField] Vector3 awayPosition, awayRotation, frontPosition, frontRotation;
     [SerializeField] float tamaSlideSpeed = 0.01f;
-    
+
+    PlayerController pc;
     public Tamagotchi tama;
     int timesEvolved;
     
@@ -36,6 +37,8 @@ public class TamagotchiController : MonoBehaviour
     
     void Start()
     {
+        pc = FindObjectOfType<PlayerController>();
+        
         tama = new Tamagotchi(null);
         tamaSprite.sprite = tamaEvolutions[timesEvolved];
         
@@ -49,6 +52,10 @@ public class TamagotchiController : MonoBehaviour
             isSliding = true;
             slideUp = !slideUp;
             slideCurrent = 0;
+
+            transform.localEulerAngles = slideUp ? frontRotation : awayRotation;
+            
+            pc.SetFlashlight(!slideUp, true);
         }
     }
 
@@ -89,12 +96,10 @@ public class TamagotchiController : MonoBehaviour
             if (slideUp && !transform.localPosition.Equals(frontPosition))
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, frontPosition, lerpAmount);
-                transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, frontRotation, lerpAmount);
             }
             else if (!slideUp && !transform.localPosition.Equals(awayPosition))
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, awayPosition, lerpAmount);
-                transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, awayRotation, lerpAmount);
             }
             else
             {
