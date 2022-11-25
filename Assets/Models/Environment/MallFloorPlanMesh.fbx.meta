@@ -44,6 +44,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Zone7Material
     second: {fileID: 2100000, guid: 22fde5f67ecd66747bffbbffef09d102, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Zone8Material
+    second: {fileID: 2100000, guid: 63bd6eb6eb381e849bd9fd1fadfef5df, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
