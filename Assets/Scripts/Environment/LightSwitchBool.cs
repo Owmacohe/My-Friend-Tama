@@ -5,5 +5,4 @@ using UnityEngine;
 public class LightSwitchBool : MonoBehaviour
 {
     public bool lightOn = true;
-
 }

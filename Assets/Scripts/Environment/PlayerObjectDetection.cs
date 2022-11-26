@@ -8,6 +8,7 @@ public class PlayerObjectDetection : MonoBehaviour
     public bool hasCoin;
     [SerializeField] GameObject washroomSpawnerOBJ;
     [SerializeField] GameObject connectedLightSwitch;
+    [SerializeField] GameObject washroomLights;
 
     TamagotchiController tc;
     bool InWashroom = false;
@@ -22,22 +23,24 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void CheckWashroomSpawner()
     {
-        if(connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn
+        if (!connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn
             && InWashroom)
         {
             washroomSpawnerOBJ.SetActive(true);
+            washroomLights.SetActive(false);
         }
         else
         {
             washroomSpawnerOBJ.SetActive(false);
+            washroomLights.SetActive(true);
         }
 
     }
 
     void OnTriggerStay(Collider other)
     {
-        Debug.Log($"Collide with '{other.gameObject}'");
-        if (Input.GetKey(KeyCode.E))
+        //Debug.Log($"Collide with '{other.gameObject}'");
+        if (Input.GetKeyDown(KeyCode.E))
         {
 
             if (other.gameObject.CompareTag("Food"))
@@ -66,7 +69,8 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject == connectedLightSwitch)
             {
-                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
+                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();        
+
                 lightSwitch.lightOn = !lightSwitch.lightOn;
                 CheckWashroomSpawner();
             }
@@ -92,6 +96,7 @@ public class PlayerObjectDetection : MonoBehaviour
         if (other.gameObject.CompareTag("washroomStart"))
         {
             InWashroom = false;
+            connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn = true;
             CheckWashroomSpawner();
         }
     }

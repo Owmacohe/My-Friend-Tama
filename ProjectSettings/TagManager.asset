@@ -12,6 +12,7 @@ TagManager:
   - washroomStart
   - washroomSpawner
   - lightSwitch
+  - bathroomLights
   layers:
   - Default
   - TransparentFX

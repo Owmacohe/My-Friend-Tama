@@ -107,12 +107,12 @@ Material:
     - _DuplicateDetails: 1
     - _EnableSpecularLight: 0
     - _EnvironmentReflections: 1
-    - _FresnelBias: 0.294
-    - _FresnelIntensity: 5.15
+    - _FresnelBias: 0
+    - _FresnelIntensity: 4.37
     - _FresnelPower: 4
-    - _FresnelTransBias: 0.995
+    - _FresnelTransBias: 0.588
     - _FresnelTransIntensity: 0
-    - _FresnelTransPower: 5
+    - _FresnelTransPower: -29.95
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -122,14 +122,14 @@ Material:
     - _Metallic: 0
     - _MinValueAmplitude: 1
     - _OcclusionStrength: 1
-    - _Opacity: 0.263
+    - _Opacity: 0.323
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Refraction: 1.1
     - _RotationAngle: 0
     - _RotationSpeed: 0
-    - _SelfIllumination: 2.23
+    - _SelfIllumination: 1.76
     - _ShadowOpacity: 0.934
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
@@ -151,7 +151,7 @@ Material:
     - _Color: {r: 0.09433961, g: 0.08692297, b: 0.08692297, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FillColorBackground: {r: 0, g: 0, b: 0, a: 0}
-    - _FresnelColor: {r: 0.4716981, g: 0.4657648, b: 0.4657648, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _XRayColor: {r: 0, g: 1, b: 0.9802119, a: 0.1019608}
   m_BuildTextureStacks: []
