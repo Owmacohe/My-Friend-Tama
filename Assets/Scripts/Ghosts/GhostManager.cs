@@ -26,7 +26,7 @@ public class GhostManager : MonoBehaviour
         }
     }
 
-    public void CreateGhost(int index)
+    void CreateGhost(int index)
     {
         Transform temp = spawners[index];
         

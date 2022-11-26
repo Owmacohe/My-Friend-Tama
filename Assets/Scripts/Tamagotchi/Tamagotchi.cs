@@ -8,7 +8,7 @@ public class Tamagotchi
     public float Happiness { get; private set; } // 0..1
     public float Discipline { get; private set; } // 0..1
 
-    public enum TamagotchiAge { Egg = 0, Baby = 1, Kid = 2, Adult = 3 }
+    public enum TamagotchiAge { Egg, Baby, Kid, Adult }
     public TamagotchiAge Age { get; private set; }
 
     float spawnTime;
