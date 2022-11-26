@@ -6,20 +6,40 @@ using UnityEngine;
 public class PlayerObjectDetection : MonoBehaviour
 {
     public bool hasCoin;
+    [SerializeField] GameObject washroomSpawnerOBJ;
+    [SerializeField] GameObject connectedLightSwitch;
 
     TamagotchiController tc;
+    bool InWashroom = false;
 
     void Start()
     {
         tc = FindObjectOfType<TamagotchiController>();
+
+        washroomSpawnerOBJ.SetActive(false);
+
+    }
+
+    void CheckWashroomSpawner()
+    {
+        if(connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn
+            && InWashroom)
+        {
+            washroomSpawnerOBJ.SetActive(true);
+        }
+        else
+        {
+            washroomSpawnerOBJ.SetActive(false);
+        }
+
     }
 
     void OnTriggerStay(Collider other)
     {
-        // TODO: eventually we'll also need to check if the tamagotchi needs food currently
-        
+        Debug.Log($"Collide with '{other.gameObject}'");
         if (Input.GetKey(KeyCode.E))
         {
+
             if (other.gameObject.CompareTag("Food"))
             {
                 Destroy(other.gameObject);
@@ -44,17 +64,36 @@ public class PlayerObjectDetection : MonoBehaviour
                 
                 tc.tama.Play();
             }
+            else if (other.gameObject == connectedLightSwitch)
+            {
+                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
+                lightSwitch.lightOn = !lightSwitch.lightOn;
+                CheckWashroomSpawner();
+            }
+
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        
+
+        //Starts spawning washroom ghosts
+        if (other.gameObject.CompareTag("washroomStart"))
+        {
+            InWashroom = true;
+            CheckWashroomSpawner();
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
 
+        //Stops spawning washroom ghosts
+        if (other.gameObject.CompareTag("washroomStart"))
+        {
+            InWashroom = false;
+            CheckWashroomSpawner();
+        }
     }
 
     public void CoinCheck(Collider other)

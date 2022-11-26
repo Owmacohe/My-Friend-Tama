@@ -14,13 +14,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject playerFlashlight;
 
+    public bool flashlightOn = true;
+
     // Character values
     GameObject playerCamera;
     float cameraPitch;
     float velocityY;
     CharacterController controller;
     Light playerLight;
-    bool flashlightOn = true;
     bool isLookingAtTama;
 
     // Used to create character smoothing movement

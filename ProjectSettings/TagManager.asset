@@ -8,6 +8,10 @@ TagManager:
   - Food
   - Money
   - ArcadeCab
+  - FlashlightDetection
+  - washroomStart
+  - washroomSpawner
+  - lightSwitch
   layers:
   - Default
   - TransparentFX
