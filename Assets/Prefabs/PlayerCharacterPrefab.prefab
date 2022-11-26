@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 1
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 0
   m_LightLayerMask: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
@@ -341,6 +341,7 @@ MonoBehaviour:
   hasCoin: 0
   washroomSpawnerOBJ: {fileID: 0}
   connectedLightSwitch: {fileID: 0}
+  washroomLights: {fileID: 0}
 --- !u!1 &7094125459238091982
 GameObject:
   m_ObjectHideFlags: 0
