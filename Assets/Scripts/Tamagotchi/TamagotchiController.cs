@@ -8,10 +8,6 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] float firstStatThreshold = 0.5f;
     [SerializeField] float secondStatThreshold = 0.1f;
     [SerializeField] Transform foodBar, happinessBar, disciplineBar;
-
-    [Header("Sprite")]
-    [SerializeField] SpriteRenderer tamaSprite;
-    [SerializeField] Sprite[] tamaEvolutions;
     
     [Header("Flashing")]
     [SerializeField] SpriteRenderer screen;
@@ -22,8 +18,9 @@ public class TamagotchiController : MonoBehaviour
 
     PlayerController pc;
     public Tamagotchi tama;
+    Animator anim;
     int timesEvolved;
-    
+
     readonly int emissionColor = Shader.PropertyToID("_EmissionColor");
     Color defaultColour, flashingColour;
     bool isFlashing;
@@ -39,8 +36,8 @@ public class TamagotchiController : MonoBehaviour
     {
         pc = FindObjectOfType<PlayerController>();
         
-        tama = new Tamagotchi(null);
-        tamaSprite.sprite = tamaEvolutions[timesEvolved];
+        tama = new Tamagotchi(new []{ 5, 10, 15 });
+        anim = GetComponentInChildren<Animator>();
         
         defaultColour = screen.material.GetColor(emissionColor);
     }
@@ -61,9 +58,10 @@ public class TamagotchiController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // If it has just evolved
         if (tama.UpdateStats(statsSpeed))
         {
-            tamaSprite.sprite = tamaEvolutions[++timesEvolved];
+            anim.SetTrigger("Evolve");
         }
 
         CheckStat(tama.Food, new []{ isHungry, isStarving }, foodColour);

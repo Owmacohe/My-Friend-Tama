@@ -8,11 +8,10 @@ public class Tamagotchi
     public float Happiness { get; private set; } // 0..1
     public float Discipline { get; private set; } // 0..1
 
-    public enum TamagotchiAge { Egg = 0, Child = 1, Adult = 2 }
+    public enum TamagotchiAge { Egg = 0, Baby = 1, Kid = 2, Adult = 3 }
     public TamagotchiAge Age { get; private set; }
 
     float spawnTime;
-    bool hasJustEvolved;
     int[] evolutionThresholds;
 
     public Tamagotchi(int[] thresholds)
@@ -54,10 +53,12 @@ public class Tamagotchi
     /// </summary>
     bool IsEvolutionTime()
     {
-        if (evolutionThresholds != null)
-            foreach (int i in evolutionThresholds)
-                if (Round(Time.time - spawnTime, 0) == i)
-                    return true;
+        int currentAge = (int)Age;
+        
+        if (evolutionThresholds != null &&
+            currentAge < evolutionThresholds.Length &&
+            Round(Time.time - spawnTime, 0) >= evolutionThresholds[currentAge])
+            return true;
 
         return false;
     }
@@ -78,7 +79,6 @@ public class Tamagotchi
             return true;
         }
         
-        hasJustEvolved = false;
         return false;
     }
     
@@ -107,17 +107,12 @@ public class Tamagotchi
     /// </summary>
     void Evolve()
     {
-        if (!hasJustEvolved)
-        {
-            int enumSize = Enum.GetNames(typeof(TamagotchiAge)).Length;
-            int currentAgeNum = (int)Age;
+        int enumSize = Enum.GetNames(typeof(TamagotchiAge)).Length;
+        int currentAge = (int)Age;
         
-            Age = currentAgeNum < enumSize
-                ? (TamagotchiAge)(currentAgeNum + 1)
-                : (TamagotchiAge)(enumSize - 1);
-
-            hasJustEvolved = true;   
-        }
+        Age = currentAge < enumSize
+            ? (TamagotchiAge)(currentAge + 1)
+            : (TamagotchiAge)(enumSize - 1);
     }
 
     /// <summary>
