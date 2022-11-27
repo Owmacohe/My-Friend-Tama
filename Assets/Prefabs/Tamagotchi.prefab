@@ -260,9 +260,6 @@ MonoBehaviour:
   foodBar: {fileID: 6497928276141473147}
   happinessBar: {fileID: 9058548263941125241}
   disciplineBar: {fileID: 3564639678958540188}
-  tamaSprite: {fileID: 8080808213771548362}
-  tamaEvolutions:
-  - {fileID: 21300000, guid: 621e50150ed56a34aaf86afb7c26389e, type: 3}
   screen: {fileID: 8036876788361077431}
   flashingSpeed: 5
   foodColour: {r: 6.4, g: 0, b: 0, a: 1}
@@ -1114,8 +1111,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4503966733428303393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02, z: 0}
-  m_LocalScale: {x: 0.024, y: 0.024, z: 0.024}
+  m_LocalPosition: {x: 0, y: -0.0135, z: 0}
+  m_LocalScale: {x: 0.029999997, y: 0.029999997, z: 0.029999997}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7110302344375502321}
