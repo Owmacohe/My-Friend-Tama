@@ -24,8 +24,8 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 3cd2de2721a6c2443bf9889dbaf3a7ac, type: 3}
-        m_Scale: {x: 10, y: 5}
-        m_Offset: {x: 0, y: -0.25}
+        m_Scale: {x: 2.75, y: 2}
+        m_Offset: {x: 0.015, y: 0.185}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 424b221efdc72cb4fb2b787243937030, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -48,8 +48,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 3cd2de2721a6c2443bf9889dbaf3a7ac, type: 3}
-        m_Scale: {x: 10, y: 5}
-        m_Offset: {x: 0, y: -0.25}
+        m_Scale: {x: 2.75, y: 2}
+        m_Offset: {x: 0.015, y: 0.185}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -113,8 +113,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.60784316, g: 0.6627451, b: 0.6784314, a: 1}
-    - _Color: {r: 0.60784316, g: 0.6627451, b: 0.6784314, a: 1}
+    - _BaseColor: {r: 0.972549, g: 0.94509804, b: 0.8784314, a: 1}
+    - _Color: {r: 0.972549, g: 0.945098, b: 0.8784314, a: 1}
     - _EmissionColor: {r: 0.25098044, g: 0.19447698, b: 0.19447698, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
