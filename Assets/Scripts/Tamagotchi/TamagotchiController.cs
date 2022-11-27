@@ -4,17 +4,19 @@ using UnityEngine;
 public class TamagotchiController : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] float statsSpeed = 0.005f;
+    [SerializeField] float statsSpeed = 0.002f;
     [SerializeField] float firstStatThreshold = 0.5f;
     [SerializeField] float secondStatThreshold = 0.1f;
     [SerializeField] Transform foodBar, happinessBar, disciplineBar;
+    [SerializeField] GameObject foodStat, happinessStat, disciplineStat;
     
     [Header("Flashing")]
     [SerializeField] SpriteRenderer screen;
-    [SerializeField] float flashingSpeed = 5;
+    [SerializeField] float flashingSpeed = 10;
     [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
     [SerializeField] Vector3 awayPosition, awayRotation, frontPosition, frontRotation;
     [SerializeField] float tamaSlideSpeed = 0.01f;
+    [SerializeField] Light statNeedIndicator;
 
     PlayerController pc;
     public Tamagotchi tama;
@@ -24,8 +26,8 @@ public class TamagotchiController : MonoBehaviour
     readonly int emissionColor = Shader.PropertyToID("_EmissionColor");
     Color defaultColour, flashingColour;
     bool isFlashing;
-    float flashingStartTime;
-    bool isSliding, slideUp;
+    float currentFlashingSpeed;
+    bool isSliding, slideUp, isLookingAtTama;
     float slideCurrent;
     
     bool isHungry, isStarving;
@@ -36,10 +38,14 @@ public class TamagotchiController : MonoBehaviour
     {
         pc = FindObjectOfType<PlayerController>();
         
-        tama = new Tamagotchi(new []{ 5, 10, 15 });
+        tama = new Tamagotchi();
         anim = GetComponentInChildren<Animator>();
         
         defaultColour = screen.material.GetColor(emissionColor);
+        
+        foodStat.SetActive(false);
+        happinessStat.SetActive(false);
+        disciplineStat.SetActive(false);
     }
 
     void Update()
@@ -53,16 +59,21 @@ public class TamagotchiController : MonoBehaviour
             transform.localEulerAngles = slideUp ? frontRotation : awayRotation;
             
             pc.SetFlashlight(!slideUp, true);
+
+            if (slideUp)
+            {
+                isLookingAtTama = true;
+            }
+            else
+            {
+                isLookingAtTama = false;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        // If it has just evolved
-        if (tama.UpdateStats(statsSpeed))
-        {
-            anim.SetTrigger("Evolve");
-        }
+        tama.UpdateStats(statsSpeed);
 
         CheckStat(tama.Food, new []{ isHungry, isStarving }, foodColour);
         CheckStat(tama.Happiness, new []{ isSad, isMiserable }, happinessColour);
@@ -74,17 +85,27 @@ public class TamagotchiController : MonoBehaviour
 
         if (isFlashing)
         {
-            float elapsedTime = Time.time - flashingStartTime;
-            float maxOffset = flashingSpeed / 2f;
-            float elapsedTimeOffset = elapsedTime < maxOffset ? elapsedTime : maxOffset;
+            float temp = Mathf.Sin(Time.time * currentFlashingSpeed);
             
             SetScreenColour(
                 Color.Lerp(
-                    defaultColour, 
-                    flashingColour, 
-                    Mathf.Sin(Time.time * (flashingSpeed + elapsedTimeOffset))
+                    defaultColour,
+                    flashingColour,
+                    temp
                 )
             );
+
+            if (!isLookingAtTama)
+            {
+                if (temp > 0)
+                {
+                    statNeedIndicator.enabled = true;
+                }
+                else
+                {
+                    statNeedIndicator.enabled = false;
+                }   
+            }
         }
 
         if (isSliding)
@@ -135,12 +156,10 @@ public class TamagotchiController : MonoBehaviour
                     {
                         flashingColour = flash;
                         isFlashing = true;
-                        flashingStartTime = Time.time;   
+                        currentFlashingSpeed = flashingSpeed;
                     }
 
                     conditions[0] = true;
-                    
-                    // TODO: call environment script (initial ping)
                 }
 
                 if (conditions[1])
@@ -150,9 +169,8 @@ public class TamagotchiController : MonoBehaviour
             }
             else if (stat <= secondStatThreshold && !conditions[1])
             {
-                // TODO: call environment script (dire ping)
-
                 conditions[1] = true;
+                currentFlashingSpeed = flashingSpeed * 2;
             }
         }
         else
@@ -163,6 +181,7 @@ public class TamagotchiController : MonoBehaviour
                 
                 isFlashing = false;
                 SetScreenColour(defaultColour);
+                statNeedIndicator.enabled = false;
             }
             
             if (conditions[1])
@@ -181,5 +200,28 @@ public class TamagotchiController : MonoBehaviour
     {
         bar.localScale = new Vector3(stat, 1, 1);
         bar.localPosition = new Vector3((0.4f * stat) - 0.4f, -0.35f, 0);
+    }
+
+    public void Evolve()
+    {
+        tama.Evolve();
+        anim.SetTrigger("Evolve");
+
+        int currentAge = (int)tama.Age;
+        
+        if (currentAge > 0)
+        {
+            foodStat.SetActive(true);
+
+            if (currentAge > 1)
+            {
+                happinessStat.SetActive(true);
+
+                if (currentAge > 2)
+                {
+                    disciplineStat.SetActive(true); 
+                }
+            }
+        }
     }
 }

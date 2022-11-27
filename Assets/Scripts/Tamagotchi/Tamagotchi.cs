@@ -11,75 +11,68 @@ public class Tamagotchi
     public enum TamagotchiAge { Egg, Baby, Kid, Adult }
     public TamagotchiAge Age { get; private set; }
 
-    float spawnTime;
-    int[] evolutionThresholds;
-
-    public Tamagotchi(int[] thresholds)
+    public Tamagotchi()
     {
         Food = 1;
         Happiness = 1;
         Discipline = 1;
         
         Age = TamagotchiAge.Egg;
-        spawnTime = Time.time;
-
-        evolutionThresholds = thresholds;
     }
 
     /// <summary>
     /// Increases food level
     /// </summary>
-    public void Feed()
+    public void Feed(float amount)
     {
-        Food = Food < 1 ? Food + 0.1f : 1;
+        if ((int)Age > 0)
+        {
+            Food = Food < 1 ? Food + 0.1f : 1;   
+        }
     }
     
     // Increases happiness level
-    public void Play()
+    public void Play(float amount)
     {
-        Happiness = Happiness < 1 ? Happiness + 0.1f : 1;
+        if ((int)Age > 1)
+        {
+            Happiness = Happiness < 1 ? Happiness + 0.1f : 1;   
+        }
     }
     
     /// <summary>
     /// Increases discipline level
     /// </summary>
-    public void Scold()
+    public void Scold(float amount)
     {
-        Discipline = Discipline < 1 ? Discipline + 0.1f : 1;
-    }
-
-    /// <summary>
-    /// Whether or not the tamagotchi is ready to evolve
-    /// </summary>
-    bool IsEvolutionTime()
-    {
-        int currentAge = (int)Age;
-        
-        if (evolutionThresholds != null &&
-            currentAge < evolutionThresholds.Length &&
-            Round(Time.time - spawnTime, 0) >= evolutionThresholds[currentAge])
-            return true;
-
-        return false;
+        if ((int)Age > 2)
+        {
+            Discipline = Discipline < 1 ? Discipline + 0.1f : 1;   
+        }
     }
 
     /// <summary>
     /// Decreases all stats and evolves, if necessary
     /// </summary>
     /// <param name="amount">Amount that each stat has a chance to be decreased by</param>
-    public bool UpdateStats(float amount)
+    public void UpdateStats(float amount)
     {
-        Food = UpdateStat(Food, amount);
-        Happiness = UpdateStat(Happiness, amount);
-        Discipline = UpdateStat(Discipline, amount);
+        int currentAge = (int)Age;
 
-        if (IsEvolutionTime())
+        if (currentAge > 0)
         {
-            Evolve();
-            return true;
+            Food = UpdateStat(Food, amount);
+
+            if (currentAge > 1)
+            {
+                Happiness = UpdateStat(Happiness, amount);
+
+                if (currentAge > 2)
+                {
+                    Discipline = UpdateStat(Discipline, amount);   
+                }
+            }
         }
-        
-        return false;
     }
     
     /// <summary>
@@ -93,19 +86,20 @@ public class Tamagotchi
         {
             return stat - (Random.Range(0, 4) == 0 ? amount : 0);
         }
-        
-        if (stat < 0)
+        else if (stat > 1)
         {
-            return 0;
+            return 1;
         }
-            
-        return 1;
+        else
+        {
+            return 0;   
+        }
     }
 
     /// <summary>
     /// Increases the age
     /// </summary>
-    void Evolve()
+    public void Evolve()
     {
         int enumSize = Enum.GetNames(typeof(TamagotchiAge)).Length;
         int currentAge = (int)Age;
@@ -133,7 +127,7 @@ public class Tamagotchi
     public override string ToString()
     {
         return "<b>TAMAGODCHI</b>" +
-           "\nAge: " + Age + " (" + Round(Time.time - spawnTime, 0) + "s)" +
+           "\nAge: " + Age +
            "\nFood: " + Round(Food) +
            "\nHappiness: " + Round(Happiness) +
            "\nDiscipline: " + Round(Discipline);

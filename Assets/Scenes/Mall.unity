@@ -2004,7 +2004,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1276
+  m_Name: pb_Mesh-1280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6957,7 +6957,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7940
+  m_Name: pb_Mesh-7944
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10308,7 +10308,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3570
+  m_Name: pb_Mesh-3574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11744,7 +11744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 636283942731852290, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.83
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 636283942731852290, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11781,6 +11781,62 @@ PrefabInstance:
     - target: {fileID: 636283942731852413, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_Name
       value: PlayerCharacterPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005448224278090733, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005448224278090733, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005448224278090733, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005448224278090733, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236351738321181433, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236351738321181433, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236351738321181433, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236351738321181433, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715401575540264120, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: statsSpeed
+      value: 0.0005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819033416825384556, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819033416825384556, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819033416825384556, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5819033416825384556, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561009903932089625, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: m_Name
+      value: Stat Need Indicator
       objectReference: {fileID: 0}
     - target: {fileID: 8314570806875679829, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: washroomLights
