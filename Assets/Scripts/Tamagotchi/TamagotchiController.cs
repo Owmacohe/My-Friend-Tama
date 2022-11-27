@@ -4,7 +4,7 @@ using UnityEngine;
 public class TamagotchiController : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] float statsSpeed = 0.002f;
+    [SerializeField] float statsSpeed = 0.75f;
     [SerializeField] float firstStatThreshold = 0.5f;
     [SerializeField] float secondStatThreshold = 0.1f;
     [SerializeField] Transform foodBar, happinessBar, disciplineBar;
@@ -18,6 +18,10 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] float tamaSlideSpeed = 0.01f;
     [SerializeField] Light statNeedIndicator;
 
+    [Header("Sounds")]
+    [SerializeField] SoundEffectController statNeedSound;
+    [SerializeField] SoundEffectController firstThresholdSound, secondThresholdSound;
+
     PlayerController pc;
     public Tamagotchi tama;
     Animator anim;
@@ -30,12 +34,10 @@ public class TamagotchiController : MonoBehaviour
     bool isSliding, slideUp, isLookingAtTama;
     float slideCurrent;
     
-    bool isHungry, isStarving;
-    bool isSad, isMiserable;
-    bool isRude, isWicked;
-    
     void Start()
     {
+        statsSpeed /= 1000f;
+        
         pc = FindObjectOfType<PlayerController>();
         
         tama = new Tamagotchi();
@@ -75,9 +77,23 @@ public class TamagotchiController : MonoBehaviour
     {
         tama.UpdateStats(statsSpeed);
 
-        CheckStat(tama.Food, new []{ isHungry, isStarving }, foodColour);
-        CheckStat(tama.Happiness, new []{ isSad, isMiserable }, happinessColour);
-        CheckStat(tama.Discipline, new []{ isRude, isWicked }, disciplineColour);
+        bool[] foodStats = CheckStat(tama.Food, foodColour);
+        bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
+        bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
+
+        if (!foodStats[0] && !happinessStats[0] && !disciplineStats[0])
+        {
+            firstThresholdSound.Stop();
+                
+            isFlashing = false;
+            SetScreenColour(defaultColour);
+            statNeedIndicator.enabled = false;
+        }
+
+        if (!foodStats[1] && !happinessStats[1] && !disciplineStats[1])
+        {
+            secondThresholdSound.Stop();
+        }
 
         SetStatBar(foodBar, tama.Food);
         SetStatBar(happinessBar, tama.Happiness);
@@ -104,7 +120,12 @@ public class TamagotchiController : MonoBehaviour
                 else
                 {
                     statNeedIndicator.enabled = false;
-                }   
+                }
+                
+                if (!statNeedSound.source.isPlaying)
+                {
+                    statNeedSound.Play();
+                }
             }
         }
 
@@ -142,53 +163,30 @@ public class TamagotchiController : MonoBehaviour
     /// Compares a given stat's against thresholds to determine tamagotchi conditions and trigger external scripts
     /// </summary>
     /// <param name="stat">The value to be checked</param>
-    /// <param name="conditions">The reference-passed booleans to be possibly turned on/off</param>
     /// <param name="flash">The colour to flash if the stat is too low</param>
-    void CheckStat(float stat, bool[] conditions, Color flash)
+    bool[] CheckStat(float stat, Color flash)
     {
+        bool[] conditions = new bool[2];
+        
         if (stat <= firstStatThreshold)
         {
-            if (stat > secondStatThreshold)
-            {
-                if (!conditions[0])
-                {
-                    if (!isFlashing)
-                    {
-                        flashingColour = flash;
-                        isFlashing = true;
-                        currentFlashingSpeed = flashingSpeed;
-                    }
+            flashingColour = flash;
+            isFlashing = true;
+            currentFlashingSpeed = flashingSpeed;
 
-                    conditions[0] = true;
-                }
-
-                if (conditions[1])
-                {
-                    conditions[1] = false;
-                }
-            }
-            else if (stat <= secondStatThreshold && !conditions[1])
-            {
-                conditions[1] = true;
-                currentFlashingSpeed = flashingSpeed * 2;
-            }
-        }
-        else
-        {
-            if (conditions[0])
-            {
-                conditions[0] = false;
-                
-                isFlashing = false;
-                SetScreenColour(defaultColour);
-                statNeedIndicator.enabled = false;
-            }
+            conditions[0] = true;
+            firstThresholdSound.Play();
             
-            if (conditions[1])
+            if (stat <= secondStatThreshold)
             {
-                conditions[1] = false;
+                currentFlashingSpeed = flashingSpeed * 2;
+                
+                conditions[1] = true;
+                secondThresholdSound.Play();
             }
         }
+
+        return conditions;
     }
 
     /// <summary>

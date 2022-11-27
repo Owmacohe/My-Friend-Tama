@@ -27,7 +27,7 @@ public class Tamagotchi
     {
         if ((int)Age > 0)
         {
-            Food = Food < 1 ? Food + 0.1f : 1;   
+            Food = Food < 1 ? Food + amount : 1;
         }
     }
     
@@ -36,7 +36,7 @@ public class Tamagotchi
     {
         if ((int)Age > 1)
         {
-            Happiness = Happiness < 1 ? Happiness + 0.1f : 1;   
+            Happiness = Happiness < 1 ? Happiness + amount : 1;
         }
     }
     
@@ -47,7 +47,7 @@ public class Tamagotchi
     {
         if ((int)Age > 2)
         {
-            Discipline = Discipline < 1 ? Discipline + 0.1f : 1;   
+            Discipline = Discipline < 1 ? Discipline + amount : 1;
         }
     }
 
@@ -65,11 +65,11 @@ public class Tamagotchi
 
             if (currentAge > 1)
             {
-                Happiness = UpdateStat(Happiness, amount);
+                Happiness = UpdateStat(Happiness, amount * (2f/3f));
 
                 if (currentAge > 2)
                 {
-                    Discipline = UpdateStat(Discipline, amount);   
+                    Discipline = UpdateStat(Discipline, amount * (1f/3f));   
                 }
             }
         }

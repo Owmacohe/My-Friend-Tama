@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerObjectDetection : MonoBehaviour
@@ -63,7 +61,7 @@ public class PlayerObjectDetection : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 
-                tc.tama.Feed(0.15f);
+                tc.tama.Feed(0.2f);
 
                 if (tc.tama.Food >= 0.8f && (int)tc.tama.Age == 1) // TODO: this condition may want to be tweaked
                 {
@@ -82,7 +80,7 @@ public class PlayerObjectDetection : MonoBehaviour
             {
                 CoinCheck(other);
                 
-                tc.tama.Play(0.15f);
+                tc.tama.Play(0.2f);
                 
                 if (tc.tama.Happiness >= 0.8f && (int)tc.tama.Age == 2) // TODO: this condition may want to be tweaked
                 {

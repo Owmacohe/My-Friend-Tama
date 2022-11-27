@@ -7,7 +7,7 @@ public class SoundEffectController : MonoBehaviour
     [SerializeField] AudioClip[] clips;
     [SerializeField] float pitchVariation;
 
-    AudioSource source;
+    [HideInInspector] public AudioSource source;
 
     void Start()
     {
@@ -36,5 +36,13 @@ public class SoundEffectController : MonoBehaviour
     {
         SetClipAndPitch();
         source.Play();
+    }
+
+    /// <summary>
+    /// Stops the clip
+    /// </summary>
+    public void Stop()
+    {
+        source.Stop();
     }
 }
