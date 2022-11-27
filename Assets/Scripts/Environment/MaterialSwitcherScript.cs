@@ -7,9 +7,8 @@ public class MaterialSwitcherScript : MonoBehaviour
     [SerializeField] GameObject[] arcadeCabs;
     [SerializeField] float timeToSwitch = 10;
 
-    [HideInInspector] public GameObject currentCab; // Current cab turned on
+    public GameObject currentCab; // Current cab turned on
     MeshRenderer[] cabRenderers; // Array of MeshRenderers of the cabinets
-    MeshRenderer lastRend; // The last MeshRenderer turned on
     
     float onStartTime, onEndTime;
     readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
@@ -52,7 +51,7 @@ public class MaterialSwitcherScript : MonoBehaviour
 
         if (currentCab != null)
         {
-            PowerOff(lastRend);
+            PowerOff(currentCab.GetComponentInChildren<MeshRenderer>());
         }
         
         currentCab = rend.transform.parent.gameObject;
@@ -61,7 +60,5 @@ public class MaterialSwitcherScript : MonoBehaviour
     void PowerOff(MeshRenderer rend)
     {
         rend.materials[1].SetColor(EmissionColor, Color.black);
-        
-        lastRend = currentCab.GetComponentInChildren<MeshRenderer>();
     }
 }

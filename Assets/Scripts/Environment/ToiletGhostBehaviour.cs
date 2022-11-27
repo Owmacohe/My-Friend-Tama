@@ -30,16 +30,19 @@ public class ToiletGhostBehaviour : MonoBehaviour
     //Need to fix so it detects proper collision point
     private void OnTriggerStay(Collider other)
     {
-        playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        flashlightCollider = player.transform.Find("MainCamera").gameObject.transform.Find("FlashlightDetectionZone").gameObject.GetComponent<Collider>();
-
-        if (flashlightCollider)
+        Debug.Log($"bonk {other.gameObject.name} {other.gameObject.tag}");
+        if (other.gameObject.CompareTag("FlashlightDetection"))
         {
+            Debug.Log("ouch");
+            playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             if (playercontroller.flashlightOn)
             {
                 Destroy(gameObject);
             }
-            
+        }
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("You Die");
         }
     }
 
