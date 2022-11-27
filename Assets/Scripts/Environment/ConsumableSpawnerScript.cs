@@ -22,6 +22,7 @@ public class ConsumableSpawnerScript : MonoBehaviour
         {
            if (usedSpawnPoint[i].childCount == 0)
            {
+                Debug.Log($"Remove item under {usedSpawnPoint[i].name}");
                freeSpawnPoint.Add(usedSpawnPoint[i]);
                usedSpawnPoint.RemoveAt(i);
            }
@@ -49,6 +50,8 @@ public class ConsumableSpawnerScript : MonoBehaviour
             usedSpawnPoint.Add(spawnPoint);
 
             Instantiate(itemToSpawn, spawnPoint);
+
+            Debug.Log($"Spawn item under {spawnPoint.name}");
         }
     }
 }

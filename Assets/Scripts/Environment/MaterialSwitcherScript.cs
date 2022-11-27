@@ -7,7 +7,7 @@ public class MaterialSwitcherScript : MonoBehaviour
     [SerializeField] GameObject[] arcadeCabs;
     [SerializeField] float timeToSwitch = 10;
 
-    public GameObject currentCab; // Current cab turned on
+    [HideInInspector] public GameObject currentCab; // Current cab turned on
     MeshRenderer[] cabRenderers; // Array of MeshRenderers of the cabinets
     
     float onStartTime, onEndTime;

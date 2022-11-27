@@ -56,10 +56,6 @@ public class PlayerObjectDetection : MonoBehaviour
                     Destroy(other.gameObject);
                     hasCoin = true;
                 }
-                else
-                {
-                    return;   
-                }
             }
             else if (other.gameObject.CompareTag("ArcadeCab"))
             {
