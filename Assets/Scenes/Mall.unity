@@ -3866,7 +3866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorFromLight: 0
   colorMode: 0
-  color: {r: 0.023529412, g: 0.021568628, b: 0.01372549, a: 1}
+  color: {r: 0.09411765, g: 0.09411765, b: 0.0627451, a: 1}
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4002,7 +4002,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: d2e0db627bf7e0844bb944e5df56dfd4, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -8580,7 +8580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorFromLight: 0
   colorMode: 0
-  color: {r: 0.009803922, g: 0.007843138, b: 0.011764706, a: 1}
+  color: {r: 0.028921569, g: 0.01764706, b: 0.003921569, a: 1}
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8684,7 +8684,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.6441307, g: 0.47057074, b: 0.7264151, a: 1}
+  m_Color: {r: 0.46226418, g: 0.28226277, b: 0.06396103, a: 1}
   m_Intensity: 17.78
   m_Range: 12.06
   m_SpotAngle: 61.864357
@@ -8716,7 +8716,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: 88790eeab69c946409eb13f42a94e0ef, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
