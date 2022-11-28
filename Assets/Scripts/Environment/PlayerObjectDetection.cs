@@ -15,9 +15,16 @@ public class PlayerObjectDetection : MonoBehaviour
     void Start()
     {
         tc = FindObjectOfType<TamagotchiController>();
-        tc.Evolve(); // TODO: this first evolution to be removed and placed where we want it somewhere in the tutorial
+        
+        // TODO: this first evolution to be removed and placed where we want it somewhere in the tutorial
+        Invoke(nameof(TamaEvolve), 5);
 
         washroomSpawnerOBJ.SetActive(false);
+    }
+
+    void TamaEvolve()
+    {
+        tc.Evolve();
     }
 
     void FixedUpdate()

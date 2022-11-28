@@ -81,6 +81,24 @@ public class TamagotchiController : MonoBehaviour
         bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
         bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
 
+        if (foodStats[0] && (int)tama.Age == 1)
+        {
+            anim.SetBool("IsBabyHungry", true);
+        }
+        else
+        {
+            anim.SetBool("IsBabyHungry", false);
+        }
+        
+        if (foodStats[0] && (int)tama.Age == 2)
+        {
+            anim.SetBool("IsKidHungry", true);
+        }
+        else
+        {
+            anim.SetBool("IsKidHungry", false);
+        }
+
         if (!foodStats[0] && !happinessStats[0] && !disciplineStats[0])
         {
             firstThresholdSound.Stop();

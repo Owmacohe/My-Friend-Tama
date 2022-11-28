@@ -134,10 +134,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 810
-        width: 268.625
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,10 +155,10 @@ TextureImporter:
         serializedVersion: 2
         x: 268
         y: 810
-        width: 268.625
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,10 +176,10 @@ TextureImporter:
         serializedVersion: 2
         x: 536
         y: 810
-        width: 268.625
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: tama-spritesheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 540
-        width: 268.625
+        x: 804
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: tama-spritesheet_4
       rect:
         serializedVersion: 2
-        x: 272
-        y: 538
-        width: 269
+        x: 1072
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: tama-spritesheet_5
       rect:
         serializedVersion: 2
-        x: 536
-        y: 540
-        width: 268.625
+        x: 1340
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -258,12 +258,12 @@ TextureImporter:
       name: tama-spritesheet_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 270
-        width: 268.625
+        x: 1608
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -279,12 +279,12 @@ TextureImporter:
       name: tama-spritesheet_7
       rect:
         serializedVersion: 2
-        x: 268
-        y: 270
-        width: 268.625
+        x: 1876
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: tama-spritesheet_8
       rect:
         serializedVersion: 2
-        x: 536
-        y: 270
-        width: 268.625
+        x: 2144
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: tama-spritesheet_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 268.625
+        x: 2412
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -342,12 +342,12 @@ TextureImporter:
       name: tama-spritesheet_10
       rect:
         serializedVersion: 2
-        x: 268
-        y: 0
-        width: 268.625
+        x: 2680
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -363,12 +363,12 @@ TextureImporter:
       name: tama-spritesheet_11
       rect:
         serializedVersion: 2
-        x: 536
-        y: 0
-        width: 268.625
+        x: 2948
+        y: 810
+        width: 268.3846
         height: 270
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -376,6 +376,846 @@ TextureImporter:
       bones: []
       spriteID: 076ecac10cfdc0b46be2419f0d66b904
       internalID: 1586490014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 810
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b36be516cdda4e43835622d1fe815c4
+      internalID: -135315267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b71b1b17e4e213439721f9af9be59b8
+      internalID: -1935376388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6022bbd98d055124bb20bb3d1d89c243
+      internalID: 789015216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255a7c5dcf9359f47b84f8e7c2b9f6f6
+      internalID: -1611382279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31c587283515d748893375ea13b5e62
+      internalID: 1471356609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb55fb2dd8738c344b3875783e9a95f2
+      internalID: -1433967483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9215945140086fc409746b5abe054267
+      internalID: -322431358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045b0146b5056f54bb78d75a58ba3c31
+      internalID: -1451866479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4575efb2ac4b0e4459cd7e37050328db
+      internalID: 1956455831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d305decc3bfed943b764145e7254ef0
+      internalID: -2100733064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c02334d87c8f0459f680479bde72aa
+      internalID: -1382621306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82502dc4fe77394f90af29c65f66aa6
+      internalID: -1416721987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 2948
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581a74cc87d74fd48af3f6b12976bb58
+      internalID: 1854465403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 540
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed74f9458dad8e499360960cf3f3268
+      internalID: 1297638174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f591ba86e70e65e489ea741300133649
+      internalID: 2021827997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285cb4b1948582541801b3c193cc0392
+      internalID: 672762631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e42373b01215749bf8fc521ce438e7
+      internalID: 431759057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb89e1172fdaf34b86e669acee2bc60
+      internalID: -887906432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e1bdc68ece0f740a65407f4d8e03f0
+      internalID: 7338662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8064914eb1f76941b14904d319ec149
+      internalID: 1865700630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a8889ca1f38134ca5115ab5ae57358
+      internalID: 746401721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950f8a35d3552424f917227aa5c56680
+      internalID: 1738738241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5b6f92b29543c4dbd4759b7aa9179e
+      internalID: 1058474004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6968b2606cb0382428c31d9530377af5
+      internalID: 842239921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5438abee7dc38ba4192a2d85136c04d5
+      internalID: -1490720846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 2948
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90bd5697d4c2e749babb27517eff444
+      internalID: 338413650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 270
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a22b89164e1cf4bb0eb91d6774c76c
+      internalID: -835646739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d661c70e0c828a147a592a0282ad5f23
+      internalID: 1899250882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c150dd67e762944ebbde278196c00ca
+      internalID: 1478327568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4604bf21a9f677f4b87d9f361821581a
+      internalID: 1763410584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1370438166b65440a2592dbb85f501e
+      internalID: 1861691092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f346c719aa681a4fbd428de72fae00c
+      internalID: 302474365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9cc8e8540aaa741b3494e8ea2caf76
+      internalID: 651895494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84726c45c8f8b64ca2e3c1427516b13
+      internalID: -1824690424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43100f6bd59b6704987ea3e63b498fa4
+      internalID: -207498481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e98eab27be000b4b8afd405187c462e
+      internalID: -935200799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d381a6dac2bb7d42aa89753792b5729
+      internalID: 2085405370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 2680
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d53d7597899d34eb6af6f143342d4a
+      internalID: -1993415271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 2948
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7453da4d4cd838478f0038cb57ba2c4
+      internalID: -278971687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama-spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 3216
+        y: 0
+        width: 268.3846
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55853dba621bc4f4fbdef1be139233f5
+      internalID: -344131051
       vertices: []
       indices: 
       edges: []
@@ -391,17 +1231,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tama-spritesheet_1: -27423202
+      tama-spritesheet_13: -1935376388
+      tama-spritesheet_24: 1854465403
+      tama-spritesheet_17: -1433967483
+      tama-spritesheet_30: 7338662
+      tama-spritesheet_25: 1297638174
+      tama-spritesheet_27: 672762631
+      tama-spritesheet_44: 651895494
+      tama-spritesheet_36: -1490720846
+      tama-spritesheet_40: 1478327568
+      tama-spritesheet_37: 338413650
       tama-spritesheet_6: 2116238698
+      tama-spritesheet_22: -1382621306
+      tama-spritesheet_32: 746401721
       tama-spritesheet_9: -644470821
-      tama-spritesheet_0: 690826547
       tama-spritesheet_4: -1872394528
+      tama-spritesheet_21: -2100733064
       tama-spritesheet_3: -1624476619
-      tama-spritesheet_2: -1961303845
-      tama-spritesheet_8: -656758657
+      tama-spritesheet_34: 1058474004
+      tama-spritesheet_15: -1611382279
+      tama-spritesheet_49: -1993415271
+      tama-spritesheet_46: -207498481
       tama-spritesheet_11: 1586490014
+      tama-spritesheet_45: -1824690424
       tama-spritesheet_7: 1594400158
       tama-spritesheet_5: 320439950
+      tama-spritesheet_20: 1956455831
+      tama-spritesheet_26: 2021827997
+      tama-spritesheet_29: -887906432
+      tama-spritesheet_23: -1416721987
+      tama-spritesheet_1: -27423202
+      tama-spritesheet_19: -1451866479
+      tama-spritesheet_51: -344131051
+      tama-spritesheet_39: 1899250882
+      tama-spritesheet_12: -135315267
+      tama-spritesheet_18: -322431358
+      tama-spritesheet_41: 1763410584
+      tama-spritesheet_48: 2085405370
+      tama-spritesheet_16: 1471356609
+      tama-spritesheet_47: -935200799
+      tama-spritesheet_14: 789015216
+      tama-spritesheet_0: 690826547
+      tama-spritesheet_31: 1865700630
+      tama-spritesheet_43: 302474365
+      tama-spritesheet_28: 431759057
+      tama-spritesheet_33: 1738738241
+      tama-spritesheet_2: -1961303845
+      tama-spritesheet_35: 842239921
+      tama-spritesheet_8: -656758657
+      tama-spritesheet_42: 1861691092
+      tama-spritesheet_50: -278971687
+      tama-spritesheet_38: -835646739
       tama-spritesheet_10: 277138512
   spritePackingTag: 
   pSDRemoveMatte: 0
