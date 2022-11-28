@@ -12,7 +12,7 @@ public class TamagotchiController : MonoBehaviour
     
     [Header("Flashing")]
     [SerializeField] SpriteRenderer screen;
-    [SerializeField] float flashingSpeed = 10;
+    [SerializeField] float flashingSpeed = 3;
     [SerializeField, ColorUsage(true, true)] Color foodColour, happinessColour, disciplineColour;
     [SerializeField] Vector3 awayPosition, awayRotation, frontPosition, frontRotation;
     [SerializeField] float tamaSlideSpeed = 0.01f;
@@ -71,6 +71,8 @@ public class TamagotchiController : MonoBehaviour
                 isLookingAtTama = false;
             }
         }
+        
+        
     }
 
     void FixedUpdate()
@@ -139,11 +141,6 @@ public class TamagotchiController : MonoBehaviour
                 {
                     statNeedIndicator.enabled = false;
                 }
-                
-                if (!statNeedSound.source.isPlaying)
-                {
-                    statNeedSound.Play();
-                }
             }
         }
 
@@ -168,6 +165,19 @@ public class TamagotchiController : MonoBehaviour
         }
     }
 
+    void PlayStatNeedSound()
+    {
+        if (isFlashing)
+        {
+            if (!isLookingAtTama && !statNeedSound.source.isPlaying)
+            {
+                statNeedSound.Play();   
+            }
+
+            Invoke(nameof(PlayStatNeedSound), 1);
+        }
+    }
+
     /// <summary>
     /// Sets the tamagotchi's current screen colour
     /// </summary>
@@ -188,19 +198,26 @@ public class TamagotchiController : MonoBehaviour
         
         if (stat <= firstStatThreshold)
         {
-            flashingColour = flash;
-            isFlashing = true;
-            currentFlashingSpeed = flashingSpeed;
-
             conditions[0] = true;
-            firstThresholdSound.Play();
-            
+
+            if (!isFlashing)
+            {
+                isFlashing = true;
+                flashingColour = flash;
+                currentFlashingSpeed = flashingSpeed;
+                firstThresholdSound.Play();
+                PlayStatNeedSound();   
+            }
+
             if (stat <= secondStatThreshold)
             {
-                currentFlashingSpeed = flashingSpeed * 2;
-                
                 conditions[1] = true;
-                secondThresholdSound.Play();
+
+                if (!secondThresholdSound.source.isPlaying)
+                {
+                    currentFlashingSpeed = flashingSpeed * 2;
+                    secondThresholdSound.Play();   
+                }
             }
         }
 
