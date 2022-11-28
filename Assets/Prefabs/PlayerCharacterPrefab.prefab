@@ -73,7 +73,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636283941774103935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.05, z: -0.113}
+  m_LocalPosition: {x: 0, y: 0.62, z: -0.113}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -386,10 +386,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c74d9da8e7c6e4cb32f45e6e029f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasCoin: 0
+  AudioManager: {fileID: 0}
   washroomSpawnerOBJ: {fileID: 0}
   connectedLightSwitch: {fileID: 0}
   washroomLights: {fileID: 0}
+  hasCoin: 0
 --- !u!1 &6561009903932089625
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7094125459238091982}
   m_LocalRotation: {x: -0, y: 4.6566118e-10, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0727, y: -0.1164, z: 5.452}
+  m_LocalPosition: {x: -0.0727, y: 0.099, z: 5.452}
   m_LocalScale: {x: 3.389401, y: 1, z: 8.974503}
   m_ConstrainProportionsScale: 0
   m_Children: []

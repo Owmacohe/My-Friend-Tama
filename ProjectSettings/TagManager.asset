@@ -13,6 +13,7 @@ TagManager:
   - washroomSpawner
   - lightSwitch
   - bathroomLights
+  - audioManager
   layers:
   - Default
   - TransparentFX

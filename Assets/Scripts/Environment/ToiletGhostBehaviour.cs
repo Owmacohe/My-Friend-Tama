@@ -11,6 +11,7 @@ public class ToiletGhostBehaviour : MonoBehaviour
     Collider flashlightCollider;
     PlayerController playercontroller;
     int speedVariation;
+    AudioManagerMenu audioManagerMenu;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class ToiletGhostBehaviour : MonoBehaviour
 
         //Creates slight speed varation based on homingSpeed
         speedVariation = Random.Range(1, 6);
+
+        audioManagerMenu = GameObject.FindGameObjectWithTag("audioManager").gameObject.GetComponent<AudioManagerMenu>();
 
     }
 
@@ -37,6 +40,7 @@ public class ToiletGhostBehaviour : MonoBehaviour
             playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             if (playercontroller.flashlightOn)
             {
+                audioManagerMenu.ghostHitSFX.PlayOneShot(audioManagerMenu.ghostHitSFX.clip);
                 Destroy(gameObject);
             }
         }

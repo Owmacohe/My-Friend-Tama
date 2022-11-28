@@ -3,19 +3,23 @@ using UnityEngine;
 
 public class PlayerObjectDetection : MonoBehaviour
 {
-    public bool hasCoin;
+    [SerializeField] GameObject AudioManager;
     [SerializeField] GameObject washroomSpawnerOBJ;
     [SerializeField] GameObject connectedLightSwitch;
     [SerializeField] GameObject washroomLights;
+    public bool hasCoin;
 
     TamagotchiController tc;
     bool inWashroom;
     bool isPlayingWashroomGame;
+    AudioManagerMenu audioManagerMenu;
+    PlayerController playercontroller;
 
     void Start()
     {
         tc = FindObjectOfType<TamagotchiController>();
-        
+        audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
+
         // TODO: this first evolution to be removed and placed where we want it somewhere in the tutorial
         Invoke(nameof(TamaEvolve), 5);
 
@@ -42,14 +46,29 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void CheckWashroomSpawner()
     {
+
         if (!connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn
             && inWashroom)
         {
-            washroomSpawnerOBJ.SetActive(true);
             washroomLights.SetActive(false);
-            
-            isPlayingWashroomGame = true;
+
+            playercontroller = GetComponent<PlayerController>();
+
+            if (playercontroller.flashlightOn)
+            {
+                washroomSpawnerOBJ.SetActive(false);
+
+                isPlayingWashroomGame = false;
+ 
+            } 
+            else if (!playercontroller.flashlightOn)
+            {
+                washroomSpawnerOBJ.SetActive(true);
+
+                isPlayingWashroomGame = true;
+            }
         }
+
         else
         {
             washroomSpawnerOBJ.SetActive(false);
@@ -66,6 +85,8 @@ public class PlayerObjectDetection : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Food"))
             {
+                audioManagerMenu.eatSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
+
                 Destroy(other.gameObject);
                 
                 tc.tama.Feed(0.2f);
@@ -79,6 +100,7 @@ public class PlayerObjectDetection : MonoBehaviour
             {
                 if (!hasCoin)
                 {
+                    audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
                     Destroy(other.gameObject);
                     hasCoin = true;
                 }
@@ -96,7 +118,7 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject == connectedLightSwitch)
             {
-                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();        
+                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
                 lightSwitch.lightOn = !lightSwitch.lightOn;
                 CheckWashroomSpawner();
@@ -130,6 +152,7 @@ public class PlayerObjectDetection : MonoBehaviour
     {
         if (hasCoin)
         {
+            audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.arcadeCabSFX.clip);
             hasCoin = false;
         }
     }
