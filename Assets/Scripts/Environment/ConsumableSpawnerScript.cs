@@ -18,10 +18,13 @@ public class ConsumableSpawnerScript : MonoBehaviour
     
     void Update()
     {
+        var lastIndex = -1;
+
         for (int i = 0; i < usedSpawnPoint.Count;)
         {
            if (usedSpawnPoint[i].childCount == 0)
            {
+               lastIndex = i;
                //Debug.Log($"Remove item under {usedSpawnPoint[i].name}");
                freeSpawnPoint.Add(usedSpawnPoint[i]);
                usedSpawnPoint.RemoveAt(i);
@@ -43,6 +46,18 @@ public class ConsumableSpawnerScript : MonoBehaviour
             // Spawns new item
             int spawnPointIndex = Random.Range(0, freeSpawnPoint.Count);
             int itemToSpawnIndex = Random.Range(0, spawnableItems.Count);
+
+            if (lastIndex>=0 || spawnPoints.Count < 1)
+            {
+                
+                spawnPointIndex = Random.Range(0, freeSpawnPoint.Count - 1);
+
+                if (spawnPointIndex >= lastIndex)
+                {
+                    lastIndex++;
+                }
+            }
+
             Transform spawnPoint = freeSpawnPoint[spawnPointIndex];
             GameObject itemToSpawn = spawnableItems[itemToSpawnIndex];
 

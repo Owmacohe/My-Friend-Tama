@@ -323,7 +323,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MallPlantPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 195684623934598774, guid: dd9e826ef171ecf4b818bf72f8979a67, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd9e826ef171ecf4b818bf72f8979a67, type: 3}
 --- !u!4 &2014659301410828944 stripped
 Transform:
