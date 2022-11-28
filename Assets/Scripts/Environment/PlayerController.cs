@@ -136,6 +136,9 @@ public class PlayerController : MonoBehaviour
 
     public void SetFlashlight(bool isOn, bool fromTama)
     {
+        var lightFX = playerFlashlight.GetComponent<VLB.VolumetricLightBeam>();
+
+        lightFX.enabled = isOn;
         playerLight.enabled = isOn;
 
         isLookingAtTama = fromTama && !isOn;
