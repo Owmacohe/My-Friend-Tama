@@ -23,7 +23,7 @@ Material:
   m_Name: M_StylizedOutline_RedGlow
   m_Shader: {fileID: 4800000, guid: ad6de151320180a408b89711864a7035, type: 3}
   m_ValidKeywords:
-  - RANDOM_OFFSETS_ENABLED
+  - ATTENUATE_BY_DISTANCE_ENABLED
   - USE_VERTEX_COLOR_ENABLED
   m_InvalidKeywords: []
   m_LightmapFlags: 4
