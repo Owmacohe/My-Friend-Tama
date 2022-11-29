@@ -33,6 +33,8 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void FixedUpdate()
     {
+        CheckWashroomSpawner();
+
         if (isPlayingWashroomGame)
         {
             tc.tama.Scold(0.005f);
@@ -51,24 +53,25 @@ public class PlayerObjectDetection : MonoBehaviour
             && inWashroom)
         {
             washroomLights.SetActive(false);
+            washroomSpawnerOBJ.SetActive(true);
+
+            isPlayingWashroomGame = true;
 
             playercontroller = GetComponent<PlayerController>();
 
             if (playercontroller.flashlightOn)
             {
                 washroomSpawnerOBJ.SetActive(false);
-
                 isPlayingWashroomGame = false;
  
-            } 
+            }
             else if (!playercontroller.flashlightOn)
             {
                 washroomSpawnerOBJ.SetActive(true);
-
                 isPlayingWashroomGame = true;
+
             }
         }
-
         else
         {
             washroomSpawnerOBJ.SetActive(false);
@@ -121,7 +124,6 @@ public class PlayerObjectDetection : MonoBehaviour
                 var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
                 lightSwitch.lightOn = !lightSwitch.lightOn;
-                CheckWashroomSpawner();
             }
 
         }
