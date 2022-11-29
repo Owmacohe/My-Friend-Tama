@@ -7,9 +7,9 @@ public class PlayerObjectDetection : MonoBehaviour
     [SerializeField] GameObject washroomSpawnerOBJ;
     [SerializeField] GameObject connectedLightSwitch;
     [SerializeField] GameObject washroomLights;
+    [SerializeField] TamagotchiController tc;
     public bool hasCoin;
 
-    TamagotchiController tc;
     bool inWashroom;
     bool isPlayingWashroomGame;
     AudioManagerMenu audioManagerMenu;
@@ -17,18 +17,9 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void Start()
     {
-        tc = FindObjectOfType<TamagotchiController>();
         audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
 
-        // TODO: this first evolution to be removed and placed where we want it somewhere in the tutorial
-        Invoke(nameof(TamaEvolve), 5);
-
         washroomSpawnerOBJ.SetActive(false);
-    }
-
-    void TamaEvolve()
-    {
-        tc.Evolve();
     }
 
     void FixedUpdate()
@@ -48,7 +39,6 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void CheckWashroomSpawner()
     {
-
         if (!connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn
             && inWashroom)
         {
@@ -125,7 +115,12 @@ public class PlayerObjectDetection : MonoBehaviour
 
                 lightSwitch.lightOn = !lightSwitch.lightOn;
             }
-
+            else if (other.gameObject.CompareTag("fakeTama"))
+            {
+                Destroy(other.gameObject);
+                FindObjectOfType<TutorialSoundsController>()
+                    .PlayMallTutorial(TutorialSoundsController.MallTutorials.INTRO);
+            }
         }
     }
 
@@ -136,6 +131,10 @@ public class PlayerObjectDetection : MonoBehaviour
         {
             inWashroom = true;
             CheckWashroomSpawner();
+        }
+        else if (other.gameObject.CompareTag("tutorialVolume"))
+        {
+            FindObjectOfType<TutorialSoundsController>().PlayNextMallTutorial();
         }
     }
 

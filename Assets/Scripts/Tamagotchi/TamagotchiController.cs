@@ -174,7 +174,7 @@ public class TamagotchiController : MonoBehaviour
                 statNeedSound.Play();   
             }
 
-            Invoke(nameof(PlayStatNeedSound), 1);
+            Invoke(nameof(PlayStatNeedSound), 1.5f);
         }
     }
 
