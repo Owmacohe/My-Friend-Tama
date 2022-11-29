@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     Light playerLight;
     bool isLookingAtTama;
     bool isCrouched = false;
+    bool isRunning = false;
     float maxPlayerHeight;
+    float startWalkSpeed;
 
     // Used to create character smoothing movement
     Vector2 currentDir = Vector2.zero;
@@ -43,10 +45,12 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerLight = playerFlashlight.GetComponent<Light>();
         maxPlayerHeight = controller.height;
+        startWalkSpeed = walkSpeed;
     }
     
     void Update()
     {
+        RunControls();
         CrouchControl();
         UpdateMouseLook();
         UpdatePlayerMovement();
@@ -117,7 +121,6 @@ public class PlayerController : MonoBehaviour
     ///Player Crouch controls
     void CrouchControl()
     {
-
         if (Input.GetKeyDown("left ctrl"))
         {
             if (!isCrouched)
@@ -132,6 +135,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    void RunControls()
+    {
+        if (Input.GetKeyDown("left shift"))
+        {  
+             walkSpeed = startWalkSpeed * 2;
+             isRunning = true;
+        }
+        else if (Input.GetKeyUp("left shift"))
+        {
+            walkSpeed = startWalkSpeed;
+            isRunning = false;
+        }
     }
 
     public void SetFlashlight(bool isOn, bool fromTama)
