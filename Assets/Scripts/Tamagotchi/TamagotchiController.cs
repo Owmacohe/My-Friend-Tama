@@ -83,7 +83,7 @@ public class TamagotchiController : MonoBehaviour
         bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
         bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
 
-        if ((int) tama.Age == 1)
+        if ((int)tama.Age == 1)
         {
             if (foodStats[0])
             {
@@ -101,10 +101,19 @@ public class TamagotchiController : MonoBehaviour
             else
             {
                 anim.SetBool("IsBabyMad", false);
-            }   
+            }
+            
+            if (disciplineStats[0])
+            {
+                anim.SetBool("IsBabyDiscipline", true);
+            }
+            else
+            {
+                anim.SetBool("IsBabyDiscipline", false);
+            }
         }
 
-        if ((int) tama.Age == 2)
+        if ((int)tama.Age == 2)
         {
             if (foodStats[0])
             {
@@ -122,10 +131,19 @@ public class TamagotchiController : MonoBehaviour
             else
             {
                 anim.SetBool("IsKidMad", false);
-            }   
+            }
+            
+            if (disciplineStats[0])
+            {
+                anim.SetBool("IsKidDiscipline", true);
+            }
+            else
+            {
+                anim.SetBool("IsKidDiscipline", false);
+            }
         }
 
-        if ((int) tama.Age == 3)
+        if ((int)tama.Age == 3)
         {
             if (foodStats[0])
             {
@@ -143,7 +161,16 @@ public class TamagotchiController : MonoBehaviour
             else
             {
                 anim.SetBool("IsAdultMad", false);
-            }   
+            }
+            
+            if (disciplineStats[0])
+            {
+                anim.SetBool("IsAdultDiscipline", true);
+            }
+            else
+            {
+                anim.SetBool("IsAdultDiscipline", false);
+            }
         }
 
         if (!foodStats[0] && !happinessStats[0] && !disciplineStats[0])
