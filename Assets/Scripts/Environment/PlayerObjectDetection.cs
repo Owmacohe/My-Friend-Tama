@@ -12,12 +12,15 @@ public class PlayerObjectDetection : MonoBehaviour
 
     bool inWashroom;
     bool isPlayingWashroomGame;
+    bool hasRealTama = false;
     AudioManagerMenu audioManagerMenu;
     PlayerController playercontroller;
+    GateControlScript gateControlScript;
 
     void Start()
     {
         audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
+        gateControlScript = FindObjectOfType<GateControlScript>();
 
         washroomSpawnerOBJ.SetActive(false);
     }
@@ -120,6 +123,8 @@ public class PlayerObjectDetection : MonoBehaviour
                 Destroy(other.gameObject);
                 FindObjectOfType<TutorialSoundsController>()
                     .PlayMallTutorial(TutorialSoundsController.MallTutorials.INTRO);
+
+                hasRealTama = true;
             }
         }
     }
@@ -133,8 +138,14 @@ public class PlayerObjectDetection : MonoBehaviour
             CheckWashroomSpawner();
         }
         else if (other.gameObject.CompareTag("tutorialVolume"))
-        {
+        {  
             FindObjectOfType<TutorialSoundsController>().PlayNextMallTutorial();
+
+            if (hasRealTama)
+            {
+                gateControlScript.FoodCourtGateDown = false;
+                gateControlScript.FrontDoorGateDown = true;
+            }
         }
     }
 
