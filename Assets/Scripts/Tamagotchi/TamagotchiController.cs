@@ -83,22 +83,67 @@ public class TamagotchiController : MonoBehaviour
         bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
         bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
 
-        if (foodStats[0] && (int)tama.Age == 1)
+        if ((int) tama.Age == 1)
         {
-            anim.SetBool("IsBabyHungry", true);
-        }
-        else
-        {
-            anim.SetBool("IsBabyHungry", false);
-        }
+            if (foodStats[0])
+            {
+                anim.SetBool("IsBabyHungry", true);
+            }
+            else
+            {
+                anim.SetBool("IsBabyHungry", false);
+            }
         
-        if (foodStats[0] && (int)tama.Age == 2)
-        {
-            anim.SetBool("IsKidHungry", true);
+            if (happinessStats[0])
+            {
+                anim.SetBool("IsBabyMad", true);
+            }
+            else
+            {
+                anim.SetBool("IsBabyMad", false);
+            }   
         }
-        else
+
+        if ((int) tama.Age == 2)
         {
-            anim.SetBool("IsKidHungry", false);
+            if (foodStats[0])
+            {
+                anim.SetBool("IsKidHungry", true);
+            }
+            else
+            {
+                anim.SetBool("IsKidHungry", false);
+            }
+        
+            if (happinessStats[0])
+            {
+                anim.SetBool("IsKidMad", true);
+            }
+            else
+            {
+                anim.SetBool("IsKidMad", false);
+            }   
+        }
+
+        if ((int) tama.Age == 3)
+        {
+            if (foodStats[0])
+            {
+                anim.SetBool("IsAdultHungry", true);
+            }
+            else
+            {
+                anim.SetBool("IsAdultHungry", false);
+            }
+        
+            if (happinessStats[0])
+            {
+                anim.SetBool("IsAdultMad", true);
+            }
+            else
+            {
+                anim.SetBool("IsAdultMad", false);
+            }   
         }
 
         if (!foodStats[0] && !happinessStats[0] && !disciplineStats[0])
