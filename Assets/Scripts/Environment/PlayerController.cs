@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Character Controls")]
     [SerializeField] float mouseSensitivity = 3.5f;
-    [SerializeField] float walkSpeed = 10f;
+    [SerializeField] float walkSpeed = 10.0f;
     [SerializeField] float jumpHeight = 1.0f;
     [SerializeField] float gravity = -13.0f;
     [SerializeField, Range(0.0f, 0.5f)] float moveSmoothTime = 0.15f;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        // Locks cursor position at startup 
+        // Locks cursor position at startup
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         maxPlayerHeight = controller.height;
         startWalkSpeed = walkSpeed;
     }
-    
+
     void Update()
     {
         RunControls();
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         // Adjusts camera horizontal with mouse sensitivity
         transform.Rotate(Vector3.up * (currentMouseDelta.x * mouseSensitivity));
     }
-    
+
     /// <summary>
     /// Updates player movement
     /// </summary>
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         {
             velocityY = 0.0f;
         }
-        
+
         velocityY += gravity * Time.deltaTime;
 
         // Applies movement through character controller
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             velocityY += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
     }
-    
+
     /// <summary>
     /// Controls light component inside PlayerCharacter
     /// </summary>
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     void RunControls()
     {
         if (Input.GetKeyDown("left shift"))
-        {  
+        {
              walkSpeed = startWalkSpeed * 2;
              isRunning = true;
         }
