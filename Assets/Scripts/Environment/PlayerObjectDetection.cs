@@ -125,6 +125,8 @@ public class PlayerObjectDetection : MonoBehaviour
                     .PlayMallTutorial(TutorialSoundsController.MallTutorials.INTRO);
 
                 hasRealTama = true;
+                
+                FindObjectOfType<HintButtons>().ShowTamaButton();
             }
         }
     }

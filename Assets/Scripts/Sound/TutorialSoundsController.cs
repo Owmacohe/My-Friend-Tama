@@ -46,6 +46,8 @@ public class TutorialSoundsController : MonoBehaviour
                     break;
                 case MallTutorials.GAME_START:
                     tama.GetComponent<TamagotchiController>().Evolve();
+                    
+                    FindObjectOfType<HintButtons>().HideAllButtons();
                     break;
             }
         }
