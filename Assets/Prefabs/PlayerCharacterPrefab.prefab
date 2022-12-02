@@ -195,14 +195,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636283942726261121}
-  m_LocalRotation: {x: 0.0023736232, y: 0, z: 0, w: 0.99999726}
-  m_LocalPosition: {x: 0.185, y: -0.709, z: -0.073}
+  m_LocalRotation: {x: 0.0023716006, y: -0.041288037, z: 0.000098002536, w: 0.9991445}
+  m_LocalPosition: {x: 0.6, y: -0.709, z: -0.04072065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 636283941774103934}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0.272, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.272, y: -4.733, z: 0}
 --- !u!108 &636283942726261125
 Light:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ Light:
     m_Strength: 0.742
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.6942
+    m_NearPlane: 4.337318
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -503,9 +503,9 @@ MonoBehaviour:
   minVolume: 0.3
   maxVolume: 0.5
   debugMode: 1
-  groundCheckHeight: -2.01
-  groundCheckRadius: 0.5
-  groundCheckDistance: 0.3
+  groundCheckHeight: -1.51
+  groundCheckRadius: 1.01
+  groundCheckDistance: 0.42
   groundLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -766,7 +766,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.75
+  m_Volume: 1
   m_Pitch: 0.8
   Loop: 0
   Mute: 0
