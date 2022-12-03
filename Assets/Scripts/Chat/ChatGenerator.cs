@@ -400,8 +400,7 @@ public class ChatGenerator
         "Zoey"
     };
 
-    static readonly string[] messages =
-    {
+    static readonly string[] messages = {
         "Where are you?",
         "This is boring",
         "What are you doing?",
@@ -416,7 +415,16 @@ public class ChatGenerator
         "I finally caught you live!",
         "Wow!",
         "I've been here",
-        "Is this place abandoned?"
+        "Is this place abandoned?",
+        "Did I see something moving?",
+        "I'm new, what's going on?",
+        "I went to this mall as a kid",
+        "Huh, weird",
+        "It's so dark!",
+        "Are you streaming tomorrow?",
+        "What a weird place...",
+        "Nope nope nope nope",
+        "Was that a rat I saw?"
     };
 
     static string RandomFirstName()
@@ -502,7 +510,18 @@ public class ChatGenerator
         {
             return "[SUBSCRIBED]";
         }
-        
-        return messages[Random.Range(0, messages.Length)];
+
+        string temp = messages[Random.Range(0, messages.Length)];
+
+        if (Random.Range(0, 5) == 0)
+        {
+            temp = temp.ToLower();
+        }
+        else if (Random.Range(0, 10) == 0)
+        {
+            temp = temp.ToUpper();
+        }
+
+        return temp;
     }
 }
