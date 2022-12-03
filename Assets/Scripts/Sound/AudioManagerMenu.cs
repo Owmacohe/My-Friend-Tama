@@ -9,10 +9,8 @@ public class AudioManagerMenu : MonoBehaviour
     [HideInInspector] public AudioSource eatSFX;
     [HideInInspector] public AudioSource ghostHitSFX;
     [HideInInspector] public AudioSource gateShutSFX;
-
-    public GameObject[] PASpeakers;
-
-    AudioSource[] audioSource = null;
+    [HideInInspector] public AudioSource mall_intro;
+    [HideInInspector] public AudioSource mall_gameStart;
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +21,8 @@ public class AudioManagerMenu : MonoBehaviour
         eatSFX = gameObject.transform.Find("eatSFX").gameObject.GetComponent<AudioSource>();
         ghostHitSFX = gameObject.transform.Find("ghostHitSFX").gameObject.GetComponent<AudioSource>();
         gateShutSFX = gameObject.transform.Find("gateShutSFX").gameObject.GetComponent<AudioSource>();
-
-
-    }
-
-    public void MallPAOneShot(AudioSource track)
-    {
-
-        for (int i = 0; i < PASpeakers.Length; i++)
-        {
-            audioSource[i] = PASpeakers[i].GetComponent<AudioSource>();
-
-            audioSource[i].PlayOneShot(track.clip);
-        }
+        mall_intro = gameObject.transform.Find("Tutorial").gameObject.transform.Find("mall_intro").gameObject.GetComponent<AudioSource>();
+        mall_gameStart = gameObject.transform.Find("Tutorial").gameObject.transform.Find("mall_gameStart").gameObject.GetComponent<AudioSource>();
 
     }
 }

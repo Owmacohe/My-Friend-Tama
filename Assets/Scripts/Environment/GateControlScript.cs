@@ -10,6 +10,7 @@ public class GateControlScript : MonoBehaviour
     [SerializeField] GameObject BathroomGate;
     [SerializeField] GameObject FoodCourtGate;
     [SerializeField] GameObject FrontDoorGate;
+    [SerializeField] GameObject TutorialGate;
 
     AudioManagerMenu audioManagerMenu;
 
@@ -19,13 +20,13 @@ public class GateControlScript : MonoBehaviour
     public bool BathroomGateDown = false;
     public bool FoodCourtGateDown = false;
     public bool FrontDoorGateDown = false;
+    public bool TutorialGateDown = false;
 
     bool gateSFXPlayed = false;
 
     void Start()
     {
         audioManagerMenu = FindObjectOfType<AudioManagerMenu>();
-        GateSwitcher();
     }
     // Update is called once per frame
     void Update()
@@ -42,6 +43,7 @@ public class GateControlScript : MonoBehaviour
         BathroomGate.SetActive(BathroomGateDown);
         FoodCourtGate.SetActive(FoodCourtGateDown);
         FrontDoorGate.SetActive(FrontDoorGateDown);
+        TutorialGate.SetActive(TutorialGateDown);
     }
 
    

@@ -147,6 +147,14 @@ public class PlayerObjectDetection : MonoBehaviour
             {
                 gateControlScript.FoodCourtGateDown = false;
                 gateControlScript.FrontDoorGateDown = true;
+                if (audioManagerMenu.mall_gameStart.isPlaying)
+                {
+                    gateControlScript.TutorialGateDown = true;
+                }
+                else
+                {
+                    gateControlScript.TutorialGateDown = false;
+                }
             }
         }
     }
