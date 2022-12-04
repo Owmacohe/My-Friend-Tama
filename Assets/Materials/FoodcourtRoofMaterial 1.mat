@@ -10,6 +10,7 @@ Material:
   m_Name: FoodcourtRoofMaterial 1
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
+  - _DETAIL_MULX2
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,7 +25,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 3cd2de2721a6c2443bf9889dbaf3a7ac, type: 3}
-        m_Scale: {x: 2, y: 1.875}
+        m_Scale: {x: 3.36, y: 3.79}
         m_Offset: {x: -0.11, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 424b221efdc72cb4fb2b787243937030, type: 3}
@@ -39,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0fc025cfe49e6ef4fa3741ad9ec3afc1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -48,7 +49,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 3cd2de2721a6c2443bf9889dbaf3a7ac, type: 3}
-        m_Scale: {x: 2, y: 1.875}
+        m_Scale: {x: 3.36, y: 3.79}
         m_Offset: {x: -0.11, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -88,7 +89,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
-    - _DetailNormalMapScale: 1
+    - _DetailNormalMapScale: 0.75
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
@@ -107,8 +108,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.972549, g: 0.94509804, b: 0.8784314, a: 1}
-    - _Color: {r: 0.972549, g: 0.945098, b: 0.8784314, a: 1}
+    - _BaseColor: {r: 0.38431373, g: 0.39607844, b: 0.34901962, a: 1}
+    - _Color: {r: 0.3843137, g: 0.3960784, b: 0.3490196, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
