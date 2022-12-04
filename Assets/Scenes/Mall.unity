@@ -4569,10 +4569,10 @@ MonoBehaviour:
   FrontDoorGate: {fileID: 927407067}
   TutorialGate: {fileID: 1765350781}
   ToyStoreGateDown: 0
-  ArcadeGateADown: 0
-  ArcadeGateBDown: 0
-  BathroomGateDown: 0
-  FoodCourtGateDown: 0
+  ArcadeGateADown: 1
+  ArcadeGateBDown: 1
+  BathroomGateDown: 1
+  FoodCourtGateDown: 1
   FrontDoorGateDown: 0
   TutorialGateDown: 0
 --- !u!1001 &432601560
