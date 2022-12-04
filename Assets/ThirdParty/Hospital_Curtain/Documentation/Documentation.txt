@@ -1,0 +1,54 @@
+	
+- - - - - - - - - - - - - - - - - - - - - Hospital Curtain lowpoly- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+This pack contains 3d low poly Model of a Hospital curtain(Clinic curtain, Hospital room divider)
+
+Technical Details:-
+		- Model(s) : Hospital Curtain(Frame only, single, double, 3 Sided, Five sided)	
+		- Vertex count : 2899
+		- Tris count :  5632
+		- Unwrapped : Yes
+		- Texture Variations : 4 + Customizable
+		- Used Material(s) : Unity Standard Material
+		- Texture maps : Albedo/Base Color, Normal, Metalic Smoothness
+		- Texture Size : 2048(.png)
+		
+
+Features:-
+	- Foldable
+	- Lowpoly
+	- Colliders attached
+	- Arranged pivots
+	- Customizable models
+	- Sepperated mesh parts
+	- PBR HQ Textures
+	- Include many color variations
+	- Mobile, AR supported
+
+Folder details:-
+
+	Materials : Where the materials for the model located.
+	
+	Meshes : Contain FBX format of the 3d model.
+	
+	Textures : Contains Textures, that are in (.PNG) file format
+	
+	(Other folders - Prefabs, Scenes, Animations)
+
+Notes:
+Support URP, HDRP, LWRP, Built-in Render Pipeline.
+This project is submitted using Built-in Render Pipeline. If you are not using Built-in Render Pipeline, you need to manually reset the shader of the model to avoid it being pink
+
+How to use:-
+	
+	Simply drag and drop the prefab to your scene and use it.
+	(Prefab(s) located under 
+	Asset > Hospital_Curtain > Prefabs).
+
+..................................................................................
+
+About Me : "SR Studios Kerala", Indie Game developer & 3D Artist from Alappuzha, Kerala, India
+
+Contact : srstudioskerala@gmail.com
+
+................Thank you for downloading this package................................
