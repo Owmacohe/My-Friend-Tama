@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5333428700623749539}
   m_Layer: 0
   m_Name: stateInRange
-  m_TagString: Money
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,8 +126,9 @@ GameObject:
   - component: {fileID: 2691134265395546359}
   - component: {fileID: 5353634387432507451}
   - component: {fileID: 885055956570431508}
+  - component: {fileID: 808690187074923614}
   m_Layer: 0
-  m_Name: MoneyPrefab
+  m_Name: Round2StartPrefab
   m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,8 +162,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.160161, y: 6.83983, z: 4.6954775}
-  m_Center: {x: 0.06162865, y: 0.74098986, z: -1.8477386}
+  m_Size: {x: 4.160161, y: 4.2065105, z: 2.6357887}
+  m_Center: {x: 0.06162865, y: 1.6032542, z: -0.81789416}
 --- !u!114 &885055956570431508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateDefault: {fileID: 7318232992607159516}
   stateInRange: {fileID: 1484809157144153048}
+--- !u!114 &808690187074923614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118620828089330641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fb0bc56ca521445b227d0323fcfdf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArcadeTokenSpawner: {fileID: 0}
 --- !u!1 &7318232992607159516
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +236,7 @@ GameObject:
   - component: {fileID: 7902126348902681013}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Money
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
