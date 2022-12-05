@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51159125613217668}
   m_LocalRotation: {x: 0.08442898, y: -0.061614323, z: -0.005230757, w: 0.99450904}
-  m_LocalPosition: {x: -0.0204, y: -0.0198, z: 0.2017}
+  m_LocalPosition: {x: -0.02, y: 0.932, z: 0.365}
   m_LocalScale: {x: 0.50000006, y: 0.50000006, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,7 +129,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7264151, g: 0.66287404, b: 0.44315886, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.9
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -224,9 +224,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246090242877664647}
+  - component: {fileID: 1328190542}
   m_Layer: 0
   m_Name: Fake Tama
-  m_TagString: Untagged
+  m_TagString: fakeTama
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +255,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1328190542
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468287279830267709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.854805
+  m_Center: {x: 4.296827e-12, y: -0.0000000016654135, z: 0.8548086}
 --- !u!1 &1641444021667615636
 GameObject:
   m_ObjectHideFlags: 0

@@ -77,7 +77,7 @@ public class PlayerObjectDetection : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         //Debug.Log($"Collide with '{other.gameObject}'");
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             if (other.gameObject.CompareTag("Food"))
             {

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Character Controls")]
     [SerializeField] float mouseSensitivity = 3.5f;
     [SerializeField] float walkSpeed = 10.0f;
+    [SerializeField] float runSpeed = 15.0f;
     [SerializeField] float jumpHeight = 1.0f;
     [SerializeField] float gravity = -13.0f;
     [SerializeField, Range(0.0f, 0.5f)] float moveSmoothTime = 0.15f;
@@ -141,8 +142,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown("left shift"))
         {
-             walkSpeed = startWalkSpeed * 2;
-             isRunning = true;
+            walkSpeed = runSpeed;
+            isRunning = true;
         }
         else if (Input.GetKeyUp("left shift"))
         {
