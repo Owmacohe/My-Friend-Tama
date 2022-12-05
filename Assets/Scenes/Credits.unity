@@ -986,8 +986,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -14}
-  m_SizeDelta: {x: 400, y: 30}
+  m_AnchoredPosition: {x: 454, y: -15}
+  m_SizeDelta: {x: 450, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472324896
 MonoBehaviour:
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programmer and other talents
+  m_text: Tama Programmer, Voice Actor, 3D Modeler, Sound Design
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3fb95437bfab3348943c6d5def48cca, type: 2}
   m_sharedMaterial: {fileID: -5184248880620995772, guid: f3fb95437bfab3348943c6d5def48cca, type: 2}
@@ -1699,7 +1699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tama & 2D Illustrator and UI Designer
+  m_text: Tama & 2D Illustrator, UI Designer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3fb95437bfab3348943c6d5def48cca, type: 2}
   m_sharedMaterial: {fileID: -5184248880620995772, guid: f3fb95437bfab3348943c6d5def48cca, type: 2}
@@ -2350,8 +2350,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -13.999994}
-  m_SizeDelta: {x: 400, y: 30}
+  m_AnchoredPosition: {x: 551, y: -15}
+  m_SizeDelta: {x: 550, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357209721
 MonoBehaviour:
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Technical Artist and Environmental Designer
+  m_text: Technical Artist, Environmental Designer, Voice Actor, Sound Design
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3fb95437bfab3348943c6d5def48cca, type: 2}
   m_sharedMaterial: {fileID: -5184248880620995772, guid: f3fb95437bfab3348943c6d5def48cca, type: 2}
