@@ -8,19 +8,22 @@ public class PlayerObjectDetection : MonoBehaviour
     [SerializeField] GameObject connectedLightSwitch;
     [SerializeField] GameObject washroomLights;
     [SerializeField] TamagotchiController tc;
+    [SerializeField] TamagotchiEvolutionManager tem;
     public bool hasCoin;
 
     bool inWashroom;
     bool isPlayingWashroomGame;
-    bool hasRealTama = false;
+    bool hasRealTama;
     AudioManagerMenu audioManagerMenu;
     PlayerController playercontroller;
     GateControlScript gateControlScript;
+    TutorialSoundsController tutorial;
 
     void Start()
     {
         audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
         gateControlScript = FindObjectOfType<GateControlScript>();
+        tutorial = FindObjectOfType<TutorialSoundsController>();
 
         washroomSpawnerOBJ.SetActive(false);
     }
@@ -35,8 +38,15 @@ public class PlayerObjectDetection : MonoBehaviour
             
             if (tc.tama.Discipline >= 0.8f && (int)tc.tama.Age == 3) // TODO: this condition may want to be tweaked
             {
+                // TODO: raise gates
                 // TODO: end of game?
+                tc.SetUpdatingStats(false);
             }
+        }
+        
+        if (hasRealTama && !tutorial.isPlaying && gateControlScript.TutorialGateDown && tutorial.tutorialProgress == 2)
+        {
+            gateControlScript.TutorialGateDown = false;
         }
     }
 
@@ -89,7 +99,9 @@ public class PlayerObjectDetection : MonoBehaviour
 
                 if (tc.tama.Food >= 0.8f && (int)tc.tama.Age == 1) // TODO: this condition may want to be tweaked
                 {
-                    tc.Evolve();
+                    // TODO: raise gates
+                    tem.isEvolveReady = true;
+                    tc.SetUpdatingStats(false);
                 }
             }
             else if (other.gameObject.CompareTag("Money"))
@@ -109,7 +121,9 @@ public class PlayerObjectDetection : MonoBehaviour
                 
                 if (tc.tama.Happiness >= 0.8f && (int)tc.tama.Age == 2) // TODO: this condition may want to be tweaked
                 {
-                    tc.Evolve();
+                    // TODO: raise gates
+                    tem.isEvolveReady = true;
+                    tc.SetUpdatingStats(false);
                 }
             }
             else if (other.gameObject == connectedLightSwitch)
@@ -120,13 +134,23 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("fakeTama"))
             {
-                Destroy(other.gameObject);
-                FindObjectOfType<TutorialSoundsController>()
-                    .PlayMallTutorial(TutorialSoundsController.MallTutorials.INTRO);
-
-                hasRealTama = true;
+                if (tem.isEvolveReady)
+                {
+                    if (tem.isFirstTime)
+                    {
+                        tem.Evolve();
                 
-                FindObjectOfType<HintButtons>().ShowTamaButton();
+                        tutorial.PlayMallTutorial(0);
+                
+                        FindObjectOfType<HintButtons>().ShowTamaButton(); 
+                    }
+                    else
+                    {
+                        tem.Place();
+                    }
+
+                    hasRealTama = true;
+                }
             }
         }
     }
@@ -141,20 +165,14 @@ public class PlayerObjectDetection : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("tutorialVolume"))
         {  
-            FindObjectOfType<TutorialSoundsController>().PlayNextMallTutorial();
+            tutorial.PlayMallTutorial(1);
 
             if (hasRealTama)
             {
                 gateControlScript.FoodCourtGateDown = false;
                 gateControlScript.FrontDoorGateDown = true;
-                if (audioManagerMenu.mall_gameStart.isPlaying)
-                {
-                    gateControlScript.TutorialGateDown = true;
-                }
-                else
-                {
-                    gateControlScript.TutorialGateDown = false;
-                }
+                
+                gateControlScript.TutorialGateDown = true;
             }
         }
     }

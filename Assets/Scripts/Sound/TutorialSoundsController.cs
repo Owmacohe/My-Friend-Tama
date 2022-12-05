@@ -4,58 +4,55 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class TutorialSoundsController : MonoBehaviour
 {
-    [SerializeField] GameObject tama;
-    [SerializeField] AudioSource[] mallTutorials;
+    [SerializeField] AudioClip[] mallTutorials;
     [SerializeField] AudioClip[] streamerTutorials;
-    
-    public enum MallTutorials { INTRO, GAME_START }
-    public enum StreamerTutorials { TAMAGOTCHI }
 
+    AudioSource[] PAs;
     AudioSource streamerSource;
-    int tutorialProgress;
+    
+    [HideInInspector] public int tutorialProgress;
+    [HideInInspector] public bool isPlaying;
 
     void Start()
     {
         streamerSource = GetComponent<AudioSource>();
+        PAs = GetComponentsInChildren<AudioSource>();
     }
 
-    public void PlayNextMallTutorial()
+    void Update()
     {
-        if (tutorialProgress > 0)
+        if (PAs[0].isPlaying)
         {
-            PlayMallTutorial((MallTutorials)tutorialProgress);   
+            isPlaying = true;
+        }
+        else
+        {
+            isPlaying = false;
         }
     }
 
-    public void PlayMallTutorial(MallTutorials tut)
+    public void PlayMallTutorial(int tut)
     {
-        if ((int)tut == tutorialProgress && (int)tut < mallTutorials.Length)
+        if (tut == tutorialProgress && tut < PAs.Length)
         {
-            foreach (AudioSource i in mallTutorials)
+            foreach (AudioSource i in PAs)
             {
-                i.Stop();
+                i.clip = mallTutorials[tut];
+                i.Play();
+            }
+
+            if (tut == 1)
+            {
+                FindObjectOfType<HintButtons>().HideAllButtons();   
             }
             
-            mallTutorials[(int)tut].Play();
             tutorialProgress++;
-
-            switch (tut)
-            {
-                case MallTutorials.INTRO:
-                    tama.SetActive(true);
-                    break;
-                case MallTutorials.GAME_START:
-                    tama.GetComponent<TamagotchiController>().Evolve();
-                    
-                    FindObjectOfType<HintButtons>().HideAllButtons();
-                    break;
-            }
         }
     }
 
-    public void PlayStreamerTutorial(StreamerTutorials tut)
+    public void PlayStreamerTutorial(int tut)
     {
-        streamerSource.clip = streamerTutorials[(int) tut];
+        streamerSource.clip = streamerTutorials[tut];
         streamerSource.Play();
     }
 }

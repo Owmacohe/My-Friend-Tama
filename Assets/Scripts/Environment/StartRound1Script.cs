@@ -7,15 +7,18 @@ public class StartRound1Script : MonoBehaviour
     [SerializeField] GameObject FoodCourtSpawner;
 
     GateControlScript GateControl;
+    TamagotchiController tc;
 
     // Start is called before the first frame update
     void Start()
     {
         GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
         FoodCourtSpawner.SetActive(false);
+
+        tc = FindObjectOfType<TamagotchiController>();
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -24,7 +27,8 @@ public class StartRound1Script : MonoBehaviour
                 GateControl.FoodCourtGateDown = true;
                 FoodCourtSpawner.SetActive(true);
                 Destroy(gameObject);
-
+                
+                tc.SetUpdatingStats(true);
             }
         }
     }

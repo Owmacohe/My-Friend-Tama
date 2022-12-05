@@ -7,15 +7,18 @@ public class StartRound2Script : MonoBehaviour
     [SerializeField] GameObject ArcadeTokenSpawner;
 
     PlayerObjectDetection playerObjectDetection;
+    TamagotchiController tc;
 
     // Start is called before the first frame update
     void Start()
     {
         playerObjectDetection = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerObjectDetection>();
         ArcadeTokenSpawner.SetActive(false);
+
+        tc = FindObjectOfType<TamagotchiController>();
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -24,7 +27,8 @@ public class StartRound2Script : MonoBehaviour
                 playerObjectDetection.hasCoin = true;
                 ArcadeTokenSpawner.SetActive(true);
                 Destroy(gameObject);
-
+                
+                tc.SetUpdatingStats(true);
             }
         }
     }

@@ -31,10 +31,13 @@ public class TamagotchiController : MonoBehaviour
     Color defaultColour, flashingColour;
     bool isFlashing;
     float currentFlashingSpeed;
+    
     bool isSliding, slideUp, isLookingAtTama;
     float slideCurrent;
-    
-    void Start()
+
+    bool isUpdatingStats;
+
+    public void Start()
     {
         statsSpeed /= 1000f;
         
@@ -50,170 +53,148 @@ public class TamagotchiController : MonoBehaviour
         disciplineStat.SetActive(false);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            isSliding = true;
-            slideUp = !slideUp;
-            slideCurrent = 0;
-
-            transform.localEulerAngles = slideUp ? frontRotation : awayRotation;
-            
-            pc.SetFlashlight(!slideUp, true);
-
-            if (slideUp)
-            {
-                isLookingAtTama = true;
-            }
-            else
-            {
-                isLookingAtTama = false;
-            }
-        }
-        
-        
-    }
-
     void FixedUpdate()
     {
-        tama.UpdateStats(statsSpeed);
-
-        bool[] foodStats = CheckStat(tama.Food, foodColour);
-        bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
-        bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
-
-        if ((int)tama.Age == 1)
+        if (isUpdatingStats)
         {
-            if (foodStats[0])
-            {
-                anim.SetBool("IsBabyHungry", true);
-            }
-            else
-            {
-                anim.SetBool("IsBabyHungry", false);
-            }
-        
-            if (happinessStats[0])
-            {
-                anim.SetBool("IsBabyMad", true);
-            }
-            else
-            {
-                anim.SetBool("IsBabyMad", false);
-            }
+            tama.UpdateStats(statsSpeed);
             
-            if (disciplineStats[0])
-            {
-                anim.SetBool("IsBabyDiscipline", true);
-            }
-            else
-            {
-                anim.SetBool("IsBabyDiscipline", false);
-            }
-        }
+            bool[] foodStats = CheckStat(tama.Food, foodColour);
+            bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
+            bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
 
-        if ((int)tama.Age == 2)
-        {
-            if (foodStats[0])
+            if ((int)tama.Age == 1)
             {
-                anim.SetBool("IsKidHungry", true);
-            }
-            else
-            {
-                anim.SetBool("IsKidHungry", false);
-            }
-        
-            if (happinessStats[0])
-            {
-                anim.SetBool("IsKidMad", true);
-            }
-            else
-            {
-                anim.SetBool("IsKidMad", false);
-            }
-            
-            if (disciplineStats[0])
-            {
-                anim.SetBool("IsKidDiscipline", true);
-            }
-            else
-            {
-                anim.SetBool("IsKidDiscipline", false);
-            }
-        }
-
-        if ((int)tama.Age == 3)
-        {
-            if (foodStats[0])
-            {
-                anim.SetBool("IsAdultHungry", true);
-            }
-            else
-            {
-                anim.SetBool("IsAdultHungry", false);
-            }
-        
-            if (happinessStats[0])
-            {
-                anim.SetBool("IsAdultMad", true);
-            }
-            else
-            {
-                anim.SetBool("IsAdultMad", false);
-            }
-            
-            if (disciplineStats[0])
-            {
-                anim.SetBool("IsAdultDiscipline", true);
-            }
-            else
-            {
-                anim.SetBool("IsAdultDiscipline", false);
-            }
-        }
-
-        if (!foodStats[0] && !happinessStats[0] && !disciplineStats[0])
-        {
-            firstThresholdSound.Stop();
-                
-            isFlashing = false;
-            SetScreenColour(defaultColour);
-            statNeedIndicator.enabled = false;
-        }
-
-        if (!foodStats[1] && !happinessStats[1] && !disciplineStats[1])
-        {
-            secondThresholdSound.Stop();
-        }
-
-        SetStatBar(foodBar, tama.Food);
-        SetStatBar(happinessBar, tama.Happiness);
-        SetStatBar(disciplineBar, tama.Discipline);
-
-        if (isFlashing)
-        {
-            float temp = Mathf.Sin(Time.time * currentFlashingSpeed);
-            
-            SetScreenColour(
-                Color.Lerp(
-                    defaultColour,
-                    flashingColour,
-                    temp
-                )
-            );
-
-            if (!isLookingAtTama)
-            {
-                if (temp > 0)
+                if (foodStats[0])
                 {
-                    statNeedIndicator.enabled = true;
+                    anim.SetBool("IsBabyHungry", true);
                 }
                 else
                 {
-                    statNeedIndicator.enabled = false;
+                    anim.SetBool("IsBabyHungry", false);
+                }
+            
+                if (happinessStats[0])
+                {
+                    anim.SetBool("IsBabyMad", true);
+                }
+                else
+                {
+                    anim.SetBool("IsBabyMad", false);
+                }
+                
+                if (disciplineStats[0])
+                {
+                    anim.SetBool("IsBabyDiscipline", true);
+                }
+                else
+                {
+                    anim.SetBool("IsBabyDiscipline", false);
                 }
             }
+
+            if ((int)tama.Age == 2)
+            {
+                if (foodStats[0])
+                {
+                    anim.SetBool("IsKidHungry", true);
+                }
+                else
+                {
+                    anim.SetBool("IsKidHungry", false);
+                }
+            
+                if (happinessStats[0])
+                {
+                    anim.SetBool("IsKidMad", true);
+                }
+                else
+                {
+                    anim.SetBool("IsKidMad", false);
+                }
+                
+                if (disciplineStats[0])
+                {
+                    anim.SetBool("IsKidDiscipline", true);
+                }
+                else
+                {
+                    anim.SetBool("IsKidDiscipline", false);
+                }
+            }
+
+            if ((int)tama.Age == 3)
+            {
+                if (foodStats[0])
+                {
+                    anim.SetBool("IsAdultHungry", true);
+                }
+                else
+                {
+                    anim.SetBool("IsAdultHungry", false);
+                }
+            
+                if (happinessStats[0])
+                {
+                    anim.SetBool("IsAdultMad", true);
+                }
+                else
+                {
+                    anim.SetBool("IsAdultMad", false);
+                }
+                
+                if (disciplineStats[0])
+                {
+                    anim.SetBool("IsAdultDiscipline", true);
+                }
+                else
+                {
+                    anim.SetBool("IsAdultDiscipline", false);
+                }
+            }
+
+            if (!foodStats[0] && !happinessStats[0] && !disciplineStats[0])
+            {
+                firstThresholdSound.Stop();
+                    
+                isFlashing = false;
+                SetScreenColour(defaultColour);
+                statNeedIndicator.enabled = false;
+            }
+
+            if (!foodStats[1] && !happinessStats[1] && !disciplineStats[1])
+            {
+                secondThresholdSound.Stop();
+            }
+
+            SetStatBar(foodBar, tama.Food);
+            SetStatBar(happinessBar, tama.Happiness);
+            SetStatBar(disciplineBar, tama.Discipline);
+
+            if (isFlashing)
+            {
+                float temp = Mathf.Sin(Time.time * currentFlashingSpeed);
+                
+                SetScreenColour(
+                    Color.Lerp(
+                        defaultColour,
+                        flashingColour,
+                        temp
+                    )
+                );
+
+                if (!isLookingAtTama)
+                {
+                    if (temp > 0)
+                    {
+                        statNeedIndicator.enabled = true;
+                    }
+                    else
+                    {
+                        statNeedIndicator.enabled = false;
+                    }
+                }
+            }   
         }
 
         if (isSliding)
@@ -234,6 +215,29 @@ public class TamagotchiController : MonoBehaviour
             }
 
             slideCurrent += tamaSlideSpeed;
+        }
+    }
+
+    public void SlideTama(bool changeFlashlight = true)
+    {
+        isSliding = true;
+        slideUp = !slideUp;
+        slideCurrent = 0;
+
+        transform.localEulerAngles = slideUp ? frontRotation : awayRotation;
+
+        if (changeFlashlight)
+        {
+            pc.SetFlashlight(!slideUp, true);
+        }
+
+        if (slideUp)
+        {
+            isLookingAtTama = true;
+        }
+        else
+        {
+            isLookingAtTama = false;
         }
     }
 
@@ -307,10 +311,20 @@ public class TamagotchiController : MonoBehaviour
         bar.localPosition = new Vector3((0.4f * stat) - 0.4f, -0.35f, 0);
     }
 
-    public void Evolve()
+    public void WaitEvolve(float seconds)
+    {
+        Invoke(nameof(Evolve), seconds);
+    }
+
+    void Evolve()
     {
         tama.Evolve();
         anim.SetTrigger("Evolve");
+    }
+
+    public void SetUpdatingStats(bool isUpdating)
+    {
+        isUpdatingStats = isUpdating;
 
         int currentAge = (int)tama.Age;
         

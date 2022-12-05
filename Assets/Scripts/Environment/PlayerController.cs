@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0.0f, 0.5f)] float moveSmoothTime = 0.15f;
     [SerializeField, Range(0.0f, 0.3f)] float mouseSmoothTime = 0.01f;
 
+    [Header("Other")]
     [SerializeField] GameObject playerFlashlight;
+    [SerializeField] TamagotchiController tc;
 
     public bool flashlightOn = true;
 
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
     Vector2 currentDirVelocity = Vector2.zero;
     Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
+    
+    [HideInInspector] public bool keyboardInteractionPaused;
 
     void Start()
     {
@@ -51,11 +55,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        RunControls();
-        CrouchControl();
-        UpdateMouseLook();
-        UpdatePlayerMovement();
-        FlashlightControls();
+        if (!keyboardInteractionPaused)
+        {
+            RunControls();
+            CrouchControl();
+            UpdateMouseLook();
+            UpdatePlayerMovement();
+            FlashlightControls();
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                tc.SlideTama();
+            }
+        }
     }
 
     /// <summary>
