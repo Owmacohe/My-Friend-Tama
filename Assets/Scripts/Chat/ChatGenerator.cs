@@ -427,6 +427,17 @@ public class ChatGenerator
         "Was that a rat I saw?"
     };
 
+    static readonly string[] evolveMessages = {
+        "What's going on?",
+        "What is that thing?",
+        "That's so gross! I hate eggs",
+        "It's going to become a Charizard",
+        "It's so cute!",
+        "I have a bad feeling about this",
+        "What's that egg thing?",
+        "Where can I buy that?"
+    };
+
     static string RandomFirstName()
     {
         string firstName = "";
@@ -499,7 +510,7 @@ public class ChatGenerator
         return name;
     }
 
-    public static string RandomMessage()
+    public static string RandomMessage(bool evolve)
     {
         if (Random.Range(0, 10) == 0)
         {
@@ -511,17 +522,19 @@ public class ChatGenerator
             return "[SUBSCRIBED]";
         }
 
-        string temp = messages[Random.Range(0, messages.Length)];
+        string[] temp = evolve ? evolveMessages : messages;
+
+        string message = temp[Random.Range(0, temp.Length)];
 
         if (Random.Range(0, 5) == 0)
         {
-            temp = temp.ToLower();
+            message = message.ToLower();
         }
         else if (Random.Range(0, 10) == 0)
         {
-            temp = temp.ToUpper();
+            message = message.ToUpper();
         }
 
-        return temp;
+        return message;
     }
 }

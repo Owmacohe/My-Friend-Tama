@@ -7,6 +7,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
     TamagotchiController tc;
     PlayerController pc;
+    ChatController cc;
 
     [HideInInspector] public bool isEvolveReady, isFirstTime;
 
@@ -16,6 +17,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         tc.Start();
 
         pc = FindObjectOfType<PlayerController>();
+        cc = FindObjectOfType<ChatController>();
 
         isEvolveReady = true;
         isFirstTime = true;
@@ -33,6 +35,8 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
     public void Evolve()
     {
+        cc.evolveMessages = true;
+        
         fakeTama.SetActive(false);
         realTama.SetActive(true);
 
@@ -49,6 +53,8 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
     void ReturnControl()
     {
+        cc.evolveMessages = false;
+        
         pc.keyboardInteractionPaused = false;
         tc.SlideTama();
     }

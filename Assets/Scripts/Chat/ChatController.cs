@@ -12,6 +12,8 @@ public class ChatController : MonoBehaviour
     [SerializeField] Color[] nameColours;
     [SerializeField] Vector2 chatterCountRange = new Vector2(30, 50);
 
+    [HideInInspector] public bool evolveMessages;
+
     Queue<GameObject> commentQueue = new Queue<GameObject>();
     List<Chatter> chatters = new List<Chatter>();
 
@@ -34,7 +36,7 @@ public class ChatController : MonoBehaviour
             chatters.Add(new Chatter(ChatGenerator.RandomName(), RandomColour()));
         }
         
-        Invoke(nameof(RecursiveAddComment), averageCommentSpeed);
+        Invoke(nameof(RecursiveAddComment), averageCommentSpeed / 2f);
     }
 
     Color RandomColour()
@@ -61,7 +63,7 @@ public class ChatController : MonoBehaviour
 
     void RecursiveAddComment()
     {
-        AddCommentFromExistingChatter(ChatGenerator.RandomMessage());
+        AddCommentFromExistingChatter(ChatGenerator.RandomMessage(evolveMessages));
         
         Invoke(
             nameof(RecursiveAddComment), 
