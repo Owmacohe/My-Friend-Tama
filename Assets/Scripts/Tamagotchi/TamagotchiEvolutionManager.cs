@@ -9,6 +9,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
     PlayerController pc;
     ChatController cc;
     GateControlScript gc;
+    TutorialSoundsController tsc;
 
     [HideInInspector] public bool isEvolveReady, isFirstTime;
     bool isEvolving;
@@ -21,6 +22,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         pc = FindObjectOfType<PlayerController>();
         cc = FindObjectOfType<ChatController>();
         gc = FindObjectOfType<GateControlScript>();
+        tsc = FindObjectOfType<TutorialSoundsController>();
 
         isEvolveReady = true;
         isFirstTime = true;
@@ -53,15 +55,17 @@ public class TamagotchiEvolutionManager : MonoBehaviour
             tc.SlideTama(true, false);
             tc.WaitEvolve(1);
 
-            isEvolveReady = false;
-            isFirstTime = false;
+            tsc.PlayNextStreamerTutorial();
 
-            Invoke(nameof(ReturnControl), 12);   
+            Invoke(nameof(ReturnControl), 14);   
         }
     }
 
     void ReturnControl()
     {
+        if (isFirstTime)
+            tsc.PlayMallTutorial(0);
+        
         if (cc != null)
             cc.evolveMessages = false;
 
@@ -79,6 +83,8 @@ public class TamagotchiEvolutionManager : MonoBehaviour
                 break;
         }
 
+        isEvolveReady = false;
+        isFirstTime = false;
         isEvolving = false;
     }
 }
