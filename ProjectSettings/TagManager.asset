@@ -17,7 +17,6 @@ TagManager:
   - fakeTama
   - tutorialVolume
   - gateControl
-  - streamerVolume
   layers:
   - Default
   - TransparentFX

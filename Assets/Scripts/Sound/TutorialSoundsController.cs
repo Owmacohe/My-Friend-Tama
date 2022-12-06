@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -7,30 +6,17 @@ public class TutorialSoundsController : MonoBehaviour
 {
     [SerializeField] AudioClip[] mallTutorials;
     [SerializeField] AudioClip[] streamerTutorials;
-    [SerializeField] GameObject seeTamaVolume, seeFoodCourtVolume, seeArcadeVolume, seeBathroomVolume;
 
-    List<AudioSource> PAs = new List<AudioSource>();
+    AudioSource[] PAs;
     AudioSource streamerSource;
     
     [HideInInspector] public int tutorialProgress;
-    int streamerProgress;
     [HideInInspector] public bool isPlaying;
 
     void Start()
     {
         streamerSource = GetComponent<AudioSource>();
-        
-        AudioSource[] temp = GetComponentsInChildren<AudioSource>();
-
-        for (int i = 0; i < temp.Length; i++)
-        {
-            if (i > 0)
-            {
-                PAs.Add(temp[i]);
-            }
-        }
-        
-        PlayStreamerTutorial(0);
+        PAs = GetComponentsInChildren<AudioSource>();
     }
 
     void Update()
@@ -47,7 +33,7 @@ public class TutorialSoundsController : MonoBehaviour
 
     public void PlayMallTutorial(int tut)
     {
-        if (tut == tutorialProgress && tut < PAs.Count)
+        if (tut == tutorialProgress && tut < PAs.Length)
         {
             foreach (AudioSource i in PAs)
             {
@@ -64,41 +50,9 @@ public class TutorialSoundsController : MonoBehaviour
         }
     }
 
-    public void PlayNextStreamerTutorial()
+    public void PlayStreamerTutorial(int tut)
     {
-        PlayStreamerTutorial(streamerProgress);
-    }
-
-    public void PlayStreamerTutorial(GameObject volume)
-    {
-        if (volume.Equals(seeTamaVolume))
-        {
-            PlayStreamerTutorial(1);
-        }
-        else if (volume.Equals(seeFoodCourtVolume))
-        {
-            PlayStreamerTutorial(3);
-        }
-        else if (volume.Equals(seeArcadeVolume))
-        {
-            PlayStreamerTutorial(5);
-        }
-        else if (volume.Equals(seeBathroomVolume))
-        {
-            PlayStreamerTutorial(7);
-        }
-    }
-
-    void PlayStreamerTutorial(int tut)
-    {
-        if (tut == streamerProgress)
-        {
-            print("test");
-            
-            streamerSource.clip = streamerTutorials[tut];
-            streamerSource.Play();
-
-            streamerProgress++;   
-        }
+        streamerSource.clip = streamerTutorials[tut];
+        streamerSource.Play();
     }
 }

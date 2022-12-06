@@ -136,7 +136,9 @@ public class PlayerObjectDetection : MonoBehaviour
                     if (tem.isFirstTime)
                     {
                         tem.Evolve();
-
+                
+                        tutorial.PlayMallTutorial(0);
+                
                         FindObjectOfType<HintButtons>().ShowTamaButton(); 
                     }
                     else
@@ -159,7 +161,7 @@ public class PlayerObjectDetection : MonoBehaviour
             CheckWashroomSpawner();
         }
         else if (other.gameObject.CompareTag("tutorialVolume"))
-        {
+        {  
             tutorial.PlayMallTutorial(1);
 
             if (hasRealTama)
@@ -169,10 +171,6 @@ public class PlayerObjectDetection : MonoBehaviour
                 
                 gateControlScript.TutorialGateDown = true;
             }
-        }
-        else if (other.gameObject.CompareTag("streamerVolume"))
-        {
-            tutorial.PlayStreamerTutorial(other.gameObject);
         }
     }
 
