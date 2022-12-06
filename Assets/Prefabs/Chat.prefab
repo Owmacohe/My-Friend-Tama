@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -190, y: 130}
+  m_AnchoredPosition: {x: -250, y: 130}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3804595091924883415
@@ -189,3 +189,5 @@ MonoBehaviour:
   - {r: 0.5835884, g: 0.5019608, b: 1, a: 1}
   - {r: 0.447, g: 0.3150456, b: 0.117113985, a: 1}
   - {r: 0.433, g: 0.433, b: 0.433, a: 1}
+  chatterCountRange: {x: 30, y: 50}
+  evolveMessages: 0
