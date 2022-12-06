@@ -388,6 +388,9 @@ MonoBehaviour:
   statNeedSound: {fileID: 6017983385582515588}
   firstThresholdSound: {fileID: 3304050214639589458}
   secondThresholdSound: {fileID: 5640749058375711081}
+  round1Time: 180
+  round2Time: 360
+  round3Time: 540
 --- !u!1 &1641444021667615636
 GameObject:
   m_ObjectHideFlags: 0

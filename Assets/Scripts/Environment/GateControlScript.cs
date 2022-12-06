@@ -14,25 +14,24 @@ public class GateControlScript : MonoBehaviour
 
     AudioManagerMenu audioManagerMenu;
 
-    public bool ToyStoreGateDown = false;
-    public bool ArcadeGateADown = false;
-    public bool ArcadeGateBDown = false;
-    public bool BathroomGateDown = false;
-    public bool FoodCourtGateDown = false;
-    public bool FrontDoorGateDown = false;
-    public bool TutorialGateDown = false;
+    public bool ToyStoreGateDown;
+    public bool ArcadeGateADown;
+    public bool ArcadeGateBDown;
+    public bool BathroomGateDown;
+    public bool FoodCourtGateDown;
+    public bool FrontDoorGateDown;
+    public bool TutorialGateDown;
 
-    bool gateSFXPlayed = false;
+    bool gateSFXPlayed;
 
     void Start()
     {
         audioManagerMenu = FindObjectOfType<AudioManagerMenu>();
     }
-    // Update is called once per frame
+    
     void Update()
     {
         GateSwitcher();
-  
     }
 
     void GateSwitcher()
@@ -45,6 +44,4 @@ public class GateControlScript : MonoBehaviour
         FrontDoorGate.SetActive(FrontDoorGateDown);
         TutorialGate.SetActive(TutorialGateDown);
     }
-
-   
 }

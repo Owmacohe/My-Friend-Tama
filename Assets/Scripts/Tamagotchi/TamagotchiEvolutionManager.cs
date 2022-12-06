@@ -8,8 +8,10 @@ public class TamagotchiEvolutionManager : MonoBehaviour
     TamagotchiController tc;
     PlayerController pc;
     ChatController cc;
+    GateControlScript gc;
 
     [HideInInspector] public bool isEvolveReady, isFirstTime;
+    bool isEvolving;
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
         pc = FindObjectOfType<PlayerController>();
         cc = FindObjectOfType<ChatController>();
+        gc = FindObjectOfType<GateControlScript>();
 
         isEvolveReady = true;
         isFirstTime = true;
@@ -35,27 +38,53 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
     public void Evolve()
     {
-        cc.evolveMessages = true;
-        
-        fakeTama.SetActive(false);
-        realTama.SetActive(true);
+        if (!isEvolving)
+        {
+            print("evolve1");
+            
+            isEvolving = true;
+            
+            if (cc != null)
+                cc.evolveMessages = true;
 
-        pc.keyboardInteractionPaused = true;
+            fakeTama.SetActive(false);
+            realTama.SetActive(true);
 
-        tc.SlideTama(false);
-        tc.WaitEvolve(1);
+            pc.keyboardInteractionPaused = true;
 
-        isEvolveReady = false;
-        isFirstTime = false;
-        
-        Invoke(nameof(ReturnControl), 12);
+            tc.SlideTama(true, false);
+            tc.WaitEvolve(1);
+
+            isEvolveReady = false;
+            isFirstTime = false;
+
+            Invoke(nameof(ReturnControl), 12);   
+        }
     }
 
     void ReturnControl()
     {
-        cc.evolveMessages = false;
-        
+        if (cc != null)
+            cc.evolveMessages = false;
+
         pc.keyboardInteractionPaused = false;
-        tc.SlideTama();
+        tc.SlideTama(false, false);
+
+        print((int) tc.tama.Age);
+
+        switch ((int)tc.tama.Age)
+        {
+            case 2:
+                print("up1");
+                gc.ArcadeGateADown = false;
+                gc.ArcadeGateBDown = false;
+                break;
+            case 3:
+                print("up2");
+                gc.BathroomGateDown = false;
+                break;
+        }
+
+        isEvolving = false;
     }
 }

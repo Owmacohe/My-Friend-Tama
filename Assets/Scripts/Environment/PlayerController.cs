@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                tc.SlideTama();
+                tc.SlideTama(!tc.slideUp);
             }
         }
     }

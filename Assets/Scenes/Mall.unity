@@ -1873,6 +1873,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
 --- !u!4 &134081872 stripped
@@ -5309,7 +5313,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4044
+  m_Name: pb_Mesh-33236
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5734,6 +5738,10 @@ PrefabInstance:
     - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
       propertyPath: m_Name
       value: SpawnPointPrefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
@@ -12498,6 +12506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
 --- !u!4 &915202302 stripped
@@ -14435,6 +14447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPrefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
 --- !u!4 &1129036803 stripped
@@ -16237,7 +16253,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-9740
+  m_Name: pb_Mesh-38960
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16964,7 +16980,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1286
+  m_Name: pb_Mesh-30474
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19281,6 +19297,10 @@ PrefabInstance:
     - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
       propertyPath: m_Name
       value: SpawnPointPrefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
@@ -24910,6 +24930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPrefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
 --- !u!4 &1883003826 stripped
@@ -27306,12 +27330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints:
-  - {fileID: 915202302}
-  - {fileID: 134081872}
-  - {fileID: 432601561}
-  - {fileID: 1883003826}
-  - {fileID: 1470942593}
-  - {fileID: 1129036803}
   - {fileID: 1398233424}
   - {fileID: 1638450176}
   - {fileID: 341840498}

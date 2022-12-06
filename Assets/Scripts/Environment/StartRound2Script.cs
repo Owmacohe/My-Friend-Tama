@@ -7,15 +7,13 @@ public class StartRound2Script : MonoBehaviour
     [SerializeField] GameObject ArcadeTokenSpawner;
 
     PlayerObjectDetection playerObjectDetection;
-    TamagotchiController tc;
-
-    // Start is called before the first frame update
+    GateControlScript GateControl;
+    
     void Start()
     {
+        GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
         playerObjectDetection = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerObjectDetection>();
         ArcadeTokenSpawner.SetActive(false);
-
-        tc = FindObjectOfType<TamagotchiController>();
     }
 
     void OnTriggerStay(Collider other)
@@ -24,11 +22,14 @@ public class StartRound2Script : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
+                GateControl.ArcadeGateADown = true;
+                GateControl.ArcadeGateBDown = true;
+                
                 playerObjectDetection.hasCoin = true;
                 ArcadeTokenSpawner.SetActive(true);
                 Destroy(gameObject);
                 
-                tc.SetUpdatingStats(true);
+                FindObjectOfType<TamagotchiController>().StartRound(2);
             }
         }
     }

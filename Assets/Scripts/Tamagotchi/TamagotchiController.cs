@@ -22,6 +22,11 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] SoundEffectController statNeedSound;
     [SerializeField] SoundEffectController firstThresholdSound, secondThresholdSound;
 
+    [Header("Rounds")]
+    [SerializeField] float round1Time = 180;
+    [SerializeField] float round2Time = 360;
+    [SerializeField] float round3Time = 540;
+    
     PlayerController pc;
     public Tamagotchi tama;
     Animator anim;
@@ -31,11 +36,15 @@ public class TamagotchiController : MonoBehaviour
     Color defaultColour, flashingColour;
     bool isFlashing;
     float currentFlashingSpeed;
-    
-    bool isSliding, slideUp, isLookingAtTama;
+
+    [HideInInspector] public bool slideUp;
+    bool isSliding, isLookingAtTama;
     float slideCurrent;
 
     bool isUpdatingStats;
+
+    float round1StartTime, round2StartTime, round3StartTime;
+    bool hasRound1Started, hasRound2Started, hasRound3Started;
 
     public void Start()
     {
@@ -218,10 +227,10 @@ public class TamagotchiController : MonoBehaviour
         }
     }
 
-    public void SlideTama(bool changeFlashlight = true)
+    public void SlideTama(bool up, bool changeFlashlight = true)
     {
         isSliding = true;
-        slideUp = !slideUp;
+        slideUp = up;
         slideCurrent = 0;
 
         transform.localEulerAngles = slideUp ? frontRotation : awayRotation;
@@ -318,11 +327,13 @@ public class TamagotchiController : MonoBehaviour
 
     void Evolve()
     {
+        print("evolve2");
+        
         tama.Evolve();
         anim.SetTrigger("Evolve");
     }
 
-    public void SetUpdatingStats(bool isUpdating)
+    void SetUpdatingStats(bool isUpdating)
     {
         isUpdatingStats = isUpdating;
 
@@ -342,5 +353,66 @@ public class TamagotchiController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StartRound(int round)
+    {
+        switch (round)
+        {
+            case 1:
+                if ((int)tama.Age == 1)
+                {
+                    round1StartTime = Time.time;
+                    SetUpdatingStats(true);
+                    hasRound1Started = true;
+                }
+                break;
+            case 2:
+                if ((int)tama.Age == 2)
+                {
+                    round2StartTime = Time.time;
+                    SetUpdatingStats(true);
+                    hasRound2Started = true;
+                }
+                break;
+            case 3:
+                if ((int)tama.Age == 3)
+                {
+                    round3StartTime = Time.time;
+                    SetUpdatingStats(true);
+                    hasRound3Started = true;
+                }
+                break;
+        }
+    }
+
+    public bool IsRoundDone(int round)
+    {
+        bool temp =
+            (int)tama.Age == round && (
+                (round == 1 && hasRound1Started && (Time.time - round1StartTime >= round1Time)) ||
+                (round == 2 && hasRound2Started && (Time.time - round2StartTime >= round2Time)) ||
+                (round == 3 && hasRound3Started && (Time.time - round3StartTime >= round3Time))
+            );
+
+        if (temp)
+        {
+            SetUpdatingStats(false);
+
+            switch (round)
+            {
+                case 1:
+                    hasRound1Started = false;
+                    break;
+                case 2:
+                    hasRound2Started = false;
+                    break;
+                case 3:
+                    hasRound3Started = false;
+                    break;
+            }
+        }
+
+        return temp;
     }
 }

@@ -35,18 +35,29 @@ public class PlayerObjectDetection : MonoBehaviour
         if (isPlayingWashroomGame)
         {
             tc.tama.Scold(0.005f);
-            
-            if (tc.tama.Discipline >= 0.8f && (int)tc.tama.Age == 3) // TODO: this condition may want to be tweaked
-            {
-                // TODO: raise gates
-                // TODO: end of game?
-                tc.SetUpdatingStats(false);
-            }
         }
         
         if (hasRealTama && !tutorial.isPlaying && gateControlScript.TutorialGateDown && tutorial.tutorialProgress == 2)
         {
             gateControlScript.TutorialGateDown = false;
+        }
+
+        if (tc.IsRoundDone(1))
+        {
+            gateControlScript.FoodCourtGateDown = false;
+            tem.isEvolveReady = true;
+        }
+        else if (tc.IsRoundDone(2))
+        {
+            gateControlScript.ArcadeGateADown = false;
+            gateControlScript.ArcadeGateBDown = false;
+            tem.isEvolveReady = true;
+        }
+        else if (tc.IsRoundDone(3))
+        {
+            gateControlScript.BathroomGateDown = false;
+            tem.isEvolveReady = true;
+            // TODO: end of game?
         }
     }
 
@@ -96,13 +107,6 @@ public class PlayerObjectDetection : MonoBehaviour
                 Destroy(other.gameObject);
                 
                 tc.tama.Feed(0.2f);
-
-                if (tc.tama.Food >= 0.8f && (int)tc.tama.Age == 1) // TODO: this condition may want to be tweaked
-                {
-                    // TODO: raise gates
-                    tem.isEvolveReady = true;
-                    tc.SetUpdatingStats(false);
-                }
             }
             else if (other.gameObject.CompareTag("Money"))
             {
@@ -118,13 +122,6 @@ public class PlayerObjectDetection : MonoBehaviour
                 CoinCheck(other);
                 
                 tc.tama.Play(0.2f);
-                
-                if (tc.tama.Happiness >= 0.8f && (int)tc.tama.Age == 2) // TODO: this condition may want to be tweaked
-                {
-                    // TODO: raise gates
-                    tem.isEvolveReady = true;
-                    tc.SetUpdatingStats(false);
-                }
             }
             else if (other.gameObject == connectedLightSwitch)
             {
