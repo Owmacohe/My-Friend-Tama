@@ -73,6 +73,8 @@ public class TamagotchiController : MonoBehaviour
             bool[] foodStats = CheckStat(tama.Food, foodColour);
             bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
             bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
+            
+            // TODO: die when stats reach 0
 
             if ((int)tama.Age == 1)
             {

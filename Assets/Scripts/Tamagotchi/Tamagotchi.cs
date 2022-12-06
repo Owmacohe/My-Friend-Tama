@@ -69,7 +69,7 @@ public class Tamagotchi
 
                 if (currentAge > 2)
                 {
-                    Discipline = UpdateStat(Discipline, amount * (1f/3f));   
+                    Discipline = UpdateStat(Discipline, amount * (1f/3f));
                 }
             }
         }

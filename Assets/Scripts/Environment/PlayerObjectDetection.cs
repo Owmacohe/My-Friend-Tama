@@ -139,6 +139,8 @@ public class PlayerObjectDetection : MonoBehaviour
                     }
                     else
                     {
+                        // TODO: possible win state
+                        
                         tem.Place();
                     }
 
