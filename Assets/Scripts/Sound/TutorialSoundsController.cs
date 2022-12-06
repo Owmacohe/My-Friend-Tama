@@ -54,11 +54,6 @@ public class TutorialSoundsController : MonoBehaviour
                 i.clip = mallTutorials[tut];
                 i.Play();
             }
-
-            if (tut == 1)
-            {
-                FindObjectOfType<HintButtons>().HideAllButtons();   
-            }
             
             tutorialProgress++;
         }

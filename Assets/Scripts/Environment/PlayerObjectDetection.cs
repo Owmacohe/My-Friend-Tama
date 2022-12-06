@@ -136,8 +136,6 @@ public class PlayerObjectDetection : MonoBehaviour
                     if (tem.isFirstTime)
                     {
                         tem.Evolve();
-
-                        FindObjectOfType<HintButtons>().ShowTamaButton(); 
                     }
                     else
                     {

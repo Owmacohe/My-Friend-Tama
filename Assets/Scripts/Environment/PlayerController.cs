@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     [Header("Other")]
     [SerializeField] GameObject playerFlashlight;
     [SerializeField] TamagotchiController tc;
+    [SerializeField] GameObject pauseMenu;
 
-    public bool flashlightOn = true;
+    [HideInInspector] public bool flashlightOn = true;
 
     // Character values
     GameObject playerCamera;
@@ -41,9 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        // Locks cursor position at startup
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Resume();
 
         // Get child objects at start up
         playerCamera = gameObject.transform.Find("MainCamera").gameObject;
@@ -68,6 +67,34 @@ public class PlayerController : MonoBehaviour
                 tc.SlideTama(!tc.slideUp);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+
+            if (pauseMenu.activeSelf)
+            {
+                keyboardInteractionPaused = true;
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Resume();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        pauseMenu.SetActive(false);
+        
+        keyboardInteractionPaused = false;
+        
+        // Locks cursor position at startup
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     /// <summary>
