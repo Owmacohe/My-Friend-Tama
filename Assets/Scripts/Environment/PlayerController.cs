@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject playerFlashlight;
     [SerializeField] TamagotchiController tc;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject deathScreen;
 
     [HideInInspector] public bool flashlightOn = true;
 
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
     
     [HideInInspector] public bool keyboardInteractionPaused;
+    Transform respawnPoint;
 
     void Start()
     {
@@ -50,6 +52,9 @@ public class PlayerController : MonoBehaviour
         playerLight = playerFlashlight.GetComponent<Light>();
         maxPlayerHeight = controller.height;
         startWalkSpeed = walkSpeed;
+
+        respawnPoint = GameObject.FindGameObjectWithTag("Respawn").gameObject.transform;
+        deathScreen.SetActive(false);
     }
 
     void Update()
@@ -199,5 +204,12 @@ public class PlayerController : MonoBehaviour
         playerLight.enabled = isOn;
 
         isLookingAtTama = fromTama && !isOn;
+    }
+
+    public void playerKilled()
+    {
+        deathScreen.SetActive(true);
+        keyboardInteractionPaused = false;
+        this.transform.position = respawnPoint.position;
     }
 }

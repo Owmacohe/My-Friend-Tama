@@ -27,8 +27,8 @@ public class StartRound2Script : MonoBehaviour
                 
                 playerObjectDetection.hasCoin = true;
                 ArcadeTokenSpawner.SetActive(true);
-                Destroy(gameObject);
-                
+                this.gameObject.SetActive(false);
+
                 FindObjectOfType<TamagotchiController>().StartRound(2);
             }
         }

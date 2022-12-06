@@ -17,6 +17,9 @@ TagManager:
   - fakeTama
   - tutorialVolume
   - gateControl
+  - streamerVolume
+  - triggerTest
+  - deathScreen
   layers:
   - Default
   - TransparentFX

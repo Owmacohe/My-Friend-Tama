@@ -7,6 +7,7 @@ public class PlayerObjectDetection : MonoBehaviour
     [SerializeField] GameObject washroomSpawnerOBJ;
     [SerializeField] GameObject connectedLightSwitch;
     [SerializeField] GameObject washroomLights;
+    [SerializeField] GameObject deathScreen;
     [SerializeField] TamagotchiController tc;
     [SerializeField] TamagotchiEvolutionManager tem;
     public bool hasCoin;
@@ -18,12 +19,13 @@ public class PlayerObjectDetection : MonoBehaviour
     PlayerController playercontroller;
     GateControlScript gateControlScript;
     TutorialSoundsController tutorial;
-
+    Transform respawnPoint;
+  
     void Start()
     {
         audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
         gateControlScript = FindObjectOfType<GateControlScript>();
-        tutorial = FindObjectOfType<TutorialSoundsController>();
+        tutorial = FindObjectOfType<TutorialSoundsController>();     
 
         washroomSpawnerOBJ.SetActive(false);
     }
@@ -102,7 +104,7 @@ public class PlayerObjectDetection : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Food"))
             {
-                audioManagerMenu.eatSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
+                audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
 
                 Destroy(other.gameObject);
                 
@@ -195,4 +197,6 @@ public class PlayerObjectDetection : MonoBehaviour
             hasCoin = false;
         }
     }
+
+   
 }
