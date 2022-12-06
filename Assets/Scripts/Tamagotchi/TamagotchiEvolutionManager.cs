@@ -40,8 +40,6 @@ public class TamagotchiEvolutionManager : MonoBehaviour
     {
         if (!isEvolving)
         {
-            print("evolve1");
-            
             isEvolving = true;
             
             if (cc != null)
@@ -70,17 +68,13 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         pc.keyboardInteractionPaused = false;
         tc.SlideTama(false, false);
 
-        print((int) tc.tama.Age);
-
         switch ((int)tc.tama.Age)
         {
             case 2:
-                print("up1");
                 gc.ArcadeGateADown = false;
                 gc.ArcadeGateBDown = false;
                 break;
             case 3:
-                print("up2");
                 gc.BathroomGateDown = false;
                 break;
         }

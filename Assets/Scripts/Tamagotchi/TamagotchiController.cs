@@ -53,7 +53,9 @@ public class TamagotchiController : MonoBehaviour
         pc = FindObjectOfType<PlayerController>();
         
         tama = new Tamagotchi();
+        
         anim = GetComponentInChildren<Animator>();
+        anim.keepAnimatorControllerStateOnDisable = true;
         
         defaultColour = screen.material.GetColor(emissionColor);
         
@@ -327,8 +329,6 @@ public class TamagotchiController : MonoBehaviour
 
     void Evolve()
     {
-        print("evolve2");
-        
         tama.Evolve();
         anim.SetTrigger("Evolve");
     }
