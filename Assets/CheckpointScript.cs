@@ -22,7 +22,7 @@ public class CheckpointScript : MonoBehaviour
         lightSwitchBool = bathroomStartSwitch.GetComponent<LightSwitchBool>();
         gateControlScript = gateControl.GetComponent<GateControlScript>();
 
-        checkPoint2();
+        checkPoint0();
     }
 
     /// <summary>
