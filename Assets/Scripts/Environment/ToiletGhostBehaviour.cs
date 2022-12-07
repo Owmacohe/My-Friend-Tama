@@ -31,12 +31,11 @@ public class ToiletGhostBehaviour : MonoBehaviour
     }
 
     //Need to fix so it detects proper collision point
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         Debug.Log($"bonk {other.gameObject.name} {other.gameObject.tag}");
         if (other.gameObject.CompareTag("FlashlightDetection"))
         {
-            Debug.Log("ouch");
             playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             if (playercontroller.flashlightOn)
             {
@@ -46,7 +45,9 @@ public class ToiletGhostBehaviour : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("You Die");
+            FindObjectOfType<PlayerController>().KillPlayer();
+            FindObjectOfType<CheckpointScript>().CheckPoint();
+            FindObjectOfType<TamagotchiController>().tama.ResetStats();
         }
     }
 
