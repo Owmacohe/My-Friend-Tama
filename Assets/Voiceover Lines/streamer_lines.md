@@ -1,6 +1,6 @@
 ## Starting the game
 
-What’s up chatters! Welcome to this week’s instalment of Explore’R’Us, the urban exploration livestream where we check out totally radical abandoned malls! Oh yeah! Today’s lucky find is the Nest Family Shopping Centre, shut down eight years ago due to financial mismanagement, this place is totally *up our alley*. And it even looks like the power’s still left on. Let’s get exploring!
+What’s up chatters! Welcome to this week’s instalment of Explore’R’Us, the urban exploration livestream where we check out totally radical abandoned malls! Oh yeah! Today’s lucky find is the Nest Family Shopping Centre, shut down eight years ago due to financial mismanagement, this place is totally <i>up our alley</i>. And it even looks like the power’s still left on. Let’s get exploring!
 
 
 
@@ -12,7 +12,7 @@ Whoa, what’s that? Is that what I think it is?
 
 ## Evolving the tama (first time)
 
-*Oh my goodness* chat, I can’t believe what we have on our hands here. This is real-life, authentic Tama toy! They discontinued these years ago! Radical!
+<i>Oh my goodness</i> chat, I can’t believe what we have on our hands here. This is real-life, authentic Tama toy! They discontinued these years ago! Radical!
 
 
 
@@ -42,7 +42,7 @@ It keeps bringing me back here... sorta weird huh?.. Let’s keep going I guess.
 
 ## Seeing the bathroom
 
-Oh no, no no no. I don’t want to go in there. But... it really wants me to. I guess I have to. *Radical, chat!*
+Oh no, no no no. I don’t want to go in there. But... it really wants me to. I guess I have to. <i>Radical, chat!</i>
 
 
 

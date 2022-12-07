@@ -5,6 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class TutorialSoundsController : MonoBehaviour
 {
+    [TextArea(1, 100)]
+    [SerializeField] string[] tutorialSubtitles;
+    
+    [TextArea(1, 100)]
+    [SerializeField] string[] streamerSubtitles;
+    
     [SerializeField] AudioClip[] mallTutorials;
     [SerializeField] AudioClip[] streamerTutorials;
     [SerializeField] GameObject seeTamaVolume, seeFoodCourtVolume, seeArcadeVolume, seeBathroomVolume;
@@ -15,6 +21,8 @@ public class TutorialSoundsController : MonoBehaviour
     [HideInInspector] public int tutorialProgress;
     int streamerProgress;
     [HideInInspector] public bool isPlaying;
+
+    SubtitleController sc;
 
     void Start()
     {
@@ -29,6 +37,8 @@ public class TutorialSoundsController : MonoBehaviour
                 PAs.Add(temp[i]);
             }
         }
+
+        sc = FindObjectOfType<SubtitleController>();
         
         PlayStreamerTutorial(0);
     }
@@ -42,6 +52,16 @@ public class TutorialSoundsController : MonoBehaviour
         else
         {
             isPlaying = false;
+            
+            if (sc.isPopulated && sc.isTutorial)
+            {
+                sc.Clear();
+            }
+        }
+
+        if (!streamerSource.isPlaying && sc.isPopulated && !sc.isTutorial)
+        {
+            sc.Clear();
         }
     }
 
@@ -49,6 +69,9 @@ public class TutorialSoundsController : MonoBehaviour
     {
         if (tut == tutorialProgress && tut < PAs.Count)
         {
+            if (tutorialSubtitles != null && tut < tutorialSubtitles.Length)
+                sc.Populate(tutorialSubtitles[tut], true);
+            
             foreach (AudioSource i in PAs)
             {
                 i.clip = mallTutorials[tut];
@@ -88,10 +111,13 @@ public class TutorialSoundsController : MonoBehaviour
     {
         if (tut == streamerProgress)
         {
+            if (streamerSubtitles != null && tut < streamerSubtitles.Length)
+                sc.Populate(streamerSubtitles[tut], false);
+            
             streamerSource.clip = streamerTutorials[tut];
             streamerSource.Play();
 
-            streamerProgress++;   
+            streamerProgress++;
         }
     }
 }
