@@ -1,21 +1,25 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubtitleController : MonoBehaviour
 {
-    TMP_Text text;
+    [SerializeField] Image background;
+    [SerializeField] TMP_Text text;
 
     [HideInInspector] public bool isPopulated;
     [HideInInspector] public bool isTutorial;
 
     void Start()
     {
-        text = GetComponent<TMP_Text>();
+        Clear();
     }
 
     public void Populate(string subtitle, bool tutorial)
     {
+        background.enabled = true;
+        
         isTutorial = tutorial;
         
         text.text = subtitle;
@@ -24,6 +28,7 @@ public class SubtitleController : MonoBehaviour
 
     public void Clear()
     {
+        background.enabled = false;
         isPopulated = false;
         text.text = "";
     }

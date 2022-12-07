@@ -47,7 +47,6 @@ public class CheckpointScript : MonoBehaviour
             CheckPoint0();
         }
         
-        tc.roundMusic.Stop();
         lightSwitchBool.lightOn = false;
     }
 
@@ -95,6 +94,8 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
+        
+        tc.roundMusic.Stop();
     }
 
     /// <summary>
@@ -118,6 +119,8 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(true);
+        
+        tc.roundMusic.Stop();
     }
 
     /// <summary>
@@ -141,5 +144,7 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(false);
+        
+        tc.roundMusic.Stop();
     }
 }
