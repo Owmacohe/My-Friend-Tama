@@ -125,8 +125,6 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("Money"))
             {
-                cps.hasPassedCheckpoint2 = true;
-                
                 if (!hasCoin)
                 {
                     audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
@@ -142,8 +140,6 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject == connectedLightSwitch)
             {
-                cps.hasPassedCheckpoint3 = true;
-                
                 var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
                 lightSwitch.lightOn = !lightSwitch.lightOn;

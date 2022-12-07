@@ -10,6 +10,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
     ChatController cc;
     GateControlScript gc;
     TutorialSoundsController tsc;
+    CheckpointScript cps;
 
     [HideInInspector] public bool isEvolveReady, isFirstTime;
     bool isEvolving;
@@ -23,6 +24,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         cc = FindObjectOfType<ChatController>();
         gc = FindObjectOfType<GateControlScript>();
         tsc = FindObjectOfType<TutorialSoundsController>();
+        cps = FindObjectOfType<CheckpointScript>();
 
         isEvolveReady = true;
         isFirstTime = true;
@@ -51,6 +53,16 @@ public class TamagotchiEvolutionManager : MonoBehaviour
             realTama.SetActive(true);
 
             pc.keyboardInteractionPaused = true;
+
+            switch ((int)tc.tama.Age)
+            {
+                case 1:
+                    cps.hasPassedCheckpoint2 = true;
+                    break;
+                case 2:
+                    cps.hasPassedCheckpoint3 = true;
+                    break;
+            }
 
             if ((int)tc.tama.Age >= 3)
             {

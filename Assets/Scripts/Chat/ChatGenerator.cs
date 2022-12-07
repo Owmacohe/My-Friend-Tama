@@ -399,6 +399,33 @@ public class ChatGenerator
         "Zoe",
         "Zoey"
     };
+    static readonly string[] classNames = {
+        "Lilia",
+        "Danny",
+        "Joseph",
+        "Daniel",
+        "Angel",
+        "Patrick",
+        "Amanda",
+        "Stephanie",
+        "Arman",
+        "Jacob",
+        "Owen",
+        "Michael",
+        "Jongwoo",
+        "Sharon",
+        "Alex",
+        "Percy",
+        "Sol",
+        "Étienne",
+        "Luka",
+        "Cassandra",
+        "Margaret",
+        "Che",
+        "Mads",
+        "Zi Di",
+        "Man"
+    };
 
     static readonly string[] messages = {
         "Where are you?",
@@ -426,7 +453,6 @@ public class ChatGenerator
         "Nope nope nope nope",
         "Was that a rat I saw?"
     };
-
     static readonly string[] evolveMessages = {
         "What's going on?",
         "What is that thing?",
@@ -442,7 +468,8 @@ public class ChatGenerator
     {
         string firstName = "";
 
-        string temp = firstNames[Random.Range(0, firstNames.Length)].ToLower();
+        string[] tempArray = Random.Range(0, 2) == 0 ? firstNames : classNames;
+        string temp = tempArray[Random.Range(0, tempArray.Length)].ToLower();
 
         for (int i = 0; i < temp.Length; i++)
         {

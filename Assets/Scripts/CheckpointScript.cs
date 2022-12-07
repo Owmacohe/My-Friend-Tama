@@ -102,7 +102,7 @@ public class CheckpointScript : MonoBehaviour
     }
 
     /// <summary>
-    /// In effect after first Tama altar evolution (after first coin pickup)
+    /// In effect after first Tama altar evolution
     /// </summary>
     void CheckPoint2()
     {
@@ -129,7 +129,7 @@ public class CheckpointScript : MonoBehaviour
     }
 
     /// <summary>
-    /// In effect after second Tama altar evolution (after first lightswitch)
+    /// In effect after second Tama altar evolution
     /// </summary>
     void CheckPoint3()
     {
