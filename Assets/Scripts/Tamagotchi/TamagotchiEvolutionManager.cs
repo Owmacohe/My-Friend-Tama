@@ -63,6 +63,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
                     cps.hasPassedCheckpoint3 = true;
                     break;
                 case 3:
+                    pc.Pause();
                     FindObjectOfType<MenuManager>().LoadScene("Win");
                     break;
             }

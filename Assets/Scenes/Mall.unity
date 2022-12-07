@@ -911,7 +911,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1990,7 +1990,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2911,10 +2911,10 @@ MonoBehaviour:
     guess."
   - "Oh no, no no no. I don\u2019t want to go in there. But... it really wants me
     to. I guess I have to. <i>Radical, chat!</i>"
-  seeTamaVolume: {fileID: 0}
-  seeFoodCourtVolume: {fileID: 0}
-  seeArcadeVolume: {fileID: 0}
-  seeBathroomVolume: {fileID: 0}
+  seeTamaVolume: {fileID: 1015967692}
+  seeFoodCourtVolume: {fileID: 1731681721}
+  seeArcadeVolume: {fileID: 1506186789}
+  seeBathroomVolume: {fileID: 1989000916}
   tutorialProgress: 0
   isPlaying: 0
 --- !u!82 &202938895
@@ -4612,7 +4612,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10467,7 +10467,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11273,7 +11273,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -14152,7 +14152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19597,7 +19597,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20535,7 +20535,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -21333,7 +21333,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -21342,7 +21342,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 22.310501
-  MaxDistance: 26.970226
+  MaxDistance: 29.54
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -25225,7 +25225,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25404,7 +25404,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25735,7 +25735,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -29266,6 +29266,10 @@ PrefabInstance:
       propertyPath: roundMusic
       value: 
       objectReference: {fileID: 212179579}
+    - target: {fileID: 5715401575540264120, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
+      propertyPath: statsSpeed
+      value: 0.00075
+      objectReference: {fileID: 0}
     - target: {fileID: 5819033416825384556, guid: b8fe5eb5073aa4346ba2f088b3a52f72, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -29408,7 +29412,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32419,7 +32423,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3365613099180332571, guid: a466e54b6a899684bbc8682cfc3215a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0

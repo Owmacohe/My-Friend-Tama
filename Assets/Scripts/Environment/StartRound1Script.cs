@@ -7,18 +7,21 @@ public class StartRound1Script : MonoBehaviour
     [SerializeField] GameObject FoodCourtSpawner;
 
     GateControlScript GateControl;
+    PlayerObjectDetection playerObjectDetection;
     
     void Start()
     {
         GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
         FoodCourtSpawner.SetActive(false);
+
+        playerObjectDetection = FindObjectOfType<PlayerObjectDetection>();
     }
 
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && playerObjectDetection.hasRealTama)
             {
                 GateControl.FoodCourtGateDown = true;
                 

@@ -20,7 +20,7 @@ public class StartRound2Script : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && playerObjectDetection.hasRealTama)
             {
                 GateControl.ArcadeGateADown = true;
                 GateControl.ArcadeGateBDown = true;
