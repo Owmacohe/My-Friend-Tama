@@ -8402,6 +8402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnPointPrefab (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
 --- !u!4 &573381035 stripped
@@ -15777,6 +15781,10 @@ PrefabInstance:
     - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
       propertyPath: m_Name
       value: SpawnPointPrefab (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792843653540702950, guid: 737367c08851fb645a50805621c51f13, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 737367c08851fb645a50805621c51f13, type: 3}
@@ -31806,8 +31814,6 @@ MonoBehaviour:
   - {fileID: 1196041667}
   - {fileID: 232824222}
   - {fileID: 788806266}
-  - {fileID: 1030743347}
-  - {fileID: 573381035}
   - {fileID: 761390305}
   spawnableItems:
   - {fileID: 18041291498022693, guid: 6658ae087034afe419ca8a2a29e5b255, type: 3}

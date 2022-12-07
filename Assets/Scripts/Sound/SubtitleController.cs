@@ -17,13 +17,13 @@ public class SubtitleController : MonoBehaviour
         Color temp = tutorial ? tutorialColour : streamerColour;
         
         background.enabled = true;
-        background.color = new Color(temp.r, temp.g, temp.b, 0.50f);
+        background.color = new Color(temp.r, temp.g, temp.b, 0.8f);
         
         isTutorial = tutorial;
         
         text.text = subtitle;
         Color.RGBToHSV(temp, out var H, out var S, out var V);
-        text.color = Color.HSVToRGB(H, S/2f, V);
+        text.color = Color.HSVToRGB(H, S/3f, V);
 
         isPopulated = true;
     }

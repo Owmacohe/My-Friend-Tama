@@ -524,12 +524,6 @@ public class ChatGenerator
     {
         string name = RandomFirstName();
 
-        if (Random.Range(0, 10) == 0)
-        {
-            string temp = RandomFirstName();
-            name += "_" + temp.Substring(0, Random.Range(0, temp.Length));
-        }
-
         if (Random.Range(0, 2) == 0)
         {
             for (int j = 0; j < Random.Range(1, 3); j++)
