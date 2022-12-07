@@ -24,7 +24,7 @@ public class CheckpointScript : MonoBehaviour
     {
         lightSwitchBool = bathroomStartSwitch.GetComponent<LightSwitchBool>();
         gateControlScript = gateControl.GetComponent<GateControlScript>();
-
+        
         CheckPoint();
     }
 
@@ -46,7 +46,7 @@ public class CheckpointScript : MonoBehaviour
         {
             CheckPoint0();
         }
-
+        
         lightSwitchBool.lightOn = true;
     }
 
@@ -64,6 +64,7 @@ public class CheckpointScript : MonoBehaviour
         gateControlScript.TutorialGateDown = false;
 
         foodCourtSpawner.SetActive(false);
+        arcadeSpawner.SetActive(false);
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
@@ -83,10 +84,11 @@ public class CheckpointScript : MonoBehaviour
         gateControlScript.TutorialGateDown = false;
 
         foodCourtSpawner.SetActive(false);
+        arcadeSpawner.SetActive(false);
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
-
+        
         tc.roundMusic.Stop();
     }
 
@@ -104,10 +106,11 @@ public class CheckpointScript : MonoBehaviour
         gateControlScript.TutorialGateDown = false;
 
         foodCourtSpawner.SetActive(true);
+        arcadeSpawner.SetActive(false);
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(true);
-
+        
         tc.roundMusic.Stop();
     }
 
@@ -125,6 +128,7 @@ public class CheckpointScript : MonoBehaviour
         gateControlScript.TutorialGateDown = false;
 
         foodCourtSpawner.SetActive(true);
+        arcadeSpawner.SetActive(true);
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(false);
