@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (!keyboardInteractionPaused)
         {
             RunControls();
-            CrouchControl();
+            //CrouchControl();
             UpdateMouseLook();
             UpdatePlayerMovement();
             FlashlightControls();

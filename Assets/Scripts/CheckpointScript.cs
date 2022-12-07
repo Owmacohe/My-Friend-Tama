@@ -47,7 +47,7 @@ public class CheckpointScript : MonoBehaviour
             CheckPoint0();
         }
         
-        lightSwitchBool.lightOn = false;
+        lightSwitchBool.lightOn = true;
     }
 
     /// <summary>
@@ -65,9 +65,6 @@ public class CheckpointScript : MonoBehaviour
 
         foodCourtSpawner.SetActive(false);
         arcadeSpawner.SetActive(false);
-        washroomSpawner.SetActive(false);
-        washroomSpawnPoints.SetActive(false);
-        bathroomLights.SetActive(true);
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
@@ -88,9 +85,6 @@ public class CheckpointScript : MonoBehaviour
 
         foodCourtSpawner.SetActive(false);
         arcadeSpawner.SetActive(false);
-        washroomSpawner.SetActive(false);
-        washroomSpawnPoints.SetActive(false);
-        bathroomLights.SetActive(true);
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
@@ -113,9 +107,6 @@ public class CheckpointScript : MonoBehaviour
 
         foodCourtSpawner.SetActive(true);
         arcadeSpawner.SetActive(false);
-        washroomSpawner.SetActive(false);
-        washroomSpawnPoints.SetActive(false);
-        bathroomLights.SetActive(true);
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(true);
@@ -138,13 +129,10 @@ public class CheckpointScript : MonoBehaviour
 
         foodCourtSpawner.SetActive(true);
         arcadeSpawner.SetActive(true);
-        washroomSpawner.SetActive(false);
-        washroomSpawnPoints.SetActive(true);
-        bathroomLights.SetActive(true);
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(false);
-        
+
         tc.roundMusic.Stop();
     }
 }

@@ -145,15 +145,7 @@ public class PlayerObjectDetection : MonoBehaviour
                 
                 tc.tama.Play(0.2f);
             }
-            else if (other.gameObject == connectedLightSwitch)
-            {
-                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
-                lightSwitch.lightOn = !lightSwitch.lightOn;
-                
-                if (tc.hasRound3Started)
-                    tc.StartRound(3);
-            }
             else if (other.gameObject.CompareTag("fakeTama"))
             {
                 if (tem.isEvolveReady)
@@ -171,6 +163,20 @@ public class PlayerObjectDetection : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (other.gameObject == connectedLightSwitch)
+            {
+                var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
+
+                lightSwitch.lightOn = !lightSwitch.lightOn;
+
+                if (tc.hasRound3Started)
+                    tc.StartRound(3);
+            }
+        }
+        
     }
 
     void OnTriggerEnter(Collider other)
