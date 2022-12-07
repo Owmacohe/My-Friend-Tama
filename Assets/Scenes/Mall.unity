@@ -3134,7 +3134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61960787, g: 0.15686275, b: 0.98823535, a: 0.14901961}
+  m_Color: {r: 0.9882353, g: 0.9882353, b: 0.9882353, a: 0.14901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14906,7 +14906,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294737604
-  m_fontColor: {r: 0.8125491, g: 0.59294116, b: 0.9882353, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20462,6 +20462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 210653964}
   text: {fileID: 938413244}
+  tutorialColour: {r: 0.9882353, g: 0.15686274, b: 0.15686274, a: 1}
+  streamerColour: {r: 0.61960787, g: 0.15686275, b: 0.98823535, a: 1}
   isPopulated: 0
   isTutorial: 0
 --- !u!1 &1283376889
