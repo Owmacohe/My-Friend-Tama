@@ -6024,6 +6024,9 @@ MonoBehaviour:
   gateControl: {fileID: 426482231}
   level1StartTrigger: {fileID: 902791269}
   level2StartTrigger: {fileID: 1004462784}
+  hasPassedCheckpoint1: 0
+  hasPassedCheckpoint2: 0
+  hasPassedCheckpoint3: 0
 --- !u!4 &406968922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2596307961188654688, guid: 97fd3de28a92a4c42bbe80659f2edf03, type: 3}
@@ -6188,7 +6191,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-231594
+  m_Name: pb_Mesh-58994
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18432,7 +18435,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-237314
+  m_Name: pb_Mesh-64712
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19235,7 +19238,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-228832
+  m_Name: pb_Mesh-56234
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24065,6 +24068,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a428bca82ce664fae92270fc4926d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1571922360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492847972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5837ed233622c0f47b9e999cf04ed23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadOnStart: 0
+  target: 
 --- !u!1 &1587290511
 GameObject:
   m_ObjectHideFlags: 0
@@ -29562,7 +29579,7 @@ GameObject:
   - component: {fileID: 1977852286}
   - component: {fileID: 1977852285}
   m_Layer: 5
-  m_Name: deathScreen
+  m_Name: DeathScreen
   m_TagString: deathScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

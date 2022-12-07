@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b1ecab62834f5dbbf9d3997de5565f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsSpeed: 0.75
+  statsSpeed: 0.0005
   firstStatThreshold: 0.5
   secondStatThreshold: 0.2
   foodBar: {fileID: 2494059920831476799}
@@ -388,9 +388,10 @@ MonoBehaviour:
   statNeedSound: {fileID: 6017983385582515588}
   firstThresholdSound: {fileID: 3304050214639589458}
   secondThresholdSound: {fileID: 5640749058375711081}
-  round1Time: 180
-  round2Time: 360
-  round3Time: 540
+  round1Time: 60
+  round2Time: 120
+  round3Time: 180
+  slideUp: 0
 --- !u!1 &1641444021667615636
 GameObject:
   m_ObjectHideFlags: 0

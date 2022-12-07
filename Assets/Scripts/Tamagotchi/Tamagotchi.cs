@@ -11,13 +11,22 @@ public class Tamagotchi
     public enum TamagotchiAge { Egg, Baby, Kid, Adult }
     public TamagotchiAge Age { get; private set; }
 
-    public Tamagotchi()
+    float startAmount;
+
+    public Tamagotchi(float startAmount)
     {
-        Food = 1;
-        Happiness = 1;
-        Discipline = 1;
+        this.startAmount = startAmount;
+        
+        ResetStats();
         
         Age = TamagotchiAge.Egg;
+    }
+    
+    public void ResetStats()
+    {
+        Food = startAmount;
+        Happiness = startAmount;
+        Discipline = startAmount;
     }
 
     /// <summary>

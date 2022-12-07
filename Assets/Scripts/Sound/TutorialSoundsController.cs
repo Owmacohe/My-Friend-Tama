@@ -88,8 +88,6 @@ public class TutorialSoundsController : MonoBehaviour
     {
         if (tut == streamerProgress)
         {
-            print("test");
-            
             streamerSource.clip = streamerTutorials[tut];
             streamerSource.Play();
 

@@ -17,18 +17,40 @@ public class CheckpointScript : MonoBehaviour
     LightSwitchBool lightSwitchBool;
     GateControlScript gateControlScript;
 
-    private void Start()
+    [HideInInspector] public bool hasPassedCheckpoint1, hasPassedCheckpoint2, hasPassedCheckpoint3;
+
+    void Start()
     {
         lightSwitchBool = bathroomStartSwitch.GetComponent<LightSwitchBool>();
         gateControlScript = gateControl.GetComponent<GateControlScript>();
+        
+        CheckPoint();
+    }
 
-        checkPoint0();
+    public void CheckPoint()
+    {
+        if (hasPassedCheckpoint3)
+        {
+            CheckPoint3();
+        }
+        else if (hasPassedCheckpoint2)
+        {
+            CheckPoint2();
+        }
+        else if (hasPassedCheckpoint1)
+        {
+            CheckPoint1();
+        }
+        else
+        {
+            CheckPoint0();
+        }
     }
 
     /// <summary>
     /// Called at start of game
     /// </summary>
-    public void checkPoint0()
+    void CheckPoint0()
     {
         gateControlScript.ToyStoreGateDown = false;
         gateControlScript.ArcadeGateADown = true;
@@ -48,12 +70,14 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
+        
+        print("CHECKPOINT 0");
     }
 
     /// <summary>
     /// In effect after player picks up coke can the first time
     /// </summary>
-    public void checkPoint1()
+    void CheckPoint1()
     {
         gateControlScript.ToyStoreGateDown = false;
         gateControlScript.ArcadeGateADown = true;
@@ -73,15 +97,17 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
+        
+        print("CHECKPOINT 1");
     }
 
     /// <summary>
-    /// In effect after first Tama altar evolution
+    /// In effect after first Tama altar evolution (after first coin pickup)
     /// </summary>
-    public void checkPoint2()
+    void CheckPoint2()
     {
         gateControlScript.ToyStoreGateDown = false;
-        gateControlScript.ArcadeGateADown = true;
+        gateControlScript.ArcadeGateADown = false;
         gateControlScript.ArcadeGateBDown = false;
         gateControlScript.BathroomGateDown = true;
         gateControlScript.FoodCourtGateDown = false;
@@ -98,15 +124,17 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(true);
+        
+        print("CHECKPOINT 2");
     }
 
     /// <summary>
-    /// In effect after second Tama altar evolution
+    /// In effect after second Tama altar evolution (after first lightswitch)
     /// </summary>
-    public void checkPoint3()
+    void CheckPoint3()
     {
         gateControlScript.ToyStoreGateDown = false;
-        gateControlScript.ArcadeGateADown = true;
+        gateControlScript.ArcadeGateADown = false;
         gateControlScript.ArcadeGateBDown = false;
         gateControlScript.BathroomGateDown = false;
         gateControlScript.FoodCourtGateDown = false;
@@ -123,5 +151,7 @@ public class CheckpointScript : MonoBehaviour
 
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(false);
+        
+        print("CHECKPOINT 3");
     }
 }

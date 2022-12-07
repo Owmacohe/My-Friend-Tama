@@ -23,7 +23,7 @@ public class StartRound1Script : MonoBehaviour
                 GateControl.FoodCourtGateDown = true;
                 
                 FoodCourtSpawner.SetActive(true);
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 
                 FindObjectOfType<TamagotchiController>().StartRound(1);
             }

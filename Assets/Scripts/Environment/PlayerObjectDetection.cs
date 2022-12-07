@@ -20,12 +20,14 @@ public class PlayerObjectDetection : MonoBehaviour
     GateControlScript gateControlScript;
     TutorialSoundsController tutorial;
     Transform respawnPoint;
+    CheckpointScript cps;
   
     void Start()
     {
         audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
         gateControlScript = FindObjectOfType<GateControlScript>();
-        tutorial = FindObjectOfType<TutorialSoundsController>();     
+        tutorial = FindObjectOfType<TutorialSoundsController>();
+        cps = FindObjectOfType<CheckpointScript>();
 
         washroomSpawnerOBJ.SetActive(false);
     }
@@ -44,22 +46,31 @@ public class PlayerObjectDetection : MonoBehaviour
             gateControlScript.TutorialGateDown = false;
         }
 
-        if (tc.IsRoundDone(1))
+        if (tc.IsGateTimeDone(1))
         {
             gateControlScript.FoodCourtGateDown = false;
+        }
+        else if (tc.IsGateTimeDone(2))
+        {
+            gateControlScript.ArcadeGateADown = false;
+            gateControlScript.ArcadeGateBDown = false;
+        }
+        else if (tc.IsGateTimeDone(3))
+        {
+            gateControlScript.BathroomGateDown = false;
+        }
+
+        if (tc.IsRoundDone(1))
+        {
             tem.isEvolveReady = true;
         }
         else if (tc.IsRoundDone(2))
         {
-            gateControlScript.ArcadeGateADown = false;
-            gateControlScript.ArcadeGateBDown = false;
             tem.isEvolveReady = true;
         }
         else if (tc.IsRoundDone(3))
         {
-            gateControlScript.BathroomGateDown = false;
             tem.isEvolveReady = true;
-            // TODO: end of game?
         }
     }
 
@@ -104,6 +115,8 @@ public class PlayerObjectDetection : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Food"))
             {
+                cps.hasPassedCheckpoint1 = true;
+                
                 audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
 
                 Destroy(other.gameObject);
@@ -112,6 +125,8 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("Money"))
             {
+                cps.hasPassedCheckpoint2 = true;
+                
                 if (!hasCoin)
                 {
                     audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
@@ -127,6 +142,8 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject == connectedLightSwitch)
             {
+                cps.hasPassedCheckpoint3 = true;
+                
                 var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
                 lightSwitch.lightOn = !lightSwitch.lightOn;
@@ -197,6 +214,4 @@ public class PlayerObjectDetection : MonoBehaviour
             hasCoin = false;
         }
     }
-
-   
 }

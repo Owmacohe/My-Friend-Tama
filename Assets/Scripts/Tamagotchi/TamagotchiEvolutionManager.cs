@@ -52,12 +52,19 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
             pc.keyboardInteractionPaused = true;
 
-            tc.SlideTama(true, false);
-            tc.WaitEvolve(1);
+            if ((int)tc.tama.Age >= 3)
+            {
+                GetComponent<MenuManager>().LoadScene("Win");
+            }
+            else
+            {
+                tc.SlideTama(true, false);
+                tc.WaitEvolve(1);
 
-            tsc.PlayNextStreamerTutorial();
+                tsc.PlayNextStreamerTutorial();
 
-            Invoke(nameof(ReturnControl), 14);   
+                Invoke(nameof(ReturnControl), 14);
+            }
         }
     }
 

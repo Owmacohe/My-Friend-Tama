@@ -4,7 +4,7 @@ using UnityEngine;
 public class TamagotchiController : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] float statsSpeed = 0.75f;
+    [SerializeField] float statsSpeed = 0.0005f;
     [SerializeField] float firstStatThreshold = 0.5f;
     [SerializeField] float secondStatThreshold = 0.1f;
     [SerializeField] Transform foodBar, happinessBar, disciplineBar;
@@ -23,11 +23,12 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] SoundEffectController firstThresholdSound, secondThresholdSound;
 
     [Header("Rounds")]
-    [SerializeField] float round1Time = 180;
-    [SerializeField] float round2Time = 360;
-    [SerializeField] float round3Time = 540;
+    [SerializeField] float round1Time = 60;
+    [SerializeField] float round2Time = 120;
+    [SerializeField] float round3Time = 180;
     
     PlayerController pc;
+    CheckpointScript cps;
     public Tamagotchi tama;
     Animator anim;
     int timesEvolved;
@@ -48,11 +49,10 @@ public class TamagotchiController : MonoBehaviour
 
     public void Start()
     {
-        statsSpeed /= 1000f;
-        
         pc = FindObjectOfType<PlayerController>();
+        cps = FindObjectOfType<CheckpointScript>();
         
-        tama = new Tamagotchi();
+        tama = new Tamagotchi(0.6f);
         
         anim = GetComponentInChildren<Animator>();
         anim.keepAnimatorControllerStateOnDisable = true;
@@ -66,15 +66,20 @@ public class TamagotchiController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isUpdatingStats)
+        if (isUpdatingStats && !pc.isDead)
         {
             tama.UpdateStats(statsSpeed);
             
             bool[] foodStats = CheckStat(tama.Food, foodColour);
             bool[] happinessStats = CheckStat(tama.Happiness, happinessColour);
             bool[] disciplineStats = CheckStat(tama.Discipline, disciplineColour);
-            
-            // TODO: die when stats reach 0
+
+            if (tama.Food <= 0 || tama.Happiness <= 0 || tama.Discipline <= 0)
+            {
+                pc.KillPlayer();
+                cps.CheckPoint();
+                tama.ResetStats();
+            }
 
             if ((int)tama.Age == 1)
             {
@@ -207,7 +212,7 @@ public class TamagotchiController : MonoBehaviour
                         statNeedIndicator.enabled = false;
                     }
                 }
-            }   
+            }
         }
 
         if (isSliding)
@@ -416,5 +421,15 @@ public class TamagotchiController : MonoBehaviour
         }
 
         return temp;
+    }
+
+    public bool IsGateTimeDone(int round)
+    {
+        return
+            (int)tama.Age == round && (
+                (round == 1 && hasRound1Started && (Time.time - round1StartTime >= 30)) ||
+                (round == 2 && hasRound2Started && (Time.time - round2StartTime >= 30)) ||
+                (round == 3 && hasRound3Started && (Time.time - round3StartTime >= 30))
+            );
     }
 }

@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
     Light playerLight;
     bool isLookingAtTama;
-    bool isCrouched = false;
-    bool isRunning = false;
+    bool isCrouched;
+    bool isRunning;
     float maxPlayerHeight;
     float startWalkSpeed;
 
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     
     [HideInInspector] public bool keyboardInteractionPaused;
     Transform respawnPoint;
+    [HideInInspector] public bool isDead;
 
     void Start()
     {
@@ -73,16 +74,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!isDead && Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
 
             if (pauseMenu.activeSelf)
             {
-                keyboardInteractionPaused = true;
-
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                Pause();
             }
             else
             {
@@ -91,15 +89,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Pause()
+    {
+        keyboardInteractionPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        deathScreen.SetActive(false);
         
         keyboardInteractionPaused = false;
         
-        // Locks cursor position at startup
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        isDead = false;
     }
 
     /// <summary>
@@ -206,10 +214,13 @@ public class PlayerController : MonoBehaviour
         isLookingAtTama = fromTama && !isOn;
     }
 
-    public void playerKilled()
+    public void KillPlayer()
     {
+        Pause();
+        
         deathScreen.SetActive(true);
-        keyboardInteractionPaused = false;
-        this.transform.position = respawnPoint.position;
+        transform.position = respawnPoint.position;
+
+        isDead = true;
     }
 }
