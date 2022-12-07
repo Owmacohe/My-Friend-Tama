@@ -1,0 +1,1235 @@
+fileFormatVersion: 2
+guid: fb6362fdd659f0149a31738a9e4a41f7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78365dbcb58b4d543b2a27c37fad3244
+      internalID: -1671809696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f415f9bd31e5b7747a0fe4e18fdc48d3
+      internalID: -21897485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c58e6c8c00d67a4a99176d9a9593b9d
+      internalID: -898131989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab40d6df915bb345a68526490c8dcd0
+      internalID: 362551923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732c09fe651d3ad4ea682df65fb894ca
+      internalID: -2008448738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba71ca30c11bd8e4f8fd5b88a818df3c
+      internalID: 1080586034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83c1139c8aa5984b96a4e9da6530aef
+      internalID: -1482848666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757da6a5c1498744d85918c81c1d3a26
+      internalID: 195186959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86406e2aa8accd0419bcacb6c922735e
+      internalID: -702088493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 1076.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea724df7abf7c3742955864f8dc7c3b9
+      internalID: -2060726066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1af7fed08b929c4bafd5305df143fd3
+      internalID: -1368180655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40faba806aa7f64418fb4e78c75390e0
+      internalID: 783298323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ea12ec5cea87b46a39db24c7ac4c58
+      internalID: -337030113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c087a2f649afb374a912789b88c0b1f3
+      internalID: 281255106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5997b642375df4438bbe677be9d8819
+      internalID: -303730441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0154df6cc5a5734d99458e426f4e2d2
+      internalID: 512403364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca7d98d81c3115428039af4224aadb3
+      internalID: 1483368849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b46a82b5156a144905397a9eced2e8
+      internalID: -1493309035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96ba58af0863434d826721f4ce85187
+      internalID: 1071887805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 807.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c41403b9e912b48aed752363965607
+      internalID: 1920849123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0ab79314d7758499b10c6f41fb35f4
+      internalID: -126026949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2e0960159707b4b8e763413e22f9a3
+      internalID: 1005599355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59357b22db560094597daf1d36a6d62a
+      internalID: 700461046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e43e71f9f6942547b7066806b176df8
+      internalID: 518351898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39be9d3e4d2121843926b35420dc3127
+      internalID: 1688961478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4787eed349661074992f5b91d5901dd4
+      internalID: -249333048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eceee1a76e10311458a660735dee3757
+      internalID: -1935306364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616ceb1b2f18ecb4db1dd4312fabad8e
+      internalID: -706193089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c229ebf01f31d4429ca66f65529c9e1
+      internalID: 978489681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 538.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281ae06d346c4a44e839b69796a27bea
+      internalID: 915890790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53484b5eae3ec8a4892cc3ba1900000b
+      internalID: 1084704842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e709fc8fa6b324f9553995649b3360
+      internalID: 44479704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148deded5ce1ca54385ca0290b82e1fd
+      internalID: 458562527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87af37ed96d1b4d42bb7a343bf1ef6e7
+      internalID: 50587960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0781136984fdb28468ef7e974db7f2c1
+      internalID: 93008210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8706bd4df1c6b4fba974723f409663
+      internalID: 1812608486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7048376fe7eafd4488033a0550549c3
+      internalID: 1936535244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526a70dd53f77764eb8cab8eb68cd8d6
+      internalID: 1619281369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a0b178826d1d0449ce024698877bfa
+      internalID: -188243483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 269.8
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4443d332e3b8248b0f5f741d53d663
+      internalID: -1808862706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec540402c160f045b865652a1dc356a
+      internalID: 1875607277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692e0d96752951d4bac6536a37f40182
+      internalID: 1676374773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa3249fdc129e742af1359b292d3f76
+      internalID: -300341847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58799d365eb62fe479e4f5eefb2d1e6c
+      internalID: -1778200872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9199bcdc2da1d344cb4598aa83c43120
+      internalID: 1855097747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4890d961a2c328c46b445864f417e321
+      internalID: 1731060671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad99b6b39da45864ca83a8a62bf814de
+      internalID: 1937631029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130318e5ac3839949951facaea892350
+      internalID: 434013444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9920b7f655f4c294f9311afafb3f36f8
+      internalID: -709017028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evolve-baby-to-kid-spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 0.7999878
+        width: 268.5
+        height: 269.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5af9d097d29aa409f869f6c4ab0dda
+      internalID: 1753661025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 868c5ffa72e257e47b4186c76a9b10a2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      evolve-baby-to-kid-spritesheet_27: -706193089
+      evolve-baby-to-kid-spritesheet_2: -898131989
+      evolve-baby-to-kid-spritesheet_5: 1080586034
+      evolve-baby-to-kid-spritesheet_46: 1937631029
+      evolve-baby-to-kid-spritesheet_43: -1778200872
+      evolve-baby-to-kid-spritesheet_38: -188243483
+      evolve-baby-to-kid-spritesheet_16: 1483368849
+      evolve-baby-to-kid-spritesheet_4: -2008448738
+      evolve-baby-to-kid-spritesheet_37: 1619281369
+      evolve-baby-to-kid-spritesheet_7: 195186959
+      evolve-baby-to-kid-spritesheet_13: 281255106
+      evolve-baby-to-kid-spritesheet_34: 93008210
+      evolve-baby-to-kid-spritesheet_23: 518351898
+      evolve-baby-to-kid-spritesheet_0: -1671809696
+      evolve-baby-to-kid-spritesheet_31: 44479704
+      evolve-baby-to-kid-spritesheet_45: 1731060671
+      evolve-baby-to-kid-spritesheet_39: -1808862706
+      evolve-baby-to-kid-spritesheet_30: 1084704842
+      evolve-baby-to-kid-spritesheet_1: -21897485
+      evolve-baby-to-kid-spritesheet_24: 1688961478
+      evolve-baby-to-kid-spritesheet_8: -702088493
+      evolve-baby-to-kid-spritesheet_14: -303730441
+      evolve-baby-to-kid-spritesheet_36: 1936535244
+      evolve-baby-to-kid-spritesheet_47: 434013444
+      evolve-baby-to-kid-spritesheet_6: -1482848666
+      evolve-baby-to-kid-spritesheet_10: -1368180655
+      evolve-baby-to-kid-spritesheet_17: -1493309035
+      evolve-baby-to-kid-spritesheet_9: -2060726066
+      evolve-baby-to-kid-spritesheet_20: -126026949
+      evolve-baby-to-kid-spritesheet_33: 50587960
+      evolve-baby-to-kid-spritesheet_26: -1935306364
+      evolve-baby-to-kid-spritesheet_18: 1071887805
+      evolve-baby-to-kid-spritesheet_15: 512403364
+      evolve-baby-to-kid-spritesheet_41: 1676374773
+      evolve-baby-to-kid-spritesheet_32: 458562527
+      evolve-baby-to-kid-spritesheet_29: 915890790
+      evolve-baby-to-kid-spritesheet_12: -337030113
+      evolve-baby-to-kid-spritesheet_25: -249333048
+      evolve-baby-to-kid-spritesheet_11: 783298323
+      evolve-baby-to-kid-spritesheet_42: -300341847
+      evolve-baby-to-kid-spritesheet_19: 1920849123
+      evolve-baby-to-kid-spritesheet_21: 1005599355
+      evolve-baby-to-kid-spritesheet_48: -709017028
+      evolve-baby-to-kid-spritesheet_28: 978489681
+      evolve-baby-to-kid-spritesheet_3: 362551923
+      evolve-baby-to-kid-spritesheet_44: 1855097747
+      evolve-baby-to-kid-spritesheet_22: 700461046
+      evolve-baby-to-kid-spritesheet_40: 1875607277
+      evolve-baby-to-kid-spritesheet_49: 1753661025
+      evolve-baby-to-kid-spritesheet_35: 1812608486
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
