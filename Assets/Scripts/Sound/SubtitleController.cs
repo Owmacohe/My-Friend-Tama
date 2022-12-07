@@ -17,7 +17,7 @@ public class SubtitleController : MonoBehaviour
         Color temp = tutorial ? tutorialColour : streamerColour;
         
         background.enabled = true;
-        background.color = new Color(temp.r, temp.g, temp.b, 0.15f);
+        background.color = new Color(temp.r, temp.g, temp.b, 0.50f);
         
         isTutorial = tutorial;
         
