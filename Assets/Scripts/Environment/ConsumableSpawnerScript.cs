@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConsumableSpawnerScript : MonoBehaviour  
+public class ConsumableSpawnerScript : MonoBehaviour
 {
     [SerializeField] List<Transform> spawnPoints;
     [SerializeField] List<GameObject> spawnableItems;
@@ -15,7 +15,9 @@ public class ConsumableSpawnerScript : MonoBehaviour
     {
         freeSpawnPoint.AddRange(spawnPoints);
     }
-    
+
+  
+
     void Update()
     {
         var lastIndex = -1;
@@ -49,7 +51,7 @@ public class ConsumableSpawnerScript : MonoBehaviour
 
             if (lastIndex>=0 || spawnPoints.Count < 1)
             {
-                
+
                 spawnPointIndex = Random.Range(0, freeSpawnPoint.Count - 1);
 
                 if (spawnPointIndex >= lastIndex)

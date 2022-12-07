@@ -8,12 +8,12 @@ public class StartRound2Script : MonoBehaviour
 
     PlayerObjectDetection playerObjectDetection;
     GateControlScript GateControl;
-    
+
     void Start()
     {
         GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
         playerObjectDetection = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerObjectDetection>();
-        ArcadeTokenSpawner.SetActive(false);
+    
     }
 
     void OnTriggerStay(Collider other)
@@ -24,7 +24,7 @@ public class StartRound2Script : MonoBehaviour
             {
                 GateControl.ArcadeGateADown = true;
                 GateControl.ArcadeGateBDown = true;
-                
+
                 playerObjectDetection.hasCoin = true;
                 ArcadeTokenSpawner.SetActive(true);
                 gameObject.SetActive(false);
