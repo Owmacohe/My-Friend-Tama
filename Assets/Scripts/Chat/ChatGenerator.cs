@@ -463,6 +463,14 @@ public class ChatGenerator
         "What's that egg thing?",
         "Where can I buy that?"
     };
+    static readonly string[] roundDoneMessages = {
+        "Go back to the altar!",
+        "That thing's ready to evolve",
+        "Try the wood room?",
+        "You've been at this a while",
+        "Go back",
+        "Get out of there now"
+    };
 
     static string RandomFirstName()
     {
@@ -537,7 +545,7 @@ public class ChatGenerator
         return name;
     }
 
-    public static string RandomMessage(bool evolve)
+    public static string RandomMessage(bool evolve, bool roundDone)
     {
         if (Random.Range(0, 10) == 0)
         {
@@ -549,7 +557,20 @@ public class ChatGenerator
             return "[SUBSCRIBED]";
         }
 
-        string[] temp = evolve ? evolveMessages : messages;
+        string[] temp;
+
+        if (evolve)
+        {
+            temp = evolveMessages;
+        }
+        else if (roundDone)
+        {
+            temp = roundDoneMessages;
+        }
+        else
+        {
+            temp = messages;
+        }
 
         string message = temp[Random.Range(0, temp.Length)];
 

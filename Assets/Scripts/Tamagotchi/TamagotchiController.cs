@@ -26,9 +26,11 @@ public class TamagotchiController : MonoBehaviour
     [SerializeField] float round1Time = 60;
     [SerializeField] float round2Time = 120;
     [SerializeField] float round3Time = 180;
+    public AudioSource roundMusic;
     
     PlayerController pc;
     CheckpointScript cps;
+    ChatController cc;
     public Tamagotchi tama;
     Animator anim;
     int timesEvolved;
@@ -51,6 +53,7 @@ public class TamagotchiController : MonoBehaviour
     {
         pc = FindObjectOfType<PlayerController>();
         cps = FindObjectOfType<CheckpointScript>();
+        cc = FindObjectOfType<ChatController>();
         
         tama = new Tamagotchi(0.6f);
         
@@ -370,24 +373,30 @@ public class TamagotchiController : MonoBehaviour
                 if ((int)tama.Age == 1)
                 {
                     round1StartTime = Time.time;
+                    
                     SetUpdatingStats(true);
                     hasRound1Started = true;
+                    roundMusic.Play();
                 }
                 break;
             case 2:
                 if ((int)tama.Age == 2)
                 {
                     round2StartTime = Time.time;
+                    
                     SetUpdatingStats(true);
                     hasRound2Started = true;
+                    roundMusic.Play();
                 }
                 break;
             case 3:
                 if ((int)tama.Age == 3)
                 {
                     round3StartTime = Time.time;
+                    
                     SetUpdatingStats(true);
                     hasRound3Started = true;
+                    roundMusic.Play();
                 }
                 break;
         }
@@ -418,6 +427,16 @@ public class TamagotchiController : MonoBehaviour
                     hasRound3Started = false;
                     break;
             }
+
+            if (cc != null)
+                cc.roundDoneMessages = true;
+            
+            roundMusic.Stop();
+        }
+        else
+        {
+            if (cc != null)
+                cc.roundDoneMessages = false;
         }
 
         return temp;

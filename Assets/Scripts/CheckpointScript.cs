@@ -16,6 +16,7 @@ public class CheckpointScript : MonoBehaviour
 
     LightSwitchBool lightSwitchBool;
     GateControlScript gateControlScript;
+    TamagotchiController tc;
 
     [HideInInspector] public bool hasPassedCheckpoint1, hasPassedCheckpoint2, hasPassedCheckpoint3;
 
@@ -45,6 +46,9 @@ public class CheckpointScript : MonoBehaviour
         {
             CheckPoint0();
         }
+        
+        tc.roundMusic.Stop();
+        lightSwitchBool.lightOn = false;
     }
 
     /// <summary>
@@ -66,12 +70,8 @@ public class CheckpointScript : MonoBehaviour
         washroomSpawnPoints.SetActive(false);
         bathroomLights.SetActive(true);
 
-        lightSwitchBool.lightOn = false;
-
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
-        
-        print("CHECKPOINT 0");
     }
 
     /// <summary>
@@ -93,12 +93,8 @@ public class CheckpointScript : MonoBehaviour
         washroomSpawnPoints.SetActive(false);
         bathroomLights.SetActive(true);
 
-        lightSwitchBool.lightOn = false;
-
         level1StartTrigger.SetActive(true);
         level2StartTrigger.SetActive(true);
-        
-        print("CHECKPOINT 1");
     }
 
     /// <summary>
@@ -120,12 +116,8 @@ public class CheckpointScript : MonoBehaviour
         washroomSpawnPoints.SetActive(false);
         bathroomLights.SetActive(true);
 
-        lightSwitchBool.lightOn = false;
-
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(true);
-        
-        print("CHECKPOINT 2");
     }
 
     /// <summary>
@@ -147,11 +139,7 @@ public class CheckpointScript : MonoBehaviour
         washroomSpawnPoints.SetActive(true);
         bathroomLights.SetActive(true);
 
-        lightSwitchBool.lightOn = false;
-
         level1StartTrigger.SetActive(false);
         level2StartTrigger.SetActive(false);
-        
-        print("CHECKPOINT 3");
     }
 }

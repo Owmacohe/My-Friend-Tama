@@ -13,6 +13,7 @@ public class ChatController : MonoBehaviour
     [SerializeField] Vector2 chatterCountRange = new Vector2(30, 50);
 
     [HideInInspector] public bool evolveMessages;
+    [HideInInspector] public bool roundDoneMessages;
 
     Queue<GameObject> commentQueue = new Queue<GameObject>();
     List<Chatter> chatters = new List<Chatter>();
@@ -63,7 +64,7 @@ public class ChatController : MonoBehaviour
 
     void RecursiveAddComment()
     {
-        AddCommentFromExistingChatter(ChatGenerator.RandomMessage(evolveMessages));
+        AddCommentFromExistingChatter(ChatGenerator.RandomMessage(evolveMessages, roundDoneMessages));
         
         Invoke(
             nameof(RecursiveAddComment), 
