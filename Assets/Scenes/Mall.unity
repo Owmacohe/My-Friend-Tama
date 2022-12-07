@@ -2900,7 +2900,7 @@ MonoBehaviour:
   - "Whoa, what\u2019s that? Is that what I think it is?"
   - "<i>Oh my goodness</i> chat, I can\u2019t believe what we have on our hands here.
     This is real-life, authentic Tama toy! They discontinued these years ago! Radical!"
-  - Oh hey, this must be the food court. How is cool that? Huh, looks like it was
+  - Oh hey, this must be the food court. How cool is that? Huh, looks like it was
     left in a hurry, chat.
   - "I mean, I guess let\u2019s evolve this thing again. I\u2019m getting kinda freaked
     out here guys... Haha just kidding! I\u2019m great! Hope you\u2019re all having
@@ -2911,10 +2911,10 @@ MonoBehaviour:
     guess."
   - "Oh no, no no no. I don\u2019t want to go in there. But... it really wants me
     to. I guess I have to. <i>Radical, chat!</i>"
-  seeTamaVolume: {fileID: 1015967692}
-  seeFoodCourtVolume: {fileID: 1731681721}
-  seeArcadeVolume: {fileID: 1506186789}
-  seeBathroomVolume: {fileID: 1989000916}
+  seeTamaVolume: {fileID: 0}
+  seeFoodCourtVolume: {fileID: 0}
+  seeArcadeVolume: {fileID: 0}
+  seeBathroomVolume: {fileID: 0}
   tutorialProgress: 0
   isPlaying: 0
 --- !u!82 &202938895
@@ -6512,7 +6512,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4158
+  m_Name: pb_Mesh-4324
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14907,7 +14907,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294737604
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -19217,7 +19217,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-10000
+  m_Name: pb_Mesh-10166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20020,7 +20020,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1286
+  m_Name: pb_Mesh-1452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20463,8 +20463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 210653964}
   text: {fileID: 938413244}
-  tutorialColour: {r: 0.8980392, g: 0, b: 0.047058824, a: 1}
-  streamerColour: {r: 0.7102908, g: 0.39398363, b: 0.9622642, a: 1}
+  tutorialColour: {r: 0.9882353, g: 0.15686274, b: 0.15686274, a: 1}
+  streamerColour: {r: 0.61960787, g: 0.15686275, b: 0.98823535, a: 1}
   isPopulated: 0
   isTutorial: 0
 --- !u!1 &1283376889
@@ -22319,6 +22319,7 @@ Transform:
   - {fileID: 199162906}
   - {fileID: 283590493}
   - {fileID: 81424827}
+  - {fileID: 1934051876}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25618,11 +25619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6808795411554854411, guid: b0b93e3312f19a642bba2da863de48a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 77.07485
+      value: 77.1
       objectReference: {fileID: 0}
     - target: {fileID: 6808795411554854411, guid: b0b93e3312f19a642bba2da863de48a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.719341
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 6808795411554854411, guid: b0b93e3312f19a642bba2da863de48a4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29986,6 +29987,61 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849f8582958c3c94d91e64a2bacec702, type: 3}
+--- !u!1 &1934051875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1934051876}
+  - component: {fileID: 1934051877}
+  m_Layer: 0
+  m_Name: Decal Projector (coke)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934051876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934051875}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 86.43, y: 15.943, z: 51.985}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1420049034}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1934051877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934051875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 961f4f5265ba79d44a44d348758eab63, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 0.9
+  m_StartAngleFade: 180
+  m_EndAngleFade: 180
+  m_UVScale: {x: 1, y: 1}
+  m_UVBias: {x: 0, y: 0}
+  m_ScaleMode: 1
+  m_Offset: {x: 0, y: 0, z: 1}
+  m_Size: {x: 3.01, y: 5.22, z: 2}
+  m_FadeFactor: 0.5
 --- !u!1 &1935233248
 GameObject:
   m_ObjectHideFlags: 0
