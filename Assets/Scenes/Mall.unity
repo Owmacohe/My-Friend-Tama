@@ -30120,36 +30120,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.02
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1000
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.7490196
+      value: 0.101960786
       objectReference: {fileID: 0}
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.7158805
+      value: 0.2990388
       objectReference: {fileID: 0}
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.7763601
+      value: 0.5679225
       objectReference: {fileID: 0}
     - target: {fileID: 19822192, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.785
+      value: 0.6037736
       objectReference: {fileID: 0}
     - target: {fileID: 19910812, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 19910812, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
-      propertyPath: m_RenderMode
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 19910812, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: m_UseCustomVertexStreams
       value: 1
@@ -30157,7 +30153,7 @@ PrefabInstance:
     - target: {fileID: 19910812, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ef54134d57f00094ca1ece0047da96a7, type: 2}
+      objectReference: {fileID: 2100000, guid: 8d20a6834f5625e4eba5372d38bf7e99, type: 2}
     - target: {fileID: 19910812, guid: e9a6501da28be2b4986e8ba47c2e017c, type: 3}
       propertyPath: m_VertexStreams.Array.size
       value: 4
