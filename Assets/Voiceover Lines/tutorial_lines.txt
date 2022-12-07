@@ -1,3 +1,17 @@
-﻿Thank you for coming to the nest Family Shopping Centre. The mall is now closed. Please grab your belongings and head to the available exits. We look forward to seeing you again soon!
+﻿mall_intro: Thank you for coming to the Nest family shopping center. The mall is now closed. Please grab your belongings and head to the available exits. We look forward to seeing you again soon!
 
-Good morning shopper! Welcome back to the Nest Family Shopping Centre. We're so happy you could join us for- Today we have a very special guest with us- Tama... Tama... TAMA. The toy that's soon to sweep the nation! To help Tama grow big and strong, there are three easy steps. First, remember to feed Tama when they're hungry. Otherwise, Tama will become sad and- The Nest Family is not responsible for injury in the event of- disturbing our guests. Good luck, and please remember- please remember- remember- remember- the mall is now closed.
+mall_gameStart: Good morning shopper! Welcome back to the Nest family shopping center, we're so happy you could join us for- today we have special guest with us. TA. MA. TA. MA. TAA. MAA. The toy that's soon to sweep the nation. To help Tama grow big and strong, there are 3 easy steps. First, remeber to feed Tama when they're hungry, otherwise Tama will become sad and- the nest family is not responsible for injury in the event of- disturbing our guests. Good luck! And please remember. please rememeber. remember. remember. The mall is now closed.
+
+round1Start: Oh my! Looks like Tama's hungry. Help Tama grow big and strong by feeding it a healthy can of red drink. Otherwise, Tama will die, and you'll be a murderer.
+
+round1Win: Good evening, Nest Family Shopping Center... PLACE TAMA ON THE ALTAR. THE CHILD WILL ASCEND.
+
+round2Intructions: Step 2. Remeber to keep your Tama entertained by playing any number of- Arcade machines available for all ages at the Nest Entertainment Centre. Don't forget to grab your tokens by the change machines.
+
+round2Start: Don't forget to take breaks to eat while gaming. Or don't. I'm a mall PA system, not your parent.
+
+round2Win: Good evening, Nest FALTER. ALTER. PLACE TAMA ON THE ALTAR. THE CHILD WILL ASCEND. 
+
+round3Instructions: And finally step -pee just like any other life form. Unfortunately, Tama's a bit performance shy and can only go in the dark. Head to the washroom near the food court, turn off the lights, and let Tama do their thing. But be careful of-
+
+round3Win: PLACE THE CHILD ON THE ALTAR AND BE RELEASED.
