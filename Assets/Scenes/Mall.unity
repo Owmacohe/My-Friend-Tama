@@ -2858,27 +2858,28 @@ MonoBehaviour:
   - Thank you for coming to the nest Family Shopping Centre. The mall is now closed.
     Please grab your belongings and head to the available exits. We look forward
     to seeing you again soon!
-  - Good morning shopper! Welcome back to the Nest Family Shopping Centre. We're
-    so happy you could join us for- Today we have a very special guest with us- Tama...
-    Tama... TAMA. The toy that's soon to sweep the nation! To help Tama grow big
-    and strong, there are three easy steps. First, remember to feed Tama when they're
-    hungry. Otherwise, Tama will become sad and- The Nest Family is not responsible
-    for injury in the event of- disturbing our guests. Good luck, and please remember-
-    please remember- remember- remember- the mall is now closed.
+  - "Good morning shopper! Welcome back to the Nest Family Shopping Centre. We're
+    so happy you could join us for\u2014 Today we have a very special guest with
+    us\u2014Tama... Tama... TAMA. The toy that's soon to sweep the nation! To help
+    Tama grow big and strong, there are three easy steps. First, remember to feed
+    Tama when they're hungry. Otherwise, Tama will become sad and\u2014The Nest Family
+    is not responsible for injury in the event of\u2014disturbing our guests. Good
+    luck, and please remember\u2014please remember- remember- remember\u2014the mall
+    is now closed."
   - Oh my! Looks like Tama's hungry. Help Tama grow big and strong by feeding it
     a healthy can of red drink. Otherwise, Tama will die, and you'll be a murderer.
   - Good evening, Nest Family Shopping Center... PLACE TAMA ON THE ALTAR. THE CHILD
     WILL ASCEND.
-  - Step 2. Remeber to keep your Tama entertained by playing any number of- Arcade
-    machines available for all ages at the Nest Entertainment Centre. Don't forget
-    to grab your tokens by the change machines.
+  - "Step 2: Remember to keep your Tama entertained by playing any number of\u2014<i>Arcade
+    machines available for all ages at the Nest Entertainment Centre</i>. Don't forget
+    to grab your tokens by the change machines."
   - Don't forget to take breaks to eat while gaming. Or don't. I'm a mall PA system,
     not your parent.
   - Good evening, Nest FALTER. ALTER. PLACE TAMA ON THE ALTAR. THE CHILD WILL ASCEND.
-  - And finally step -pee just like any other life form. Unfortunately, Tama's a
-    bit performance shy and can only go in the dark. Head to the washroom near the
-    food court, turn off the lights, and let Tama do their thing. But be careful
-    of-
+  - "And finally step\u2014pee just like any other life form. Unfortunately, Tama's
+    a bit performance shy and can only go in the dark. Head to the washroom near
+    the food court, turn off the lights, and let Tama do their thing. But be careful
+    of\u2014"
   - PLACE THE CHILD ON THE ALTAR AND BE RELEASED.
   streamerTutorials:
   - {fileID: 8300000, guid: c24494ec01e3f0145873950c0b5e0459, type: 3}
@@ -2890,7 +2891,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 93259db35b5fe4b4791370a560c34777, type: 3}
   - {fileID: 8300000, guid: 6411f1d4829777f40bd9ba1e1f8a4e7f, type: 3}
   streamerSubtitles:
-  - "What\u2019s up chatters! Welcome to this week\u2019s instalment of Explore\u2019R\u2019Us,
+  - "WHAT'S UP CHATTERS! Welcome to this week\u2019s instalment of Explore\u2019R\u2019Us,
     the urban exploration livestream where we check out totally radical abandoned
     malls! Oh yeah! Today\u2019s lucky find is the Nest Family Shopping Centre, shut
     down eight years ago due to financial mismanagement, this place is totally <i>up
@@ -2899,8 +2900,8 @@ MonoBehaviour:
   - "Whoa, what\u2019s that? Is that what I think it is?"
   - "<i>Oh my goodness</i> chat, I can\u2019t believe what we have on our hands here.
     This is real-life, authentic Tama toy! They discontinued these years ago! Radical!"
-  - Oh hey, this must be the food court. How cool that! Huh, looks like it was left
-    in a hurry, chat.
+  - Oh hey, this must be the food court. How is cool that? Huh, looks like it was
+    left in a hurry, chat.
   - "I mean, I guess let\u2019s evolve this thing again. I\u2019m getting kinda freaked
     out here guys... Haha just kidding! I\u2019m great! Hope you\u2019re all having
     a fantastic time! Oh yeah!"
@@ -14906,7 +14907,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294737604
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20462,8 +20463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 210653964}
   text: {fileID: 938413244}
-  tutorialColour: {r: 0.9882353, g: 0.15686274, b: 0.15686274, a: 1}
-  streamerColour: {r: 0.61960787, g: 0.15686275, b: 0.98823535, a: 1}
+  tutorialColour: {r: 0.8980392, g: 0, b: 0.047058824, a: 1}
+  streamerColour: {r: 0.7102908, g: 0.39398363, b: 0.9622642, a: 1}
   isPopulated: 0
   isTutorial: 0
 --- !u!1 &1283376889
