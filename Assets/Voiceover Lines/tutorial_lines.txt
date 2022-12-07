@@ -10,7 +10,7 @@ round2Intructions: Step 2. Remeber to keep your Tama entertained by playing any 
 
 round2Start: Don't forget to take breaks to eat while gaming. Or don't. I'm a mall PA system, not your parent.
 
-round2Win: Good evening, Nest FALTER. ALTER. PLACE TAMA ON THE ALTAR. THE CHILD WILL ASCEND. 
+round2Win: Good evening, Nest FALTER. ALTER. PLACE TAMA ON THE ALTAR. THE CHILD WILL ASCEND.
 
 round3Instructions: And finally step -pee just like any other life form. Unfortunately, Tama's a bit performance shy and can only go in the dark. Head to the washroom near the food court, turn off the lights, and let Tama do their thing. But be careful of-
 

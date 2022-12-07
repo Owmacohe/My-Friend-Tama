@@ -62,6 +62,9 @@ public class TamagotchiEvolutionManager : MonoBehaviour
                 case 2:
                     cps.hasPassedCheckpoint3 = true;
                     break;
+                case 3:
+                    FindObjectOfType<MenuManager>().LoadScene("Win");
+                    break;
             }
 
             if ((int)tc.tama.Age >= 3)
@@ -83,8 +86,10 @@ public class TamagotchiEvolutionManager : MonoBehaviour
     void ReturnControl()
     {
         if (isFirstTime)
+        {
             tsc.PlayMallTutorial(0);
-        
+        }
+
         if (cc != null)
             cc.evolveMessages = false;
 
@@ -96,9 +101,13 @@ public class TamagotchiEvolutionManager : MonoBehaviour
             case 2:
                 gc.ArcadeGateADown = false;
                 gc.ArcadeGateBDown = false;
+                
+                tsc.PlayMallTutorial(4);
                 break;
             case 3:
                 gc.BathroomGateDown = false;
+                
+                tsc.PlayMallTutorial(7);
                 break;
         }
 

@@ -2844,6 +2844,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6fc467efd54880ae183d484f144101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mallTutorials:
+  - {fileID: 8300000, guid: e751649dacf54f14081d02a000b236d3, type: 3}
+  - {fileID: 8300000, guid: 35b7b4dbb1ea9814a9ce915007695519, type: 3}
+  - {fileID: 8300000, guid: 778cd60e564c63b42827ff16ba07acd3, type: 3}
+  - {fileID: 8300000, guid: c7c185aa24efbe64f94e100a0829b874, type: 3}
+  - {fileID: 8300000, guid: 92036cf87a8157b4da5ab817c50125cf, type: 3}
+  - {fileID: 8300000, guid: c217da78db735384faa637686c1073c4, type: 3}
+  - {fileID: 8300000, guid: da0a45c15acef12448741a40c3cbfe9a, type: 3}
+  - {fileID: 8300000, guid: 285210762a3ac7d40bdbfdefc6078586, type: 3}
+  - {fileID: 8300000, guid: 851133a3f0ca99c45917fcf617da459c, type: 3}
   tutorialSubtitles:
   - Thank you for coming to the nest Family Shopping Centre. The mall is now closed.
     Please grab your belongings and head to the available exits. We look forward
@@ -2855,6 +2865,30 @@ MonoBehaviour:
     hungry. Otherwise, Tama will become sad and- The Nest Family is not responsible
     for injury in the event of- disturbing our guests. Good luck, and please remember-
     please remember- remember- remember- the mall is now closed.
+  - Oh my! Looks like Tama's hungry. Help Tama grow big and strong by feeding it
+    a healthy can of red drink. Otherwise, Tama will die, and you'll be a murderer.
+  - Good evening, Nest Family Shopping Center... PLACE TAMA ON THE ALTAR. THE CHILD
+    WILL ASCEND.
+  - Step 2. Remeber to keep your Tama entertained by playing any number of- Arcade
+    machines available for all ages at the Nest Entertainment Centre. Don't forget
+    to grab your tokens by the change machines.
+  - Don't forget to take breaks to eat while gaming. Or don't. I'm a mall PA system,
+    not your parent.
+  - Good evening, Nest FALTER. ALTER. PLACE TAMA ON THE ALTAR. THE CHILD WILL ASCEND.
+  - And finally step -pee just like any other life form. Unfortunately, Tama's a
+    bit performance shy and can only go in the dark. Head to the washroom near the
+    food court, turn off the lights, and let Tama do their thing. But be careful
+    of-
+  - PLACE THE CHILD ON THE ALTAR AND BE RELEASED.
+  streamerTutorials:
+  - {fileID: 8300000, guid: c24494ec01e3f0145873950c0b5e0459, type: 3}
+  - {fileID: 8300000, guid: b3d237952b28ca340a120ff7f64e4d50, type: 3}
+  - {fileID: 8300000, guid: 0b01e6316967bd84a9f8c4e89fa03f13, type: 3}
+  - {fileID: 8300000, guid: b2e1a2ff0910e954a985adae296f5df9, type: 3}
+  - {fileID: 8300000, guid: fd8c82142869aba4bbaa31ef00980690, type: 3}
+  - {fileID: 8300000, guid: 7b9bc7ec3ab687a43831d6b20ea42087, type: 3}
+  - {fileID: 8300000, guid: 93259db35b5fe4b4791370a560c34777, type: 3}
+  - {fileID: 8300000, guid: 6411f1d4829777f40bd9ba1e1f8a4e7f, type: 3}
   streamerSubtitles:
   - "What\u2019s up chatters! Welcome to this week\u2019s instalment of Explore\u2019R\u2019Us,
     the urban exploration livestream where we check out totally radical abandoned
@@ -2876,18 +2910,6 @@ MonoBehaviour:
     guess."
   - "Oh no, no no no. I don\u2019t want to go in there. But... it really wants me
     to. I guess I have to. <i>Radical, chat!</i>"
-  mallTutorials:
-  - {fileID: 8300000, guid: e751649dacf54f14081d02a000b236d3, type: 3}
-  - {fileID: 8300000, guid: 35b7b4dbb1ea9814a9ce915007695519, type: 3}
-  streamerTutorials:
-  - {fileID: 8300000, guid: c24494ec01e3f0145873950c0b5e0459, type: 3}
-  - {fileID: 8300000, guid: b3d237952b28ca340a120ff7f64e4d50, type: 3}
-  - {fileID: 8300000, guid: 0b01e6316967bd84a9f8c4e89fa03f13, type: 3}
-  - {fileID: 8300000, guid: b2e1a2ff0910e954a985adae296f5df9, type: 3}
-  - {fileID: 8300000, guid: fd8c82142869aba4bbaa31ef00980690, type: 3}
-  - {fileID: 8300000, guid: 7b9bc7ec3ab687a43831d6b20ea42087, type: 3}
-  - {fileID: 8300000, guid: 93259db35b5fe4b4791370a560c34777, type: 3}
-  - {fileID: 8300000, guid: 6411f1d4829777f40bd9ba1e1f8a4e7f, type: 3}
   seeTamaVolume: {fileID: 1015967692}
   seeFoodCourtVolume: {fileID: 1731681721}
   seeArcadeVolume: {fileID: 1506186789}
@@ -3096,8 +3118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 610, y: 60}
+  m_AnchoredPosition: {x: 0, y: 45}
+  m_SizeDelta: {x: 610, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210653964
 MonoBehaviour:
@@ -14851,7 +14873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 45}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &938413244
@@ -23817,7 +23839,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506186789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -124, y: 10, z: 52.1}
+  m_LocalPosition: {x: -124, y: 10, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -26851,7 +26873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731681721}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -40, y: 10, z: 40}
+  m_LocalPosition: {x: -44, y: 10, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -30761,7 +30783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989000916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57, y: 8, z: 52}
+  m_LocalPosition: {x: -57, y: 8, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []

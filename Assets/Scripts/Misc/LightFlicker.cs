@@ -28,8 +28,7 @@ public class LightFlicker : MonoBehaviour
     // Saves us iterating every time we update, we just change by the delta
     Queue<float> smoothQueue;
     float lastSum = 0;
-
-
+    
     /// <summary>
     /// Reset the randomness and start again. You usually don't need to call
     /// this, deactivating/reactivating is usually fine but if you want a strict

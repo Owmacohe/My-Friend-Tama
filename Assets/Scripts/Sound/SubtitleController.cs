@@ -11,11 +11,6 @@ public class SubtitleController : MonoBehaviour
     [HideInInspector] public bool isPopulated;
     [HideInInspector] public bool isTutorial;
 
-    void Start()
-    {
-        Clear();
-    }
-
     public void Populate(string subtitle, bool tutorial)
     {
         background.enabled = true;

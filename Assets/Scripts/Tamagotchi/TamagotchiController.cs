@@ -47,7 +47,7 @@ public class TamagotchiController : MonoBehaviour
     bool isUpdatingStats;
 
     float round1StartTime, round2StartTime, round3StartTime;
-    bool hasRound1Started, hasRound2Started, hasRound3Started;
+    [HideInInspector] public bool hasRound1Started, hasRound2Started, hasRound3Started;
 
     public void Start()
     {

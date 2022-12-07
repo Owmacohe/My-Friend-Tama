@@ -5,14 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class TutorialSoundsController : MonoBehaviour
 {
+    [Header("Tutorial")]
+    [SerializeField] AudioClip[] mallTutorials;
     [TextArea(1, 100)]
     [SerializeField] string[] tutorialSubtitles;
     
+    [Header("Streamer")]
+    [SerializeField] AudioClip[] streamerTutorials;
     [TextArea(1, 100)]
     [SerializeField] string[] streamerSubtitles;
-    
-    [SerializeField] AudioClip[] mallTutorials;
-    [SerializeField] AudioClip[] streamerTutorials;
     [SerializeField] GameObject seeTamaVolume, seeFoodCourtVolume, seeArcadeVolume, seeBathroomVolume;
 
     List<AudioSource> PAs = new List<AudioSource>();

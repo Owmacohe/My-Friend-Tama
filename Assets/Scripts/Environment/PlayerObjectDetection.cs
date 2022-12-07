@@ -63,14 +63,17 @@ public class PlayerObjectDetection : MonoBehaviour
         if (tc.IsRoundDone(1))
         {
             tem.isEvolveReady = true;
+            tutorial.PlayMallTutorial(3);
         }
         else if (tc.IsRoundDone(2))
         {
             tem.isEvolveReady = true;
+            tutorial.PlayMallTutorial(6);
         }
         else if (tc.IsRoundDone(3))
         {
             tem.isEvolveReady = true;
+            tutorial.PlayMallTutorial(8);
         }
     }
 
@@ -115,6 +118,8 @@ public class PlayerObjectDetection : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Food"))
             {
+                tutorial.PlayMallTutorial(2);
+                
                 cps.hasPassedCheckpoint1 = true;
                 
                 audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
@@ -125,6 +130,8 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("Money"))
             {
+                tutorial.PlayMallTutorial(5);
+                
                 if (!hasCoin)
                 {
                     audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
@@ -143,6 +150,9 @@ public class PlayerObjectDetection : MonoBehaviour
                 var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
                 lightSwitch.lightOn = !lightSwitch.lightOn;
+                
+                if (tc.hasRound3Started)
+                    tc.StartRound(3);
             }
             else if (other.gameObject.CompareTag("fakeTama"))
             {
@@ -154,8 +164,6 @@ public class PlayerObjectDetection : MonoBehaviour
                     }
                     else
                     {
-                        // TODO: possible win state
-                        
                         tem.Place();
                     }
 
