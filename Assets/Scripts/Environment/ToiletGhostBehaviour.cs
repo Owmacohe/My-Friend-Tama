@@ -21,13 +21,13 @@ public class ToiletGhostBehaviour : MonoBehaviour
         speedVariation = Random.Range(1, 6);
 
         audioManagerMenu = GameObject.FindGameObjectWithTag("audioManager").gameObject.GetComponent<AudioManagerMenu>();
-
+        playercontroller = FindObjectOfType<PlayerController>();
     }
 
     void FixedUpdate()
     {
-        ghostLook();
-        ghostPlayerTracking();
+        GhostLook();
+        GhostPlayerTracking();
     }
 
     //Need to fix so it detects proper collision point
@@ -36,12 +36,7 @@ public class ToiletGhostBehaviour : MonoBehaviour
         Debug.Log($"bonk {other.gameObject.name} {other.gameObject.tag}");
         if (other.gameObject.CompareTag("FlashlightDetection"))
         {
-            playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-            if (playercontroller.flashlightOn)
-            {
-                audioManagerMenu.ghostHitSFX.PlayOneShot(audioManagerMenu.ghostHitSFX.clip);
-                Destroy(gameObject);
-            }
+            GhostDestroy();
         }
         else if (other.gameObject.CompareTag("Player"))
         {
@@ -51,10 +46,30 @@ public class ToiletGhostBehaviour : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("FlashlightDetection"))
+        {
+            GhostDestroy();
+        }
+    }
+
+    void GhostDestroy()
+    {
+        if (playercontroller == null)
+            playercontroller = FindObjectOfType<PlayerController>();
+        
+        if (playercontroller.flashlightOn)
+        {
+            audioManagerMenu.ghostHitSFX.PlayOneShot(audioManagerMenu.ghostHitSFX.clip);
+            Destroy(gameObject);
+        }
+    }
+
     /// <summary>
     /// Keeps Ghost eyes Locked on player
     /// </summary>
-    void ghostLook()
+    void GhostLook()
     {
         transform.LookAt(mainCam);
         transform.localEulerAngles = Vector3.up * transform.localEulerAngles.y;
@@ -63,13 +78,11 @@ public class ToiletGhostBehaviour : MonoBehaviour
     /// <summary>
     /// Tracks player current location
     /// </summary>
-    void ghostPlayerTracking()
+    void GhostPlayerTracking()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
 
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, homingSpeed * speedVariation);
     }
-
-
 }

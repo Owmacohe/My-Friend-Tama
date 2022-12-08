@@ -12,7 +12,7 @@ public class StartRound2Script : MonoBehaviour
     void Start()
     {
         GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
-        playerObjectDetection = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerObjectDetection>();
+        playerObjectDetection = FindObjectOfType<PlayerObjectDetection>();
     
     }
 
@@ -20,7 +20,7 @@ public class StartRound2Script : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E) && playerObjectDetection.hasRealTama)
+            if (Input.GetKey(KeyCode.E))
             {
                 GateControl.ArcadeGateADown = true;
                 GateControl.ArcadeGateBDown = true;

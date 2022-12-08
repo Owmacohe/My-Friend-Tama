@@ -21,7 +21,7 @@ public class StartRound1Script : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E) && playerObjectDetection.hasRealTama)
+            if (Input.GetKey(KeyCode.E))
             {
                 GateControl.FoodCourtGateDown = true;
                 

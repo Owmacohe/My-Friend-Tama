@@ -139,6 +139,9 @@ public class PlayerObjectDetection : MonoBehaviour
                         audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
                         Destroy(other.gameObject);
                         hasCoin = true;
+                        
+                        if (!tc.hasRound2Started && !tc.IsRoundDone(2))
+                            tc.StartRound(2);
                     }
                 }
                 else if (other.gameObject.CompareTag("ArcadeCab"))
