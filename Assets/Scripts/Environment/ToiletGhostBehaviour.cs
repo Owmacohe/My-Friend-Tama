@@ -9,7 +9,7 @@ public class ToiletGhostBehaviour : MonoBehaviour
     Transform mainCam;
     GameObject player;
     Collider flashlightCollider;
-    PlayerController playercontroller;
+    PlayerController playerController;
     int speedVariation;
     AudioManagerMenu audioManagerMenu;
 
@@ -17,11 +17,11 @@ public class ToiletGhostBehaviour : MonoBehaviour
     {
         mainCam = Camera.main.transform;
 
-        //Creates slight speed varation based on homingSpeed
+        //Creates slight speed variation based on homingSpeed
         speedVariation = Random.Range(1, 6);
 
-        audioManagerMenu = GameObject.FindGameObjectWithTag("audioManager").gameObject.GetComponent<AudioManagerMenu>();
-        playercontroller = FindObjectOfType<PlayerController>();
+        audioManagerMenu = FindObjectOfType<AudioManagerMenu>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     void FixedUpdate()
@@ -56,10 +56,10 @@ public class ToiletGhostBehaviour : MonoBehaviour
 
     void GhostDestroy()
     {
-        if (playercontroller == null)
-            playercontroller = FindObjectOfType<PlayerController>();
+        if (playerController == null)
+            playerController = FindObjectOfType<PlayerController>();
         
-        if (playercontroller.flashlightOn)
+        if (playerController.flashlightOn)
         {
             audioManagerMenu.ghostHitSFX.PlayOneShot(audioManagerMenu.ghostHitSFX.clip);
             Destroy(gameObject);
@@ -81,8 +81,7 @@ public class ToiletGhostBehaviour : MonoBehaviour
     void GhostPlayerTracking()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
-
+        
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, homingSpeed * speedVariation);
     }
 }

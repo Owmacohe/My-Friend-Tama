@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class StartRound2Script : MonoBehaviour
 {
-    [SerializeField] GameObject ArcadeTokenSpawner;
-
+    [SerializeField] GameObject arcadeTokenSpawner;
+    
     PlayerObjectDetection playerObjectDetection;
-    GateControlScript GateControl;
+    GateControlScript gateControl;
 
     void Start()
     {
-        GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
+        gateControl = FindObjectOfType<GateControlScript>();
         playerObjectDetection = FindObjectOfType<PlayerObjectDetection>();
-    
     }
 
     void OnTriggerStay(Collider other)
@@ -22,11 +21,11 @@ public class StartRound2Script : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                GateControl.ArcadeGateADown = true;
-                GateControl.ArcadeGateBDown = true;
+                gateControl.arcadeGateADown = true;
+                gateControl.arcadeGateBDown = true;
 
                 playerObjectDetection.hasCoin = true;
-                ArcadeTokenSpawner.SetActive(true);
+                arcadeTokenSpawner.SetActive(true);
                 gameObject.SetActive(false);
 
                 FindObjectOfType<TamagotchiController>().StartRound(2);

@@ -7,7 +7,6 @@ public class PlayerObjectDetection : MonoBehaviour
     [SerializeField] GameObject washroomSpawnerOBJ;
     [SerializeField] GameObject connectedLightSwitch;
     [SerializeField] GameObject washroomLights;
-    [SerializeField] GameObject deathScreen;
     [SerializeField] TamagotchiController tc;
     [SerializeField] TamagotchiEvolutionManager tem;
     public bool hasCoin;
@@ -16,18 +15,21 @@ public class PlayerObjectDetection : MonoBehaviour
     bool isPlayingWashroomGame;
     [HideInInspector] public bool hasRealTama;
     AudioManagerMenu audioManagerMenu;
-    PlayerController playercontroller;
+    PlayerController playerController;
     GateControlScript gateControlScript;
     TutorialSoundsController tutorial;
     Transform respawnPoint;
     CheckpointScript cps;
+    LightSwitchBool lsb;
   
     void Start()
     {
         audioManagerMenu = AudioManager.GetComponent<AudioManagerMenu>();
+        playerController = GetComponent<PlayerController>();
         gateControlScript = FindObjectOfType<GateControlScript>();
         tutorial = FindObjectOfType<TutorialSoundsController>();
         cps = FindObjectOfType<CheckpointScript>();
+        lsb = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
         washroomSpawnerOBJ.SetActive(false);
     }
@@ -41,23 +43,23 @@ public class PlayerObjectDetection : MonoBehaviour
             tc.tama.Scold(0.005f);
         }
         
-        if (hasRealTama && !tutorial.isPlaying && gateControlScript.TutorialGateDown && tutorial.tutorialProgress == 2)
+        if (hasRealTama && !tutorial.isPlaying && gateControlScript.tutorialGateDown && tutorial.tutorialProgress == 2)
         {
-            gateControlScript.TutorialGateDown = false;
+            gateControlScript.tutorialGateDown = false;
         }
 
         if (tc.IsGateTimeDone(1))
         {
-            gateControlScript.FoodCourtGateDown = false;
+            gateControlScript.foodCourtGateDown = false;
         }
         else if (tc.IsGateTimeDone(2))
         {
-            gateControlScript.ArcadeGateADown = false;
-            gateControlScript.ArcadeGateBDown = false;
+            gateControlScript.arcadeGateADown = false;
+            gateControlScript.arcadeGateBDown = false;
         }
         else if (tc.IsGateTimeDone(3))
         {
-            gateControlScript.BathroomGateDown = false;
+            gateControlScript.bathroomGateDown = false;
         }
 
         if (tc.IsRoundDone(1))
@@ -79,27 +81,22 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void CheckWashroomSpawner()
     {
-        if (!connectedLightSwitch.GetComponent<LightSwitchBool>().lightOn
-            && inWashroom)
+        if (!lsb.lightOn && inWashroom)
         {
             washroomLights.SetActive(false);
             washroomSpawnerOBJ.SetActive(true);
 
             isPlayingWashroomGame = true;
 
-            playercontroller = GetComponent<PlayerController>();
-
-            if (playercontroller.flashlightOn)
+            if (playerController.flashlightOn)
             {
                 washroomSpawnerOBJ.SetActive(false);
                 isPlayingWashroomGame = false;
- 
             }
-            else if (!playercontroller.flashlightOn)
+            else
             {
                 washroomSpawnerOBJ.SetActive(true);
                 isPlayingWashroomGame = true;
-
             }
         }
         else
@@ -199,10 +196,10 @@ public class PlayerObjectDetection : MonoBehaviour
 
             if (hasRealTama)
             {
-                gateControlScript.FoodCourtGateDown = false;
-                gateControlScript.FrontDoorGateDown = true;
+                gateControlScript.foodCourtGateDown = false;
+                gateControlScript.frontDoorGateDown = true;
                 
-                gateControlScript.TutorialGateDown = true;
+                gateControlScript.tutorialGateDown = true;
             }
         }
         else if (other.gameObject.CompareTag("streamerVolume"))

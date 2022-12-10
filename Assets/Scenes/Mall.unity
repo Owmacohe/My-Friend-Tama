@@ -3034,6 +3034,10 @@ PrefabInstance:
       propertyPath: FoodCourtSpawner
       value: 
       objectReference: {fileID: 709991491}
+    - target: {fileID: 302663544, guid: fe4b298410a6d4144833018436386f4e, type: 3}
+      propertyPath: foodCourtSpawner
+      value: 
+      objectReference: {fileID: 709991491}
     - target: {fileID: 5051982152585759593, guid: fe4b298410a6d4144833018436386f4e, type: 3}
       propertyPath: m_Name
       value: StartFoodPrefab
@@ -6512,7 +6516,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-113554
+  m_Name: pb_Mesh-45004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7010,13 +7014,13 @@ MonoBehaviour:
   FoodCourtGate: {fileID: 1339003525}
   FrontDoorGate: {fileID: 927407067}
   TutorialGate: {fileID: 1765350781}
-  ToyStoreGateDown: 0
-  ArcadeGateADown: 1
-  ArcadeGateBDown: 1
-  BathroomGateDown: 1
-  FoodCourtGateDown: 1
-  FrontDoorGateDown: 0
-  TutorialGateDown: 0
+  toyStoreGateDown: 0
+  arcadeGateADown: 0
+  arcadeGateBDown: 0
+  bathroomGateDown: 0
+  foodCourtGateDown: 0
+  frontDoorGateDown: 0
+  tutorialGateDown: 0
 --- !u!1 &426871837
 GameObject:
   m_ObjectHideFlags: 0
@@ -19225,7 +19229,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-119396
+  m_Name: pb_Mesh-50846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20028,7 +20032,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-110682
+  m_Name: pb_Mesh-42132
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26189,8 +26193,6 @@ MonoBehaviour:
   eatSFX: {fileID: 0}
   ghostHitSFX: {fileID: 0}
   gateShutSFX: {fileID: 0}
-  mall_intro: {fileID: 0}
-  mall_gameStart: {fileID: 0}
 --- !u!1 &1664599673
 GameObject:
   m_ObjectHideFlags: 0
@@ -32441,6 +32443,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 808690187074923614, guid: a2d37cdd48e03b74eaf328efd3acd05c, type: 3}
       propertyPath: ArcadeTokenSpawner
+      value: 
+      objectReference: {fileID: 215612466}
+    - target: {fileID: 808690187074923614, guid: a2d37cdd48e03b74eaf328efd3acd05c, type: 3}
+      propertyPath: arcadeTokenSpawner
       value: 
       objectReference: {fileID: 215612466}
     - target: {fileID: 2691134265395546359, guid: a2d37cdd48e03b74eaf328efd3acd05c, type: 3}

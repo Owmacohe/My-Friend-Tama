@@ -12,7 +12,6 @@ public class ObjectStateSwitchScript : MonoBehaviour
     {
         stateDefault.SetActive(true);
         stateInRange.SetActive(false);
-
     }
 
    void OnTriggerEnter(Collider other)

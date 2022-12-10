@@ -15,9 +15,7 @@ public class ConsumableSpawnerScript : MonoBehaviour
     {
         freeSpawnPoint.AddRange(spawnPoints);
     }
-
-  
-
+    
     void Update()
     {
         var lastIndex = -1;
@@ -49,9 +47,8 @@ public class ConsumableSpawnerScript : MonoBehaviour
             int spawnPointIndex = Random.Range(0, freeSpawnPoint.Count);
             int itemToSpawnIndex = Random.Range(0, spawnableItems.Count);
 
-            if (lastIndex>=0 || spawnPoints.Count < 1)
+            if (lastIndex >= 0 || spawnPoints.Count < 1)
             {
-
                 spawnPointIndex = Random.Range(0, freeSpawnPoint.Count - 1);
 
                 if (spawnPointIndex >= lastIndex)

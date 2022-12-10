@@ -55,13 +55,13 @@ public class CheckpointScript : MonoBehaviour
     /// </summary>
     void CheckPoint0()
     {
-        gateControlScript.ToyStoreGateDown = false;
-        gateControlScript.ArcadeGateADown = true;
-        gateControlScript.ArcadeGateBDown = true;
-        gateControlScript.BathroomGateDown = true;
-        gateControlScript.FoodCourtGateDown = true;
-        gateControlScript.FrontDoorGateDown = false;
-        gateControlScript.TutorialGateDown = false;
+        gateControlScript.toyStoreGateDown = false;
+        gateControlScript.arcadeGateADown = true;
+        gateControlScript.arcadeGateBDown = true;
+        gateControlScript.bathroomGateDown = true;
+        gateControlScript.foodCourtGateDown = true;
+        gateControlScript.frontDoorGateDown = false;
+        gateControlScript.tutorialGateDown = false;
 
         foodCourtSpawner.SetActive(false);
 
@@ -74,13 +74,13 @@ public class CheckpointScript : MonoBehaviour
     /// </summary>
     void CheckPoint1()
     {
-        gateControlScript.ToyStoreGateDown = false;
-        gateControlScript.ArcadeGateADown = true;
-        gateControlScript.ArcadeGateBDown = true;
-        gateControlScript.BathroomGateDown = true;
-        gateControlScript.FoodCourtGateDown = false;
-        gateControlScript.FrontDoorGateDown = true;
-        gateControlScript.TutorialGateDown = false;
+        gateControlScript.toyStoreGateDown = false;
+        gateControlScript.arcadeGateADown = true;
+        gateControlScript.arcadeGateBDown = true;
+        gateControlScript.bathroomGateDown = true;
+        gateControlScript.foodCourtGateDown = false;
+        gateControlScript.frontDoorGateDown = true;
+        gateControlScript.tutorialGateDown = false;
 
         foodCourtSpawner.SetActive(false);
 
@@ -95,13 +95,13 @@ public class CheckpointScript : MonoBehaviour
     /// </summary>
     void CheckPoint2()
     {
-        gateControlScript.ToyStoreGateDown = false;
-        gateControlScript.ArcadeGateADown = false;
-        gateControlScript.ArcadeGateBDown = false;
-        gateControlScript.BathroomGateDown = true;
-        gateControlScript.FoodCourtGateDown = false;
-        gateControlScript.FrontDoorGateDown = true;
-        gateControlScript.TutorialGateDown = false;
+        gateControlScript.toyStoreGateDown = false;
+        gateControlScript.arcadeGateADown = false;
+        gateControlScript.arcadeGateBDown = false;
+        gateControlScript.bathroomGateDown = true;
+        gateControlScript.foodCourtGateDown = false;
+        gateControlScript.frontDoorGateDown = true;
+        gateControlScript.tutorialGateDown = false;
 
         foodCourtSpawner.SetActive(true);
 
@@ -116,13 +116,13 @@ public class CheckpointScript : MonoBehaviour
     /// </summary>
     void CheckPoint3()
     {
-        gateControlScript.ToyStoreGateDown = false;
-        gateControlScript.ArcadeGateADown = false;
-        gateControlScript.ArcadeGateBDown = false;
-        gateControlScript.BathroomGateDown = false;
-        gateControlScript.FoodCourtGateDown = false;
-        gateControlScript.FrontDoorGateDown = true;
-        gateControlScript.TutorialGateDown = false;
+        gateControlScript.toyStoreGateDown = false;
+        gateControlScript.arcadeGateADown = false;
+        gateControlScript.arcadeGateBDown = false;
+        gateControlScript.bathroomGateDown = false;
+        gateControlScript.foodCourtGateDown = false;
+        gateControlScript.frontDoorGateDown = true;
+        gateControlScript.tutorialGateDown = false;
 
         foodCourtSpawner.SetActive(true);
 

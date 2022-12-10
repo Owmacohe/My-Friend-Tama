@@ -12,22 +12,17 @@ public class GateControlScript : MonoBehaviour
     [SerializeField] GameObject FrontDoorGate;
     [SerializeField] GameObject TutorialGate;
 
-    AudioManagerMenu audioManagerMenu;
+    //AudioManagerMenu audioManagerMenu;
 
-    public bool ToyStoreGateDown;
-    public bool ArcadeGateADown;
-    public bool ArcadeGateBDown;
-    public bool BathroomGateDown;
-    public bool FoodCourtGateDown;
-    public bool FrontDoorGateDown;
-    public bool TutorialGateDown;
+    [HideInInspector] public bool toyStoreGateDown;
+    [HideInInspector] public bool arcadeGateADown;
+    [HideInInspector] public bool arcadeGateBDown;
+    [HideInInspector] public bool bathroomGateDown;
+    [HideInInspector] public bool foodCourtGateDown;
+    [HideInInspector] public bool frontDoorGateDown;
+    [HideInInspector] public bool tutorialGateDown;
 
-    bool gateSFXPlayed;
-
-    void Start()
-    {
-        audioManagerMenu = FindObjectOfType<AudioManagerMenu>();
-    }
+    //bool gateSFXPlayed;
     
     void Update()
     {
@@ -36,12 +31,12 @@ public class GateControlScript : MonoBehaviour
 
     void GateSwitcher()
     {
-        ToyStoreGate.SetActive(ToyStoreGateDown);
-        ArcadeGateA.SetActive(ArcadeGateADown);
-        ArcadeGateB.SetActive(ArcadeGateBDown);
-        BathroomGate.SetActive(BathroomGateDown);
-        FoodCourtGate.SetActive(FoodCourtGateDown);
-        FrontDoorGate.SetActive(FrontDoorGateDown);
-        TutorialGate.SetActive(TutorialGateDown);
+        ToyStoreGate.SetActive(toyStoreGateDown);
+        ArcadeGateA.SetActive(arcadeGateADown);
+        ArcadeGateB.SetActive(arcadeGateBDown);
+        BathroomGate.SetActive(bathroomGateDown);
+        FoodCourtGate.SetActive(foodCourtGateDown);
+        FrontDoorGate.SetActive(frontDoorGateDown);
+        TutorialGate.SetActive(tutorialGateDown);
     }
 }

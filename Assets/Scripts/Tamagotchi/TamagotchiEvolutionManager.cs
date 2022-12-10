@@ -100,13 +100,13 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         switch ((int)tc.tama.Age)
         {
             case 2:
-                gc.ArcadeGateADown = false;
-                gc.ArcadeGateBDown = false;
+                gc.arcadeGateADown = false;
+                gc.arcadeGateBDown = false;
                 
                 tsc.PlayMallTutorial(4);
                 break;
             case 3:
-                gc.BathroomGateDown = false;
+                gc.bathroomGateDown = false;
                 
                 tsc.PlayMallTutorial(7);
                 break;

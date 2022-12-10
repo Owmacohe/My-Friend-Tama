@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     Light playerLight;
     bool isLookingAtTama;
     bool isCrouched;
-    bool isRunning;
+    //bool isRunning;
     float maxPlayerHeight;
     float startWalkSpeed;
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
     Vector2 currentMouseDelta = Vector2.zero;
-    Vector2 currentMouseDeltaVelocity = Vector2.zero;
+    //Vector2 currentMouseDeltaVelocity = Vector2.zero;
     
     [HideInInspector] public bool keyboardInteractionPaused;
     Transform respawnPoint;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         Resume();
 
         // Get child objects at start up
-        playerCamera = gameObject.transform.Find("MainCamera").gameObject;
+        playerCamera = Camera.main.gameObject;
         controller = GetComponent<CharacterController>();
         playerLight = playerFlashlight.GetComponent<Light>();
         maxPlayerHeight = controller.height;
@@ -93,19 +93,20 @@ public class PlayerController : MonoBehaviour
     {
         keyboardInteractionPaused = true;
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        MouseSwitcher.SetInactive();
     }
 
     public void Resume()
     {
+        if (isDead)
+            tc.tama.ResetStats();
+        
         pauseMenu.SetActive(false);
         deathScreen.SetActive(false);
         
         keyboardInteractionPaused = false;
         
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        MouseSwitcher.SetActive();
 
         isDead = false;
     }
@@ -195,12 +196,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("left shift"))
         {
             walkSpeed = runSpeed;
-            isRunning = true;
+            //isRunning = true;
         }
         else if (Input.GetKeyUp("left shift"))
         {
             walkSpeed = startWalkSpeed;
-            isRunning = false;
+            //isRunning = false;
         }
     }
 

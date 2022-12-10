@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class StartRound1Script : MonoBehaviour
 {
-    [SerializeField] GameObject FoodCourtSpawner;
+    [SerializeField] GameObject foodCourtSpawner;
 
-    GateControlScript GateControl;
-    PlayerObjectDetection playerObjectDetection;
+    GateControlScript gateControl;
+    //PlayerObjectDetection playerObjectDetection;
     
     void Start()
     {
-        GateControl = GameObject.FindGameObjectWithTag("gateControl").gameObject.GetComponent<GateControlScript>();
-        FoodCourtSpawner.SetActive(false);
+        gateControl = FindObjectOfType<GateControlScript>();
+        foodCourtSpawner.SetActive(false);
 
-        playerObjectDetection = FindObjectOfType<PlayerObjectDetection>();
+        //playerObjectDetection = FindObjectOfType<PlayerObjectDetection>();
     }
 
     void OnTriggerStay(Collider other)
@@ -23,9 +23,9 @@ public class StartRound1Script : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                GateControl.FoodCourtGateDown = true;
+                gateControl.foodCourtGateDown = true;
                 
-                FoodCourtSpawner.SetActive(true);
+                foodCourtSpawner.SetActive(true);
                 gameObject.SetActive(false);
                 
                 FindObjectOfType<TamagotchiController>().StartRound(1);
