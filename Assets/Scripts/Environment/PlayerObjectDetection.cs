@@ -13,7 +13,6 @@ public class PlayerObjectDetection : MonoBehaviour
 
     bool inWashroom;
     bool isPlayingWashroomGame;
-    [HideInInspector] public bool hasRealTama;
     AudioManagerMenu audioManagerMenu;
     PlayerController playerController;
     GateControlScript gateControlScript;
@@ -36,46 +35,49 @@ public class PlayerObjectDetection : MonoBehaviour
 
     void FixedUpdate()
     {
-        CheckWashroomSpawner();
-
-        if (isPlayingWashroomGame)
+        if (!playerController.isPaused)
         {
-            tc.tama.Scold(0.005f);
-        }
+            CheckWashroomSpawner();
+
+            if (isPlayingWashroomGame)
+            {
+                tc.tama.Scold(0.005f);
+            }
         
-        if (hasRealTama && !tutorial.isPlaying && gateControlScript.tutorialGateDown && tutorial.tutorialProgress == 2)
-        {
-            gateControlScript.tutorialGateDown = false;
-        }
+            if (!tutorial.isPlaying && gateControlScript.tutorialGateDown && tutorial.tutorialProgress == 2)
+            {
+                gateControlScript.tutorialGateDown = false;
+            }
 
-        if (tc.IsGateTimeDone(1))
-        {
-            gateControlScript.foodCourtGateDown = false;
-        }
-        else if (tc.IsGateTimeDone(2))
-        {
-            gateControlScript.arcadeGateADown = false;
-            gateControlScript.arcadeGateBDown = false;
-        }
-        else if (tc.IsGateTimeDone(3))
-        {
-            gateControlScript.bathroomGateDown = false;
-        }
-
-        if (tc.IsRoundDone(1))
-        {
-            tem.isEvolveReady = true;
-            tutorial.PlayMallTutorial(3);
-        }
-        else if (tc.IsRoundDone(2))
-        {
-            tem.isEvolveReady = true;
-            tutorial.PlayMallTutorial(6);
-        }
-        else if (tc.IsRoundDone(3))
-        {
-            tem.isEvolveReady = true;
-            tutorial.PlayMallTutorial(8);
+            if (tc.IsGateTimeDone(1))
+            {
+                gateControlScript.foodCourtGateDown = false;
+            }
+            else if (tc.IsGateTimeDone(2))
+            {
+                gateControlScript.arcadeGateADown = false;
+                gateControlScript.arcadeGateBDown = false;
+            }
+            else if (tc.IsGateTimeDone(3))
+            {
+                gateControlScript.bathroomGateDown = false;
+            }
+            
+            if (tc.IsRoundDone(1))
+            {
+                tem.isEvolveReady = true;
+                tutorial.PlayMallTutorial(3);
+            }
+            else if (tc.IsRoundDone(2))
+            {
+                tem.isEvolveReady = true;
+                tutorial.PlayMallTutorial(6);
+            }
+            else if (tc.IsRoundDone(3))
+            {
+                tem.isEvolveReady = true;
+                tutorial.PlayMallTutorial(8);
+            }   
         }
     }
 
@@ -113,43 +115,39 @@ public class PlayerObjectDetection : MonoBehaviour
         //Debug.Log($"Collide with '{other.gameObject}'");
         if (Input.GetKey(KeyCode.E))
         {
-            if (hasRealTama)
+            if (other.gameObject.CompareTag("Food"))
             {
-                if (other.gameObject.CompareTag("Food"))
-                {
-                    tutorial.PlayMallTutorial(2);
+                tutorial.PlayMallTutorial(2);
                 
-                    cps.hasPassedCheckpoint1 = true;
+                cps.hasPassedCheckpoint1 = true;
                 
-                    audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
+                audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
 
-                    Destroy(other.gameObject);
+                Destroy(other.gameObject);
                 
-                    tc.tama.Feed(0.2f);
-                }
-                else if (other.gameObject.CompareTag("Money"))
-                {
-                    tutorial.PlayMallTutorial(5);
-                
-                    if (!hasCoin)
-                    {
-                        audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
-                        Destroy(other.gameObject);
-                        hasCoin = true;
-                        
-                        if (!tc.hasRound2Started && !tc.IsRoundDone(2))
-                            tc.StartRound(2);
-                    }
-                }
-                else if (other.gameObject.CompareTag("ArcadeCab"))
-                {
-                    CoinCheck(other);
-                
-                    tc.tama.Play(0.2f);
-                }   
+                tc.tama.Feed(0.2f);
             }
-
-            if (other.gameObject.CompareTag("fakeTama"))
+            else if (other.gameObject.CompareTag("Money"))
+            {
+                tutorial.PlayMallTutorial(5);
+                
+                if (!hasCoin)
+                {
+                    audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
+                    Destroy(other.gameObject);
+                    hasCoin = true;
+                        
+                    if (!tc.hasRound2Started && !tc.IsRoundDone(2))
+                        tc.StartRound(2);
+                }
+            }
+            else if (other.gameObject.CompareTag("ArcadeCab"))
+            {
+                CoinCheck(other);
+                
+                tc.tama.Play(0.2f);
+            }
+            else if (other.gameObject.CompareTag("fakeTama"))
             {
                 if (tem.isEvolveReady)
                 {
@@ -161,15 +159,13 @@ public class PlayerObjectDetection : MonoBehaviour
                     {
                         tem.Place();
                     }
-
-                    hasRealTama = true;
                 }
             }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (other.gameObject == connectedLightSwitch && hasRealTama)
+            if (other.gameObject == connectedLightSwitch)
             {
                 var lightSwitch = connectedLightSwitch.GetComponent<LightSwitchBool>();
 
@@ -192,14 +188,14 @@ public class PlayerObjectDetection : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("tutorialVolume"))
         {
-            tutorial.PlayMallTutorial(1);
-
-            if (hasRealTama)
+            if (tutorial.PlayMallTutorial(1))
             {
                 gateControlScript.foodCourtGateDown = false;
                 gateControlScript.frontDoorGateDown = true;
                 
                 gateControlScript.tutorialGateDown = true;
+            
+                Destroy(other.gameObject);   
             }
         }
         else if (other.gameObject.CompareTag("streamerVolume"))

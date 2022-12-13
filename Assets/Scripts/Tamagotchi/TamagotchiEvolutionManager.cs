@@ -14,6 +14,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
     [HideInInspector] public bool isEvolveReady, isFirstTime;
     bool isEvolving;
+    float lastEvolutionTime;
 
     void Start()
     {
@@ -35,16 +36,17 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         fakeTama.SetActive(true);
         realTama.SetActive(false);
 
-        pc.keyboardInteractionPaused = true;
+        pc.isPaused = true;
         
         Invoke(nameof(Evolve), 4);
     }
 
     public void Evolve()
     {
-        if (!isEvolving)
+        if (!isEvolving && Time.time - lastEvolutionTime > 8)
         {
             isEvolving = true;
+            lastEvolutionTime = Time.time;
             
             if (cc != null)
                 cc.evolveMessages = true;
@@ -52,34 +54,32 @@ public class TamagotchiEvolutionManager : MonoBehaviour
             fakeTama.SetActive(false);
             realTama.SetActive(true);
 
-            pc.keyboardInteractionPaused = true;
+            pc.isPaused = true;
 
-            switch ((int)tc.tama.Age)
+            int tamaAge = (int)tc.tama.Age;
+
+            if (tamaAge < 3)
             {
-                case 1:
+                if (tamaAge == 1)
+                {
                     cps.hasPassedCheckpoint2 = true;
-                    break;
-                case 2:
+                }
+                else if (tamaAge == 2)
+                {
                     cps.hasPassedCheckpoint3 = true;
-                    break;
-                case 3:
-                    pc.Pause();
-                    FindObjectOfType<MenuManager>().LoadScene("Win");
-                    break;
-            }
-
-            if ((int)tc.tama.Age >= 3)
-            {
-                GetComponent<MenuManager>().LoadScene("Win");
-            }
-            else
-            {
+                }
+                
                 tc.SlideTama(true, false);
                 tc.WaitEvolve(1);
 
                 tsc.PlayNextStreamerTutorial();
 
                 Invoke(nameof(ReturnControl), 14);
+            }
+            else
+            {
+                pc.Pause();
+                GetComponent<MenuManager>().LoadScene("Win");
             }
         }
     }
@@ -94,7 +94,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
         if (cc != null)
             cc.evolveMessages = false;
 
-        pc.keyboardInteractionPaused = false;
+        pc.isPaused = false;
         tc.SlideTama(false, false);
 
         switch ((int)tc.tama.Age)

@@ -46,8 +46,9 @@ public class TamagotchiController : MonoBehaviour
 
     bool isUpdatingStats;
 
-    float round1StartTime, round2StartTime, round3StartTime;
+    [HideInInspector] public float round1StartTime, round2StartTime, round3StartTime;
     [HideInInspector] public bool hasRound1Started, hasRound2Started, hasRound3Started;
+    [HideInInspector] public float pauseStartTime, pauseTime;
 
     public void Start()
     {
@@ -69,7 +70,7 @@ public class TamagotchiController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isUpdatingStats && !pc.isDead)
+        if (isUpdatingStats && !pc.isDead && !pc.isPaused)
         {
             tama.UpdateStats(statsSpeed);
             
@@ -373,6 +374,7 @@ public class TamagotchiController : MonoBehaviour
                 if ((int)tama.Age == 1)
                 {
                     round1StartTime = Time.time;
+                    pauseTime = 0;
                     
                     SetUpdatingStats(true);
                     hasRound1Started = true;
@@ -383,6 +385,7 @@ public class TamagotchiController : MonoBehaviour
                 if ((int)tama.Age == 2)
                 {
                     round2StartTime = Time.time;
+                    pauseTime = 0;
                     
                     SetUpdatingStats(true);
                     hasRound2Started = true;
@@ -393,6 +396,7 @@ public class TamagotchiController : MonoBehaviour
                 if ((int)tama.Age == 3)
                 {
                     round3StartTime = Time.time;
+                    pauseTime = 0;
                     
                     SetUpdatingStats(true);
                     hasRound3Started = true;
@@ -406,14 +410,16 @@ public class TamagotchiController : MonoBehaviour
     {
         bool temp =
             (int)tama.Age == round && (
-                (round == 1 && hasRound1Started && (Time.time - round1StartTime >= round1Time)) ||
-                (round == 2 && hasRound2Started && (Time.time - round2StartTime >= round2Time)) ||
-                (round == 3 && hasRound3Started && (Time.time - round3StartTime >= round3Time))
+                (round == 1 && hasRound1Started && (Time.time - round1StartTime - pauseTime >= round1Time)) ||
+                (round == 2 && hasRound2Started && (Time.time - round2StartTime - pauseTime >= round2Time)) ||
+                (round == 3 && hasRound3Started && (Time.time - round3StartTime - pauseTime >= round3Time))
             );
 
         if (temp)
         {
             SetUpdatingStats(false);
+
+            pauseTime = 0;
 
             switch (round)
             {
@@ -446,9 +452,9 @@ public class TamagotchiController : MonoBehaviour
     {
         return
             (int)tama.Age == round && (
-                (round == 1 && hasRound1Started && (Time.time - round1StartTime >= 30)) ||
-                (round == 2 && hasRound2Started && (Time.time - round2StartTime >= 30)) ||
-                (round == 3 && hasRound3Started && (Time.time - round3StartTime >= 30))
+                (round == 1 && hasRound1Started && (Time.time - round1StartTime - pauseTime >= 30)) ||
+                (round == 2 && hasRound2Started && (Time.time - round2StartTime - pauseTime >= 30)) ||
+                (round == 3 && hasRound3Started && (Time.time - round3StartTime - pauseTime >= 30))
             );
     }
 }

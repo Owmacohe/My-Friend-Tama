@@ -27,7 +27,11 @@ public class ToiletGhostBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         GhostLook();
-        GhostPlayerTracking();
+
+        if (!playerController.isPaused)
+        {
+            GhostPlayerTracking();   
+        }
     }
 
     //Need to fix so it detects proper collision point

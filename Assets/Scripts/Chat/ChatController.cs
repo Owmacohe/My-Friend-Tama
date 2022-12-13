@@ -17,6 +17,7 @@ public class ChatController : MonoBehaviour
 
     Queue<GameObject> commentQueue = new Queue<GameObject>();
     List<Chatter> chatters = new List<Chatter>();
+    PlayerController pc;
 
     class Chatter
     {
@@ -38,6 +39,8 @@ public class ChatController : MonoBehaviour
         }
         
         Invoke(nameof(RecursiveAddComment), averageCommentSpeed / 2f);
+
+        pc = FindObjectOfType<PlayerController>();
     }
 
     Color RandomColour()
@@ -64,8 +67,11 @@ public class ChatController : MonoBehaviour
 
     void RecursiveAddComment()
     {
-        AddCommentFromExistingChatter(ChatGenerator.RandomMessage(evolveMessages, roundDoneMessages));
-        
+        if (!pc.isPaused)
+        {
+            AddCommentFromExistingChatter(ChatGenerator.RandomMessage(evolveMessages, roundDoneMessages));   
+        }
+
         Invoke(
             nameof(RecursiveAddComment), 
             Random.Range(

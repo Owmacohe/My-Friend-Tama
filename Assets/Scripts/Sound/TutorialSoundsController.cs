@@ -23,7 +23,7 @@ public class TutorialSoundsController : MonoBehaviour
     int streamerProgress;
     [HideInInspector] public bool isPlaying;
 
-    SubtitleController sc;
+    SubtitleController subtitles;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class TutorialSoundsController : MonoBehaviour
             }
         }
 
-        sc = FindObjectOfType<SubtitleController>();
+        subtitles = FindObjectOfType<SubtitleController>();
         
         PlayStreamerTutorial(0);
     }
@@ -54,24 +54,24 @@ public class TutorialSoundsController : MonoBehaviour
         {
             isPlaying = false;
             
-            if (sc.isPopulated && sc.isTutorial)
+            if (subtitles.isPopulated && subtitles.isTutorial)
             {
-                sc.Clear();
+                subtitles.Clear();
             }
         }
 
-        if (!streamerSource.isPlaying && sc.isPopulated && !sc.isTutorial)
+        if (!streamerSource.isPlaying && subtitles.isPopulated && !subtitles.isTutorial)
         {
-            sc.Clear();
+            subtitles.Clear();
         }
     }
 
-    public void PlayMallTutorial(int tut)
+    public bool PlayMallTutorial(int tut)
     {
         if (tut == tutorialProgress && tut < PAs.Count)
         {
             if (tutorialSubtitles != null && tut < tutorialSubtitles.Length)
-                sc.Populate(tutorialSubtitles[tut], true);
+                subtitles.Populate(tutorialSubtitles[tut], true);
             
             foreach (AudioSource i in PAs)
             {
@@ -80,45 +80,59 @@ public class TutorialSoundsController : MonoBehaviour
             }
             
             tutorialProgress++;
+
+            return true;
         }
+
+        return false;
     }
 
-    public void PlayNextStreamerTutorial()
+    public bool PlayNextStreamerTutorial()
     {
-        PlayStreamerTutorial(streamerProgress);
+        return PlayStreamerTutorial(streamerProgress);
     }
 
-    public void PlayStreamerTutorial(GameObject volume)
+    public bool PlayStreamerTutorial(GameObject volume)
     {
         if (volume.Equals(seeTamaVolume))
         {
-            PlayStreamerTutorial(1);
+            Destroy(volume);
+            return PlayStreamerTutorial(1);
         }
         else if (volume.Equals(seeFoodCourtVolume))
         {
-            PlayStreamerTutorial(3);
+            Destroy(volume);
+            return PlayStreamerTutorial(3);
         }
         else if (volume.Equals(seeArcadeVolume))
         {
-            PlayStreamerTutorial(5);
+            Destroy(volume);
+            return PlayStreamerTutorial(5);
         }
         else if (volume.Equals(seeBathroomVolume))
         {
-            PlayStreamerTutorial(7);
+            Destroy(volume);
+            return PlayStreamerTutorial(7);
         }
+
+        return false;
     }
 
-    void PlayStreamerTutorial(int tut)
+    bool PlayStreamerTutorial(int tut)
     {
         if (tut == streamerProgress)
         {
             if (streamerSubtitles != null && tut < streamerSubtitles.Length)
-                sc.Populate(streamerSubtitles[tut], false);
+                subtitles.Populate(streamerSubtitles[tut], false);
             
             streamerSource.clip = streamerTutorials[tut];
             streamerSource.Play();
 
             streamerProgress++;
+
+            return true;
         }
+
+        return false;
     }
 }

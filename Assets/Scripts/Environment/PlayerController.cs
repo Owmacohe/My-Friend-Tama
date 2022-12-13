@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     Vector2 currentMouseDelta = Vector2.zero;
     //Vector2 currentMouseDeltaVelocity = Vector2.zero;
     
-    [HideInInspector] public bool keyboardInteractionPaused;
+    [HideInInspector] public bool isPaused;
     Transform respawnPoint;
     [HideInInspector] public bool isDead;
 
@@ -56,11 +56,13 @@ public class PlayerController : MonoBehaviour
 
         respawnPoint = GameObject.FindGameObjectWithTag("Respawn").gameObject.transform;
         deathScreen.SetActive(false);
+        
+        MouseSwitcher.SetInactive();
     }
 
     void Update()
     {
-        if (!keyboardInteractionPaused)
+        if (!isPaused)
         {
             RunControls();
             //CrouchControl();
@@ -91,24 +93,34 @@ public class PlayerController : MonoBehaviour
 
     public void Pause()
     {
-        keyboardInteractionPaused = true;
+        isPaused = true;
 
-        MouseSwitcher.SetInactive();
+        MouseSwitcher.SetActive();
+        
+        tc.pauseStartTime = Time.time;
     }
 
     public void Resume()
     {
         if (isDead)
             tc.tama.ResetStats();
+
+        tc.pauseTime += Time.time - tc.pauseStartTime;
+        print(tc.pauseTime);
         
         pauseMenu.SetActive(false);
         deathScreen.SetActive(false);
         
-        keyboardInteractionPaused = false;
+        Invoke(nameof(UnPause), 0.1f);
         
-        MouseSwitcher.SetActive();
+        MouseSwitcher.SetInactive();
 
         isDead = false;
+    }
+
+    void UnPause()
+    {
+        isPaused = false;
     }
 
     /// <summary>
