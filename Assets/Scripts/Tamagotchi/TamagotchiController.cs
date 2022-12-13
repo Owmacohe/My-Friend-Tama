@@ -267,7 +267,7 @@ public class TamagotchiController : MonoBehaviour
     {
         if (isFlashing)
         {
-            if (!isLookingAtTama && !statNeedSound.source.isPlaying)
+            if (!isLookingAtTama && !statNeedSound.source.isPlaying && !pc.isPaused)
             {
                 statNeedSound.Play();   
             }

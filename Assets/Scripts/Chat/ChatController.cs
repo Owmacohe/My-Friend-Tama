@@ -39,8 +39,6 @@ public class ChatController : MonoBehaviour
         }
         
         Invoke(nameof(RecursiveAddComment), averageCommentSpeed / 2f);
-
-        pc = FindObjectOfType<PlayerController>();
     }
 
     Color RandomColour()
@@ -67,7 +65,9 @@ public class ChatController : MonoBehaviour
 
     void RecursiveAddComment()
     {
-        if (!pc.isPaused)
+        pc = FindObjectOfType<PlayerController>();
+        
+        if (pc == null || (pc != null && !pc.isPaused))
         {
             AddCommentFromExistingChatter(ChatGenerator.RandomMessage(evolveMessages, roundDoneMessages));   
         }
