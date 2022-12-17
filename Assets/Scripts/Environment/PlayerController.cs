@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
             tc.tama.ResetStats();
 
         tc.pauseTime += Time.time - tc.pauseStartTime;
-        print(tc.pauseTime);
         
         pauseMenu.SetActive(false);
         deathScreen.SetActive(false);
