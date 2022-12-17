@@ -13,6 +13,7 @@ public class StartRound2Script : MonoBehaviour
     {
         gateControl = FindObjectOfType<GateControlScript>();
         playerObjectDetection = FindObjectOfType<PlayerObjectDetection>();
+        arcadeTokenSpawner.SetActive(false);
     }
 
     void OnTriggerStay(Collider other)
@@ -29,6 +30,8 @@ public class StartRound2Script : MonoBehaviour
                 gameObject.SetActive(false);
 
                 FindObjectOfType<TamagotchiController>().StartRound(2);
+                
+                FindObjectOfType<TutorialSoundsController>().PlayMallTutorial(5);
             }
         }
     }

@@ -87,38 +87,16 @@ public class TutorialSoundsController : MonoBehaviour
         return false;
     }
 
-    public bool PlayNextStreamerTutorial()
+    public void PlayStreamerTutorial(GameObject volume)
     {
-        return PlayStreamerTutorial(streamerProgress);
+        if ((volume.Equals(seeTamaVolume) && PlayStreamerTutorial(1)) ||
+            (volume.Equals(seeFoodCourtVolume) && PlayStreamerTutorial(3)) ||
+            (volume.Equals(seeArcadeVolume) && PlayStreamerTutorial(5)) ||
+            (volume.Equals(seeBathroomVolume) && PlayStreamerTutorial(7)))
+            Destroy(volume);
     }
 
-    public bool PlayStreamerTutorial(GameObject volume)
-    {
-        if (volume.Equals(seeTamaVolume))
-        {
-            Destroy(volume);
-            return PlayStreamerTutorial(1);
-        }
-        else if (volume.Equals(seeFoodCourtVolume))
-        {
-            Destroy(volume);
-            return PlayStreamerTutorial(3);
-        }
-        else if (volume.Equals(seeArcadeVolume))
-        {
-            Destroy(volume);
-            return PlayStreamerTutorial(5);
-        }
-        else if (volume.Equals(seeBathroomVolume))
-        {
-            Destroy(volume);
-            return PlayStreamerTutorial(7);
-        }
-
-        return false;
-    }
-
-    bool PlayStreamerTutorial(int tut)
+    public bool PlayStreamerTutorial(int tut)
     {
         if (tut == streamerProgress)
         {

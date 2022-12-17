@@ -29,6 +29,8 @@ public class StartRound1Script : MonoBehaviour
                 gameObject.SetActive(false);
                 
                 FindObjectOfType<TamagotchiController>().StartRound(1);
+                
+                FindObjectOfType<TutorialSoundsController>().PlayMallTutorial(2);
             }
         }
     }

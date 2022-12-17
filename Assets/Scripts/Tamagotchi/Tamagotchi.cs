@@ -7,9 +7,7 @@ public class Tamagotchi
     public float Food { get; private set; } // 0..1
     public float Happiness { get; private set; } // 0..1
     public float Discipline { get; private set; } // 0..1
-
-    public enum TamagotchiAge { Egg, Baby, Kid, Adult }
-    public TamagotchiAge Age { get; private set; }
+    public int Age { get; set; } // 0..3
 
     float startAmount;
 
@@ -19,7 +17,7 @@ public class Tamagotchi
         
         ResetStats();
         
-        Age = TamagotchiAge.Egg;
+        Age = 0;
     }
     
     public void ResetStats()
@@ -34,7 +32,7 @@ public class Tamagotchi
     /// </summary>
     public void Feed(float amount)
     {
-        if ((int)Age > 0)
+        if (Age > 0)
         {
             Food = Food < 1 ? Food + amount : 1;
         }
@@ -43,7 +41,7 @@ public class Tamagotchi
     // Increases happiness level
     public void Play(float amount)
     {
-        if ((int)Age > 1)
+        if (Age > 1)
         {
             Happiness = Happiness < 1 ? Happiness + amount : 1;
         }
@@ -54,7 +52,7 @@ public class Tamagotchi
     /// </summary>
     public void Scold(float amount)
     {
-        if ((int)Age > 2)
+        if (Age > 2)
         {
             Discipline = Discipline < 1 ? Discipline + amount : 1;
         }
@@ -66,7 +64,7 @@ public class Tamagotchi
     /// <param name="amount">Amount that each stat has a chance to be decreased by</param>
     public void UpdateStats(float amount)
     {
-        int currentAge = (int)Age;
+        int currentAge = Age;
 
         if (currentAge > 0)
         {
@@ -110,12 +108,9 @@ public class Tamagotchi
     /// </summary>
     public void Evolve()
     {
-        int enumSize = Enum.GetNames(typeof(TamagotchiAge)).Length;
-        int currentAge = (int)Age;
+        if (Age < 3) Age++;
         
-        Age = currentAge < enumSize
-            ? (TamagotchiAge)(currentAge + 1)
-            : (TamagotchiAge)(enumSize - 1);
+        if (Age > 3) Age = 3;
     }
 
     /// <summary>

@@ -48,31 +48,34 @@ public class TamagotchiEvolutionManager : MonoBehaviour
             isEvolving = true;
             lastEvolutionTime = Time.time;
             
-            if (cc != null)
-                cc.evolveMessages = true;
+            if (cc != null) cc.evolveMessages = true;
 
             fakeTama.SetActive(false);
             realTama.SetActive(true);
 
             pc.isPaused = true;
 
-            int tamaAge = (int)tc.tama.Age;
+            int tamaAge = tc.tama.Age;
 
             if (tamaAge < 3)
             {
-                if (tamaAge == 1)
+                if (tamaAge == 0)
+                {
+                    tsc.PlayStreamerTutorial(2);
+                }
+                else if (tamaAge == 1)
                 {
                     cps.hasPassedCheckpoint2 = true;
+                    tsc.PlayStreamerTutorial(4);
                 }
                 else if (tamaAge == 2)
                 {
                     cps.hasPassedCheckpoint3 = true;
+                    tsc.PlayStreamerTutorial(6);
                 }
                 
                 tc.SlideTama(true, false);
                 tc.WaitEvolve(1);
-
-                tsc.PlayNextStreamerTutorial();
 
                 Invoke(nameof(ReturnControl), 14);
             }
@@ -86,18 +89,14 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
     void ReturnControl()
     {
-        if (isFirstTime)
-        {
-            tsc.PlayMallTutorial(0);
-        }
+        if (isFirstTime) tsc.PlayMallTutorial(0);
 
-        if (cc != null)
-            cc.evolveMessages = false;
+        if (cc != null) cc.evolveMessages = false;
 
         pc.isPaused = false;
         tc.SlideTama(false, false);
 
-        switch ((int)tc.tama.Age)
+        switch (tc.tama.Age)
         {
             case 2:
                 gc.arcadeGateADown = false;

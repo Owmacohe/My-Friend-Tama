@@ -117,8 +117,6 @@ public class PlayerObjectDetection : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Food"))
             {
-                tutorial.PlayMallTutorial(2);
-                
                 cps.hasPassedCheckpoint1 = true;
                 
                 audioManagerMenu.arcadeCabSFX.PlayOneShot(audioManagerMenu.eatSFX.clip);
@@ -129,8 +127,6 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("Money"))
             {
-                tutorial.PlayMallTutorial(5);
-                
                 if (!hasCoin)
                 {
                     audioManagerMenu.coinSFX.PlayOneShot(audioManagerMenu.coinSFX.clip);
