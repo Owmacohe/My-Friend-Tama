@@ -145,7 +145,7 @@ public class PlayerObjectDetection : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("fakeTama"))
             {
-                if (tem.isEvolveReady)
+                if (tem.isEvolveReady && !tem.isEvolving)
                 {
                     if (tem.isFirstTime)
                     {

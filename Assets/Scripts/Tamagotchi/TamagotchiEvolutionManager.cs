@@ -12,8 +12,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
     TutorialSoundsController tsc;
     CheckpointScript cps;
 
-    [HideInInspector] public bool isEvolveReady, isFirstTime;
-    bool isEvolving;
+    [HideInInspector] public bool isEvolveReady, isFirstTime, isEvolving;
     float lastEvolutionTime;
 
     void Start()
