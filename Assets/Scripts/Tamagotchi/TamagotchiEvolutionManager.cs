@@ -37,7 +37,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
 
         pc.isPaused = true;
         
-        Invoke(nameof(Evolve), 4);
+        Invoke(nameof(Evolve), 2);
     }
 
     public void Evolve()
@@ -76,7 +76,7 @@ public class TamagotchiEvolutionManager : MonoBehaviour
                 tc.SlideTama(true, false);
                 tc.WaitEvolve(1);
 
-                Invoke(nameof(ReturnControl), 14);
+                Invoke(nameof(ReturnControl), 10);
             }
             else
             {
